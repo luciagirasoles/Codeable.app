@@ -9,6 +9,7 @@ function Login(props) {
   const [email, setEmail] = React.useState("mnavarro@able.co");
   const [password, setPassword] = React.useState("123456");
   const [errorMessage, setErrorMessage] = React.useState(null);
+
   function handleEmailChange(event) {
     setEmail(event.target.value);
   }
@@ -17,17 +18,10 @@ function Login(props) {
     setPassword(event.target.value);
   }
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-
-    try {
-      //TO BE FILLED WHEN THIS VIEW IS CONNECTED TO API
-      // const response = await login({ email, password });
-      // props.userLogin(response);
-    } catch (error) {
-      setErrorMessage(error.message);
-    }
+  function handleSubmit(e) {
+    e.preventDefault();
   }
+
   const inputIconCss = {
     border: "1.5px solid #87909e",
     display: "inline-block",
