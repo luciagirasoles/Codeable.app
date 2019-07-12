@@ -1,5 +1,7 @@
 import React from "react";
 import Module from "../components/Module";
+import UserContext from "../contexts/user";
+import { Redirect } from "@reach/router";
 
 let data = [
   {
@@ -179,6 +181,10 @@ let data = [
 ];
 
 function Class() {
+  const user = React.useContext(UserContext);
+
+  // if (!user) return <Redirect to="/" noThrow />;
+
   return (
     <div>
       {data.map(value => {
