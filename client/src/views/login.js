@@ -2,6 +2,7 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 import { FiUser, FiLock } from "react-icons/fi";
+import { Link } from "@reach/router";
 
 import Background from "../assets/background-login.jpeg";
 
@@ -149,9 +150,9 @@ function Login(props) {
             <a href="#" css={aCss}>
               Change Password
             </a>
-            <a href="#" css={aCss}>
+            <Link to="/forgot" css={aCss}>
               Forgot Password?
-            </a>
+            </Link>
           </div>
         </form>
       </div>
