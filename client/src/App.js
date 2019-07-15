@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react";
-import Login from "./views/login";
+import Login from "./views/Login";
 import { jsx } from "@emotion/core";
 import Classes from "./views/Classes";
 import { Router } from "@reach/router";
@@ -15,7 +15,7 @@ function App() {
       <Router>
         <Login path="/" />
         <Classes path="/lessons" />
-        <Forgot path="/forgot"/>
+        <Forgot path="/forgot" />
       </Router>
     </div>
   );

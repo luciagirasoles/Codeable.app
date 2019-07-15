@@ -1,7 +1,7 @@
 import React from "react";
 import Module from "../components/Module";
-import UserContext from "../contexts/user";
 import { Redirect } from "@reach/router";
+import { useUser } from "../selector";
 
 let data = [
   {
@@ -181,9 +181,9 @@ let data = [
 ];
 
 function Class() {
-  const user = React.useContext(UserContext);
+  const username = useUser();
 
-  // if (!user) return <Redirect to="/" noThrow />;
+  if (!username) return <Redirect to="/" noThrow />;
 
   return (
     <div>

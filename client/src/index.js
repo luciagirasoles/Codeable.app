@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Global } from "@emotion/core";
+import { Provider } from "react-redux";
+import store from "./store";
 
 import App from "./App";
 
 ReactDOM.render(
-  <>
+  <Provider store={store}>
     <Global
       styles={{
         body: {
@@ -19,6 +21,6 @@ ReactDOM.render(
       }}
     />
     <App />
-  </>,
+  </Provider>,
   document.getElementById("root")
 );
