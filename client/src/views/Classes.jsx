@@ -1,7 +1,10 @@
+/** @jsx jsx */
 import React from "react";
+import { jsx } from "@emotion/core";
 import Module from "../components/Module";
 import { Redirect } from "@reach/router";
 import { useUser } from "../selector";
+import Header from "../components/Header";
 
 let data = [
   {
@@ -186,7 +189,8 @@ function Class() {
   if (!username) return <Redirect to="/" noThrow />;
 
   return (
-    <div>
+    <div css={{ backgroundColor: "#eee", height: "100vh" }}>
+      <Header />
       {data.map(value => {
         return <Module module={value} />;
       })}

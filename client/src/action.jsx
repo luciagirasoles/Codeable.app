@@ -1,5 +1,5 @@
 const API_LOGIN_URL = "http://localhost:3000/login";
-// const API_LOGOUT_URL = "http://localhost:3000/logout";
+const API_LOGOUT_URL = "http://localhost:3000/logout";
 
 function login(user) {
   return async dispatch => {
@@ -24,18 +24,19 @@ function login(user) {
   };
 }
 
-// function logout() {
-//   return async dispatch => {
-//     const response = await fetch(API_LOGOUT_URL, {
-//       method: "DELETE",
-//       credentials: "include"
-//     });
-//     if (!response.ok) {
-//       dispatch({ type: "DEFAULT" });
-//     } else {
-//       dispatch({ type: "LOGOUT" });
-//     }
-//   };
-// }
+function logout() {
+  return async dispatch => {
+    const response = await fetch(API_LOGOUT_URL, {
+      method: "DELETE",
+      credentials: "include"
+    });
 
-export { login };
+    if (!response.ok) {
+      dispatch({ type: "DEFAULT" });
+    } else {
+      dispatch({ type: "LOGOUT" });
+    }
+  };
+}
+
+export { login, logout };
