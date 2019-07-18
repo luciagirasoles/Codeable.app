@@ -3,8 +3,8 @@ import { useSelector, shallowEqual } from "react-redux";
 
 function useUser() {
   return useSelector(state => {
-    if (state.user.currentUser) {
-      return state.user.currentUser.name;
+    if (state.user) {
+      return state.user;
     } else {
       return null;
     }

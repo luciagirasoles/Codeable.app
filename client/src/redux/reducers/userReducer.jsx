@@ -1,8 +1,4 @@
-import { combineReducers } from "redux";
-
-const initialState = {
-  user: { currentUser: {}, loading: false, error: null }
-};
+import initialState from "../initialState";
 
 function userReducer(state = initialState.user, action = {}) {
   switch (action.type) {
@@ -40,8 +36,4 @@ function userReducer(state = initialState.user, action = {}) {
   }
 }
 
-const reducer = combineReducers({
-  user: userReducer
-});
-
-export default reducer;
+export default userReducer;

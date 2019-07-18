@@ -3,7 +3,7 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import { FaUserCircle, FaRegBell } from "react-icons/fa";
 import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
-import { useLogout } from "../action-hook";
+import { useLogout } from "../redux/action-hook";
 
 function Header() {
   const logout = useLogout();

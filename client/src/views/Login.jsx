@@ -4,22 +4,20 @@ import { jsx } from "@emotion/core";
 import { FiUser, FiLock } from "react-icons/fi";
 import { navigate, Link } from "@reach/router";
 import Background from "../assets/background-login.jpeg";
-import { useLogin } from "../action-hook";
-import { useUser } from "../selector";
+import { useLogin } from "../redux/action-hook";
+import { useUser } from "../redux/selector";
 
 function Login() {
   const login = useLogin();
-  const username = useUser();
+  const user = useUser();
   const [email, setEmail] = React.useState("mnavarro@able.co");
   const [password, setPassword] = React.useState("123456");
-  const [errorMessage, setErrorMessage] = React.useState(null);
-  const [user, setUser] = React.useState(null);
 
   React.useEffect(() => {
-    if (username) {
+    if (user.currentUser.name) {
       navigate("/lessons");
     }
-  }, [username]);
+  }, [user]);
 
   function handleEmailChange(event) {
     setEmail(event.target.value);
@@ -146,7 +144,7 @@ function Login() {
           >
             Log In
           </button>
-          {errorMessage && (
+          {user.error && (
             <div
               css={{
                 color: "red",
@@ -155,7 +153,7 @@ function Login() {
                 fontSize: "0.95em"
               }}
             >
-              Error: {errorMessage}
+              Error: {user.error}
             </div>
           )}
 

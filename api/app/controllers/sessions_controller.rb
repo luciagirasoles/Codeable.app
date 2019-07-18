@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: :create
 
@@ -10,7 +8,7 @@ class SessionsController < ApplicationController
       render json: user
     else
       render json: { errors: 'Incorrect email or password' },
-              status: :bad_request
+             status: :bad_request
     end
   end
 

@@ -1,18 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import { navigate } from "@reach/router";
-
 import Background from "../assets/background-login.jpeg";
-import { Card, Input, Button } from "../components/Ui";
-import { sendResetEmail } from "../services/resetPassword";
+import { Link } from "@reach/router";
+import { Card } from "../components/Ui";
 
-function Forgot() {
-  async function handleSubmit(e) {
-    e.preventDefault();
-    sendResetEmail(e.target.elements.email.value);
-    navigate("/resetconfirm");
-  }
-
+function ResetConfirmation() {
   return (
     <div
       css={{
@@ -30,12 +22,12 @@ function Forgot() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-between",
           width: "500px",
           height: "300px"
         }}
       >
-        <form
+        <div
           css={{
             width: "100%",
             height: "100%",
@@ -43,30 +35,35 @@ function Forgot() {
             flexDirection: "column",
             justifyContent: "space-between"
           }}
-          onSubmit={handleSubmit}
         >
-          <h2>Ask for new password</h2>
+          <h2>Reset your password</h2>
           <div
             css={{
               height: "70%",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-between"
+              justifyContent: "space-around"
             }}
           >
             <p>
-              Dont't worry, reset your password is easy. Just enter your email
-              address.
+              We have sent a reset password email to{" "}
+              <b>ry.yrupailla@gmail.com</b>. Please click the reset password
+              link to set your new password.
             </p>
 
-            <Input name="email" type="email" placeholder="Email" />
-
-            <Button>Submit</Button>
+            <p>
+              Didn't receive the email yet? <br /> Please check your spam folder
+              or{" "}
+              <Link to="/forgot" css={{ color: "rgb(0,200,100)" }}>
+                resend
+              </Link>{" "}
+              the email.{" "}
+            </p>
           </div>
-        </form>
+        </div>
       </Card>
     </div>
   );
 }
 
-export default Forgot;
+export default ResetConfirmation;
