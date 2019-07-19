@@ -2,7 +2,6 @@
 import { jsx } from "@emotion/core";
 import { navigate } from "@reach/router";
 
-import Background from "../assets/background-login.jpeg";
 import { Card, Input, Button } from "../components/Ui";
 import { sendResetEmail } from "../services/resetPassword";
 import HomeLayout from "../components/layouts/HomeLayout";

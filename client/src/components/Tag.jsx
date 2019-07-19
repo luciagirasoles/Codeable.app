@@ -2,24 +2,29 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 
-const Tag = ({ tagname }) => {
-  let tag = tagname.toUpperCase();
+const Tag = ({ tag_id }) => {
   let color;
-  switch (tag) {
-    case "OVERVIEW":
+  let tag_text;
+  switch (tag_id) {
+    case 1:
       color = "green";
+      tag_text = "OVERVIEW";
       break;
-    case "WORKSHOP":
+    case 2:
       color = "blue";
+      tag_text = "WORKSHOP";
       break;
-    case "M-ASSIGN":
+    case 3:
       color = "orange";
+      tag_text = "M-ASSIGN";
       break;
-    case "EXERCISES":
+    case 4:
       color = "purple";
+      tag_text = "EXERCISES";
       break;
     default:
       color = "brown";
+      tag_text = "BLOG";
       break;
   }
 
@@ -36,7 +41,7 @@ const Tag = ({ tagname }) => {
         borderRadius: "5px"
       }}
     >
-      {tag}
+      {tag_text}
     </span>
   );
 };

@@ -4,14 +4,14 @@ import Tag from "./Tag";
 import ClassLink from "./ClassLink";
 import { jsx } from "@emotion/core";
 
-function Resource({ key, tagname, title, index }) {
+function Resource({ key, tag_id, title, id }) {
   return (
     <li key={key} css={{ marginBottom: "10px", display: "flex" }}>
       <div css={{ width: "100px" }}>
-        <Tag tagname={tagname} />
+        <Tag tag_id={tag_id} />
       </div>
       <div css={{ width: "400px" }}>
-        <ClassLink title={title} index={index} />
+        <ClassLink title={title} id={id} />
       </div>
     </li>
   );

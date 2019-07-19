@@ -21,8 +21,3 @@ class ModulosController < ApplicationController
 
 end
 
-
-# /modulos/:id/lessons
-# intro to Ruby fundamentals
-# GIT commands
-# Classes

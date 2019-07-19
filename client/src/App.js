@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Login path="/" />
         <Classes path="lessons" />
-        <Lesson path="lessons/module/:moduleIndex/lesson/:index" />
+        <Lesson path="lessons/module/:moduleIndex/lesson/:id" />
         <Forgot path="/forgot" />
         <ResetConfirmation path="/resetconfirm" />
         <ResetPassword path="/resetpassword/:token" />

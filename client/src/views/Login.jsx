@@ -31,7 +31,6 @@ function Login() {
   async function handleSubmit(event) {
     event.preventDefault();
     login({ email, password });
-    navigate("/lessons");
   }
 
   const inputIconCss = {

@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, shallowEqual } from "react-redux";
 
 function useUser() {
@@ -11,4 +10,24 @@ function useUser() {
   }, shallowEqual);
 }
 
-export { useUser };
+function useModulo() {
+  return useSelector(state => {
+    if (state.modulo) {
+      return state.modulo;
+    } else {
+      return [];
+    }
+  }, shallowEqual);
+}
+
+function useLessonData() {
+  return useSelector(state => {
+    if (state.sublesson) {
+      return state.sublesson;
+    } else {
+      return null;
+    }
+  }, shallowEqual);
+}
+
+export { useUser, useModulo, useLessonData };

@@ -45,7 +45,3 @@ Sublesson.create(title:'Create your first repository',content:
   ',tag_id:3,lesson_id:1,section:'main')
 Sublesson.create(title:'Check extra exercises',content:'## Make your first pull request and code review',section:'extra',lesson_id:1,tag_id:4)
 Sublesson.create(title:'Read additional material about CLI',content:'## How to be a rockstart within CLI',section:'extra',lesson_id:1,tag_id:5)
-
-
-
-

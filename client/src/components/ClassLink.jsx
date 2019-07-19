@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-function ClassLink({ title, index }) {
-  let url = `/lessons/sublesson/${index}/${title
-    .replace(/\s+/g, "-")
-    .toLowerCase()}`;
+function ClassLink({ title, id }) {
+  let url = `/lessons/module/1/lesson/${id}`;
+
   return <Link to={url}>{title}</Link>;
 }
 

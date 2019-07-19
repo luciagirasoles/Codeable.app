@@ -3,7 +3,7 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import Resource from "./Resource";
 
-function Resources({ title, mainResource, extraResource, index }) {
+function Resources({ title, mainResource, extraResource, id }) {
   return (
     <div
       css={{
@@ -13,13 +13,14 @@ function Resources({ title, mainResource, extraResource, index }) {
     >
       <h3>{title}</h3>
       <div css={{ marginLeft: "20px", marginTop: "20px" }}>
+        {/* [{sub1},{sub2},{sub3}] */}
         {mainResource.map((element, i) => {
           return (
             <Resource
-              tagname={element.tag}
+              tag_id={element.tag_id}
               key={i}
               title={element.title}
-              index={index}
+              id={element.id}
             />
           );
         })}
@@ -29,10 +30,10 @@ function Resources({ title, mainResource, extraResource, index }) {
         {extraResource.map((element, i) => {
           return (
             <Resource
-              tagname={element.tag}
+              tag_id={element.tag_id}
               key={i}
               title={element.title}
-              index={index}
+              id={id}
             />
           );
         })}

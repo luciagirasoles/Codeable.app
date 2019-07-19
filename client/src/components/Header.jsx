@@ -1,14 +1,7 @@
 /** @jsx jsx */
-import React from "react";
 import { jsx } from "@emotion/core";
 import { FaUserCircle, FaRegBell } from "react-icons/fa";
-import {
-  Menu,
-  MenuList,
-  MenuButton,
-  MenuItem,
-  MenuLink
-} from "@reach/menu-button";
+import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
 import { useLogout } from "../redux/action-hook";
 import { navigate } from "@reach/router";
 
