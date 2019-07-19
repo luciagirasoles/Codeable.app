@@ -3,20 +3,11 @@ import { jsx } from "@emotion/core";
 import Background from "../assets/background-login.jpeg";
 import { Link } from "@reach/router";
 import { Card } from "../components/Ui";
+import HomeLayout from "../components/layouts/HomeLayout";
 
 function ResetConfirmation() {
   return (
-    <div
-      css={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundImage: `url(${Background})`,
-        backgroundColor: "#ffffff",
-        backgroundSize: "cover",
-        height: "100vh"
-      }}
-    >
+    <HomeLayout>
       <Card
         css={{
           display: "flex",
@@ -62,7 +53,7 @@ function ResetConfirmation() {
           </div>
         </div>
       </Card>
-    </div>
+    </HomeLayout>
   );
 }
 

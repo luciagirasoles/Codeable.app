@@ -6,6 +6,7 @@ import { navigate, Link } from "@reach/router";
 import Background from "../assets/background-login.jpeg";
 import { useLogin } from "../redux/action-hook";
 import { useUser } from "../redux/selector";
+import HomeLayout from "../components/layouts/HomeLayout";
 
 function Login() {
   const login = useLogin();
@@ -53,18 +54,7 @@ function Login() {
   const aCss = {};
 
   return (
-    <section
-      css={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        flexDirection: "column",
-        backgroundImage: `url(${Background})`,
-        backgroundColor: "#ffffff",
-        backgroundSize: "cover"
-      }}
-    >
+    <HomeLayout>
       <div
         css={{
           display: "flex",
@@ -157,17 +147,21 @@ function Login() {
             </div>
           )}
 
-          <div css={{ display: "flex", justifyContent: "space-between" }}>
-            <a href="#" css={aCss}>
-              Change Password
-            </a>
+          <div
+            css={{
+              display: "flex",
+              justifyContent: "flex-end",
+              marginTop: "50px",
+              fontSize: ".8em"
+            }}
+          >
             <Link to="/forgot" css={aCss}>
               Forgot Password?
             </Link>
           </div>
         </form>
       </div>
-    </section>
+    </HomeLayout>
   );
 }
 export default Login;

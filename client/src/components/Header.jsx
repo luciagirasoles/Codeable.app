@@ -2,13 +2,31 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 import { FaUserCircle, FaRegBell } from "react-icons/fa";
-import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
+import {
+  Menu,
+  MenuList,
+  MenuButton,
+  MenuItem,
+  MenuLink
+} from "@reach/menu-button";
 import { useLogout } from "../redux/action-hook";
+import { navigate } from "@reach/router";
 
-function Header() {
+function Header({ styles }) {
   const logout = useLogout();
+
+  function changePassword() {
+    navigate("/changepassword");
+  }
   return (
-    <div css={{ display: "flex", justifyContent: "flex-end", padding: "10px" }}>
+    <div
+      css={{
+        display: "flex",
+        justifyContent: "flex-end",
+        padding: "10px",
+        ...styles
+      }}
+    >
       <FaRegBell
         css={{ fontSize: "1.15em", alignSelf: "center", marginRight: "20px" }}
       />
@@ -42,6 +60,7 @@ function Header() {
           }}
         >
           <MenuItem onSelect={() => logout()}>Logout</MenuItem>
+          <MenuItem onSelect={() => changePassword()}>Change Password</MenuItem>
         </MenuList>
       </Menu>
     </div>

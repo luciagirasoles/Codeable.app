@@ -3,21 +3,12 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import Background from "../assets/background-login.jpeg";
 import { Link } from "@reach/router";
-import { Card, Input, Button, Label } from "../components/Ui";
+import { Card } from "../components/Ui";
+import HomeLayout from "../components/layouts/HomeLayout";
 
 function ResetSuccessful() {
   return (
-    <div
-      css={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundImage: `url(${Background})`,
-        backgroundColor: "#ffffff",
-        backgroundSize: "cover",
-        height: "100vh"
-      }}
-    >
+    <HomeLayout>
       <Card
         css={{
           display: "flex",
@@ -47,7 +38,7 @@ function ResetSuccessful() {
           </p>
         </div>
       </Card>
-    </div>
+    </HomeLayout>
   );
 }
 

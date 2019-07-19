@@ -3,9 +3,9 @@ import { useState } from "react";
 import { jsx } from "@emotion/core";
 import { navigate } from "@reach/router";
 
-import Background from "../assets/background-login.jpeg";
 import { Card, Input, Button } from "../components/Ui";
 import { resetPassword } from "../services/resetPassword";
+import HomeLayout from "../components/layouts/HomeLayout";
 
 function ResetPassword({ token }) {
   const [password, setPassword] = useState("");
@@ -16,7 +16,7 @@ function ResetPassword({ token }) {
     e.preventDefault();
     if (password === confirm) {
       const response = await resetPassword(password, token);
-      if (response.errors) setError(response.errors)
+      if (response.errors) setError(response.errors);
       else navigate("/resetsuccessful");
     }
   }
@@ -40,17 +40,7 @@ function ResetPassword({ token }) {
   }
 
   return (
-    <div
-      css={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundImage: `url(${Background})`,
-        backgroundColor: "#ffffff",
-        backgroundSize: "cover",
-        height: "100vh"
-      }}
-    >
+    <HomeLayout>
       <Card
         css={{
           display: "flex",
@@ -110,7 +100,7 @@ function ResetPassword({ token }) {
           </div>
         </form>
       </Card>
-    </div>
+    </HomeLayout>
   );
 }
 

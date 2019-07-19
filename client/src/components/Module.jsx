@@ -4,7 +4,7 @@ import Resources from "./Resources";
 import { jsx } from "@emotion/core";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
-function Module({ module }) {
+function Module({ modulo, index }) {
   const [show, setShow] = React.useState(false);
 
   function showMaterial() {
@@ -27,7 +27,7 @@ function Module({ module }) {
           alignItems: "center"
         }}
       >
-        <h2>Modulo: {module.name}</h2>
+        <h2>Modulo: {modulo.name}</h2>
 
         {show ? (
           <MdKeyboardArrowUp
@@ -51,13 +51,14 @@ function Module({ module }) {
 
       {show && (
         <div>
-          <p>{module.description}</p>
-          {module.resources.map(element => {
+          <p>{modulo.description}</p>
+          {modulo.resources.map(element => {
             return (
               <Resources
                 title={element.title}
                 mainResource={element.mainResources}
                 extraResource={element.extraResources}
+                index={index}
               />
             );
           })}

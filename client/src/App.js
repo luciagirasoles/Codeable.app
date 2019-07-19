@@ -8,7 +8,8 @@ import Forgot from "./views/Forgot";
 import ResetConfirmation from "./views/ResetConfirmation";
 import ResetPassword from "./views/ResetPassword";
 import ResetSuccessful from "./views/ResetSuccessful";
-
+import Lesson from "./views/Lesson";
+import ChangePassword from "./views/ChangePassword";
 
 function App() {
   const container = {
@@ -18,11 +19,13 @@ function App() {
     <div css={container}>
       <Router>
         <Login path="/" />
-        <Classes path="/lessons" />
+        <Classes path="lessons" />
+        <Lesson path="lessons/module/:moduleIndex/lesson/:index" />
         <Forgot path="/forgot" />
         <ResetConfirmation path="/resetconfirm" />
         <ResetPassword path="/resetpassword/:token" />
         <ResetSuccessful path="/resetsuccessful/" />
+        <ChangePassword path="/changepassword" />
       </Router>
     </div>
   );

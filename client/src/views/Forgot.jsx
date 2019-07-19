@@ -5,6 +5,7 @@ import { navigate } from "@reach/router";
 import Background from "../assets/background-login.jpeg";
 import { Card, Input, Button } from "../components/Ui";
 import { sendResetEmail } from "../services/resetPassword";
+import HomeLayout from "../components/layouts/HomeLayout";
 
 function Forgot() {
   async function handleSubmit(e) {
@@ -14,17 +15,7 @@ function Forgot() {
   }
 
   return (
-    <div
-      css={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundImage: `url(${Background})`,
-        backgroundColor: "#ffffff",
-        backgroundSize: "cover",
-        height: "100vh"
-      }}
-    >
+    <HomeLayout>
       <Card
         css={{
           display: "flex",
@@ -65,7 +56,7 @@ function Forgot() {
           </div>
         </form>
       </Card>
-    </div>
+    </HomeLayout>
   );
 }
 
