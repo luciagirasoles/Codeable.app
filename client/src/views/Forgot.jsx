@@ -9,8 +9,10 @@ import HomeLayout from "../components/layouts/HomeLayout";
 function Forgot() {
   async function handleSubmit(e) {
     e.preventDefault();
-    sendResetEmail(e.target.elements.email.value);
-    navigate("/resetconfirm");
+    if (e.target.elements.email.value !== "") {
+      sendResetEmail(e.target.elements.email.value);
+      navigate(`/resetconfirm/${e.target.elements.email.value}`);
+    }
   }
 
   return (

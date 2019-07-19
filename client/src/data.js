@@ -41,7 +41,7 @@ let data = [
         ]
       },
       {
-        title: "Intro to Ruby",
+        title: "Intro to Ruby 2",
         mainResources: [
           {
             tag: "Overview",
@@ -76,7 +76,7 @@ let data = [
         ]
       },
       {
-        title: "Intro to Ruby",
+        title: "Intro to Ruby 3",
         mainResources: [
           {
             tag: "Overview",

@@ -7,6 +7,7 @@ import { useSubLesson } from "../redux/action-hook";
 import { useLessonData } from "../redux/selector";
 import { Redirect } from "@reach/router";
 import { useUser } from "../redux/selector";
+import { Card } from "../components/Ui";
 
 function Lesson({ id }) {
   const user = useUser();
@@ -21,13 +22,19 @@ function Lesson({ id }) {
 
   return (
     <MainLayout>
-      <div css={{ display: "grid", gridTemplateColumns: "1fr 200px" }}>
-        <div>
-          <h1>{lessonData.title} </h1>
-          <br />
+      <div
+        css={{
+          display: "grid",
+          gridTemplateColumns: "1fr 250px",
+          gridGap: "70px",
+          height: "100%"
+        }}
+      >
+        <Card styles={{ padding: "50px" }}>
+          <h1 css={{ marginBottom: "25px" }}>{lessonData.title} </h1>
           <p>{lessonData.content}</p>
-        </div>
-        <Aside />
+        </Card>
+        <Aside moduleID={0} />
       </div>
     </MainLayout>
   );

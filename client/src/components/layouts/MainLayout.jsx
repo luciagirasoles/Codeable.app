@@ -12,7 +12,8 @@ function MainLayout({ children }) {
         display: "grid",
         gridTemplateAreas: " 'nav header' 'nav content'",
         gridTemplateColumns: "200px 1fr",
-        gridTemplateRows: "auto 1fr"
+        gridTemplateRows: "auto 1fr",
+        fontFamily: "'Open Sans', 'sans-serif'"
       }}
     >
       <Header styles={{ gridArea: "header" }} />

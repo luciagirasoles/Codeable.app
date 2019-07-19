@@ -22,7 +22,7 @@ function App() {
         <Classes path="lessons" />
         <Lesson path="lessons/module/:moduleIndex/lesson/:id" />
         <Forgot path="/forgot" />
-        <ResetConfirmation path="/resetconfirm" />
+        <ResetConfirmation path="/resetconfirm/:email" />
         <ResetPassword path="/resetpassword/:token" />
         <ResetSuccessful path="/resetsuccessful/" />
         <ChangePassword path="/changepassword" />

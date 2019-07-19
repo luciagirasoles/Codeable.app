@@ -1,6 +1,6 @@
 const initialState = {
   user: { currentUser: {}, loading: false, error: null },
-  modulo: {},
+  modulo: [],
   sublesson: { id: "", title: "", content: "" }
 };
 

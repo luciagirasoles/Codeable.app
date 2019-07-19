@@ -33,7 +33,7 @@ function Resources({ title, mainResource, extraResource, id }) {
               tag_id={element.tag_id}
               key={i}
               title={element.title}
-              id={id}
+              id={element.id}
             />
           );
         })}

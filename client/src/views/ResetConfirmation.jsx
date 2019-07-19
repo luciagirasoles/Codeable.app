@@ -5,7 +5,7 @@ import { Link } from "@reach/router";
 import { Card } from "../components/Ui";
 import HomeLayout from "../components/layouts/HomeLayout";
 
-function ResetConfirmation() {
+function ResetConfirmation({ email }) {
   return (
     <HomeLayout>
       <Card
@@ -37,9 +37,8 @@ function ResetConfirmation() {
             }}
           >
             <p>
-              We have sent a reset password email to{" "}
-              <b>ry.yrupailla@gmail.com</b>. Please click the reset password
-              link to set your new password.
+              We have sent a reset password email to <b>{email}</b>. Please
+              click the reset password link to set your new password.
             </p>
 
             <p>
