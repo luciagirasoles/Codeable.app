@@ -8,6 +8,7 @@ import { useLessonData } from "../redux/selector";
 import { Redirect } from "@reach/router";
 import { useUser } from "../redux/selector";
 import { Card } from "../components/Ui";
+import TopNavigation from "../components/TopNavigation";
 
 function Lesson({ id }) {
   const user = useUser();
@@ -31,6 +32,7 @@ function Lesson({ id }) {
         }}
       >
         <Card styles={{ padding: "50px" }}>
+          <TopNavigation />
           <h1 css={{ marginBottom: "25px" }}>{lessonData.title} </h1>
           <p>{lessonData.content}</p>
         </Card>
