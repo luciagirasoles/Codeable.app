@@ -4,7 +4,7 @@ import Resources from "./Resources";
 import { jsx } from "@emotion/core";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
-function Module({ module, index }) {
+function Module({ module }) {
   const [show, setShow] = React.useState(false);
 
   function showMaterial() {
