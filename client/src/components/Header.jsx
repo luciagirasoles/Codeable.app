@@ -4,6 +4,7 @@ import { FaUserCircle, FaRegBell } from "react-icons/fa";
 import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
 import { useLogout } from "../redux/action-hook";
 import { navigate } from "@reach/router";
+import Search from "./Search";
 
 function Header({ styles }) {
   const logout = useLogout();
@@ -20,6 +21,7 @@ function Header({ styles }) {
         ...styles
       }}
     >
+      <Search autoFocus />
       <FaRegBell
         css={{ fontSize: "1.15em", alignSelf: "center", marginRight: "20px" }}
       />
@@ -43,7 +45,6 @@ function Header({ styles }) {
         <MenuList
           css={{
             position: "absolute",
-            top: 0,
             right: 25,
             top: 40,
             cursor: "pointer",

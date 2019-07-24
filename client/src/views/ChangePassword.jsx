@@ -3,7 +3,7 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import { navigate } from "@reach/router";
 import { useUser } from "../redux/selector";
-import { Card, Input, Button } from "../components/Ui";
+import { Card, Input, Button, Logo } from "../components/Ui";
 import { changePassword } from "../services/resetPassword";
 import MainLayout from "../components/layouts/MainLayout";
 import { Redirect } from "@reach/router";
@@ -82,6 +82,7 @@ function Forgot() {
           }}
           onSubmit={handleSubmit}
         >
+          <Logo />
           <h2 css={{ margin: "0 auto" }}>Change password</h2>
           <div
             css={{
@@ -94,29 +95,27 @@ function Forgot() {
             <label>Current Password</label>
             <Input
               name="currentpassword"
-              type="currentpassword"
+              type="password"
               placeholder="Enter Current Password"
               autoComplete="off"
               onChange={handlePassword}
-              type="password"
+              autoFocus
             />
             <label>New Password</label>
             <Input
               name="newpassword"
-              type="newpassword"
+              type="password"
               placeholder="Enter New Password"
               onChange={handlePasswordChange}
-              type="password"
               autoComplete="off"
             />
             <label>Confirm New Password</label>
             <Input
               name="confirmpassword"
-              type="confirmpassword"
+              type="password"
               placeholder="Confirm New Password"
               onChange={handleConfirmChange}
               autoComplete="off"
-              type="password"
             />
             <span css={{ color: "red" }}>{error}</span>
             <span css={{ color: "green" }}>{alert}</span>

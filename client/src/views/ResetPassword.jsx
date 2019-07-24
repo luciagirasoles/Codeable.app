@@ -3,7 +3,7 @@ import { useState } from "react";
 import { jsx } from "@emotion/core";
 import { navigate } from "@reach/router";
 
-import { Card, Input, Button } from "../components/Ui";
+import { Card, Input, Button, Logo } from "../components/Ui";
 import { resetPassword } from "../services/resetPassword";
 import HomeLayout from "../components/layouts/HomeLayout";
 
@@ -61,6 +61,7 @@ function ResetPassword({ token }) {
           }}
           onSubmit={handleSubmit}
         >
+          <Logo />
           <h2>Change your password</h2>
           <div
             css={{

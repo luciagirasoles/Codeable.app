@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import Background from "../assets/background-login.jpeg";
 import { Link } from "@reach/router";
-import { Card } from "../components/Ui";
+import { Card, Logo } from "../components/Ui";
 import HomeLayout from "../components/layouts/HomeLayout";
 
 function ResetConfirmation({ email }) {
@@ -18,6 +17,7 @@ function ResetConfirmation({ email }) {
           height: "300px"
         }}
       >
+        <Logo />
         <div
           css={{
             width: "100%",
@@ -44,7 +44,13 @@ function ResetConfirmation({ email }) {
             <p>
               Didn't receive the email yet? <br /> Please check your spam folder
               or{" "}
-              <Link to="/forgot" css={{ color: "rgb(0,200,100)" }}>
+              <Link
+                to="/forgot"
+                css={{
+                  color: "#4ea64e",
+                  fontWeight: "bold"
+                }}
+              >
                 resend
               </Link>{" "}
               the email.{" "}

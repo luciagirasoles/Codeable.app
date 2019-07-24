@@ -22,7 +22,7 @@ function Class() {
     <MainLayout>
       {modulo &&
         modulo.map(value => {
-          return <Module module={value} />;
+          return <Module key={JSON.stringify(value)} module={value} />;
         })}
     </MainLayout>
   );

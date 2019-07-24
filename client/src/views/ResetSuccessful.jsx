@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx } from "@emotion/core";
-import Background from "../assets/background-login.jpeg";
 import { Link } from "@reach/router";
 import { Card } from "../components/Ui";
 import HomeLayout from "../components/layouts/HomeLayout";
@@ -32,7 +31,7 @@ function ResetSuccessful() {
           <p>You successfully updated your password</p>
           <p>
             Go to{" "}
-            <Link to="/" css={{ color: "rgb(0,200,100)" }}>
+            <Link to="/" css={{ color: "#4ea64e", fontWeight: "bold" }}>
               home
             </Link>
           </p>
