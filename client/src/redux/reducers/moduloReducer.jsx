@@ -1,6 +1,6 @@
 import initialState from "../initialState";
 
-function moduloReducer(state = initialState.modulo, action = {}) {
+function moduloReducer(state = initialState.modulos, action = {}) {
   switch (action.type) {
     case "FETCH_DATA": {
       return action.payload;

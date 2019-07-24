@@ -62,6 +62,7 @@ function Module({ module }) {
                 extraResource={lesson.sublessons.filter(
                   sublesson => sublesson.section === "extra"
                 )}
+                key={JSON.stringify(lesson)}
                 id={lesson.id}
               />
             );

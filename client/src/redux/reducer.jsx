@@ -5,7 +5,7 @@ import sublessonReducer from "./reducers/sublessonReducer";
 
 const reducer = combineReducers({
   user: userReducer,
-  modulo: moduloReducer,
+  modulos: moduloReducer,
   sublesson: sublessonReducer
 });
 

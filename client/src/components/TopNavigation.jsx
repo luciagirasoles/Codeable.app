@@ -2,8 +2,12 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 import { Link } from "@reach/router";
+import { useLesson } from "../redux/selector";
 
-function TopNavigation() {
+function TopNavigation({ moduleId, lessonId }) {
+  const TAGS = ["OVERVIEW", "WORKSHOP", "M-ASSIGN", "EXERCISES", "BLOG"];
+  const lesson = useLesson(moduleId, lessonId);
+
   return (
     <div
       css={{
@@ -15,56 +19,22 @@ function TopNavigation() {
         marginBottom: "100px"
       }}
     >
-      <Link
-        to="#"
-        css={{
-          backgroundColor: "#163236",
-          padding: "5px 10px",
-          borderRadius: "10px"
-        }}
-      >
-        OVERVIEW
-      </Link>
-      <Link
-        to="#"
-        css={{
-          backgroundColor: "#163236",
-          padding: "5px 10px",
-          borderRadius: "10px"
-        }}
-      >
-        WORKSHOP
-      </Link>
-      <Link
-        to="#"
-        css={{
-          backgroundColor: "#163236",
-          padding: "5px 10px",
-          borderRadius: "10px"
-        }}
-      >
-        M-ASSIGN
-      </Link>
-      <Link
-        to="#"
-        css={{
-          backgroundColor: "#163236",
-          padding: "5px 10px",
-          borderRadius: "10px"
-        }}
-      >
-        EXERCISES
-      </Link>
-      <Link
-        to="#"
-        css={{
-          backgroundColor: "#163236",
-          padding: "5px 10px",
-          borderRadius: "10px"
-        }}
-      >
-        BLOG
-      </Link>
+      {lesson.sublessons.map(sublesson => {
+        return (
+          <Link
+            to={`/lessons/module/${moduleId}/lesson/${lessonId}/sublesson/${
+              sublesson.id
+            }`}
+            css={{
+              backgroundColor: "#163236",
+              padding: "5px 10px",
+              borderRadius: "10px"
+            }}
+          >
+            {TAGS[sublesson.tag_id - 1]}
+          </Link>
+        );
+      })}
     </div>
   );
 }

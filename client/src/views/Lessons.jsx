@@ -1,31 +1,31 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import Module from "../components/Module";
-import { useUser, useModulo } from "../redux/selector";
+import { useUser, useModulos } from "../redux/selector";
 import MainLayout from "../components/layouts/MainLayout";
 import { useEffect } from "react";
 import { Redirect } from "@reach/router";
-import { useRequestAPI } from "../redux/action-hook";
+import { useRequestModulos } from "../redux/action-hook";
 
-function Class() {
+function Lessons() {
   const user = useUser();
-  const request = useRequestAPI();
-  const modulo = useModulo();
+  const requestModulos = useRequestModulos();
+  const modulos = useModulos();
 
   useEffect(() => {
-    request();
+    requestModulos();
   }, []);
 
   if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 
   return (
     <MainLayout>
-      {modulo &&
-        modulo.map(value => {
+      {modulos &&
+        modulos.map(value => {
           return <Module key={JSON.stringify(value)} module={value} />;
         })}
     </MainLayout>
   );
 }
 
-export default Class;
+export default Lessons;

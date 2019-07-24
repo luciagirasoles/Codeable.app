@@ -3,7 +3,7 @@ import React from "react";
 import { Router } from "@reach/router";
 import { jsx } from "@emotion/core";
 import Login from "./views/Login";
-import Classes from "./views/Classes";
+import Lessons from "./views/Lessons";
 import Forgot from "./views/Forgot";
 import ResetConfirmation from "./views/ResetConfirmation";
 import ResetPassword from "./views/ResetPassword";
@@ -19,8 +19,8 @@ function App() {
     <div css={container}>
       <Router>
         <Login path="/" />
-        <Classes path="lessons" />
-        <Lesson path="lessons/module/:moduleIndex/lesson/:id" />
+        <Lessons path="lessons" />
+        <Lesson path="lessons/module/:moduleId/lesson/:lessonId/sublesson/:sublessonId" />
         <Forgot path="/forgot" />
         <ResetConfirmation path="/resetconfirm/:email" />
         <ResetPassword path="/resetpassword/:token" />

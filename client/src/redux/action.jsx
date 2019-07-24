@@ -1,7 +1,7 @@
 const API_LOGIN_URL = "http://localhost:3000/login";
 const API_LOGOUT_URL = "http://localhost:3000/logout";
-const URL = `http://localhost:3000/modulos`;
-const URL_Lesson = `http://localhost:3000/sublessons`;
+const URL_MODULOS = `http://localhost:3000/modulos`;
+const URL_SUBLESSON = `http://localhost:3000/sublessons`;
 
 function login(user) {
   return async dispatch => {
@@ -42,9 +42,9 @@ function logout() {
 }
 
 // Request API for Module , Lesson & Sublesson
-function requestAPI() {
+function requestModulos() {
   return async dispatch => {
-    let response = await fetch(URL, {
+    let response = await fetch(URL_MODULOS, {
       credentials: "include",
       headers: {
         "Content-Type": "application/json"
@@ -57,7 +57,7 @@ function requestAPI() {
 
 function requestSublesson(id) {
   return async dispatch => {
-    let response = await fetch(`${URL_Lesson}/${id}`, {
+    let response = await fetch(`${URL_SUBLESSON}/${id}`, {
       credentials: "include",
       headers: {
         "Content-Type": "application/json"
@@ -68,4 +68,4 @@ function requestSublesson(id) {
   };
 }
 
-export { login, logout, requestAPI, requestSublesson };
+export { login, logout, requestModulos, requestSublesson };

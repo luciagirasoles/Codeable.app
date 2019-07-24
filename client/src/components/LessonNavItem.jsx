@@ -3,9 +3,13 @@ import { jsx } from "@emotion/core";
 import React from "react";
 import { Link } from "@reach/router";
 import { FaBookOpen } from "react-icons/fa";
+import { useLesson } from "../redux/selector";
 
 function LessonNavItem({ lessonName, moduleId, lessonId, lessonOverview }) {
-  let url = `/lessons/module/${moduleId}/lesson/${lessonId}`;
+  const lesson = useLesson(moduleId, lessonId);
+  let url = `/lessons/module/${moduleId}/lesson/${lessonId}/sublesson/${
+    lesson.sublessons[0] ? lesson.sublessons[0].id : 1
+  }`;
   return (
     <Link
       to={url}
@@ -21,9 +25,9 @@ function LessonNavItem({ lessonName, moduleId, lessonId, lessonOverview }) {
       </span>
       <div css={{ fontSize: "15px" }}>
         <div>
-          <b>{lessonName}</b>
+          <b>{lesson.title}</b>
         </div>
-        <div>lessonOverview</div>
+        <div>{lesson.title}</div>
       </div>
     </Link>
   );

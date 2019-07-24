@@ -1,23 +1,19 @@
 /**@jsx jsx */
+import React from "react";
 import { jsx } from "@emotion/core";
 import { useEffect } from "react";
 import MainLayout from "../components/layouts/MainLayout";
 import Aside from "../components/Aside";
-import { useSubLesson } from "../redux/action-hook";
-import { useLessonData } from "../redux/selector";
+// import { useSubLesson } from "../redux/action-hook";
+import { useLessonData, useLesson, useSublesson } from "../redux/selector";
 import { Redirect } from "@reach/router";
 import { useUser } from "../redux/selector";
 import { Card } from "../components/Ui";
 import TopNavigation from "../components/TopNavigation";
 
-function Lesson({ id }) {
+function Lesson({ moduleId, lessonId, sublessonId }) {
   const user = useUser();
-  const sublesson = useSubLesson();
-  const lessonData = useLessonData();
-
-  useEffect(() => {
-    sublesson(id);
-  }, []);
+  const sublesson = useSublesson(moduleId, lessonId, sublessonId);
 
   if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 
@@ -32,11 +28,11 @@ function Lesson({ id }) {
         }}
       >
         <Card styles={{ padding: "50px" }}>
-          <TopNavigation />
-          <h1 css={{ marginBottom: "25px" }}>{lessonData.title} </h1>
-          <p>{lessonData.content}</p>
+          <TopNavigation moduleId={moduleId} lessonId={lessonId} />
+          <h1 css={{ marginBottom: "25px" }}>{sublesson.title}</h1>
+          <p>{sublesson.content}</p>
         </Card>
-        <Aside moduleID={0} />
+        <Aside moduleId={moduleId} />
       </div>
     </MainLayout>
   );

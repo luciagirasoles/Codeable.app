@@ -13,14 +13,14 @@ function Resources({ title, mainResource, extraResource, id }) {
     >
       <h3>{title}</h3>
       <div css={{ marginLeft: "20px", marginTop: "20px" }}>
-        {/* [{sub1},{sub2},{sub3}] */}
         {mainResource.map((element, i) => {
           return (
             <Resource
-              tag_id={element.tag_id}
-              key={i}
+              lessonId={id}
+              tagId={element.tag_id}
+              key={JSON.stringify(element)}
               title={element.title}
-              id={element.id}
+              sublessonId={element.id}
             />
           );
         })}
@@ -30,10 +30,11 @@ function Resources({ title, mainResource, extraResource, id }) {
         {extraResource.map((element, i) => {
           return (
             <Resource
-              tag_id={element.tag_id}
-              key={i}
+              lessonId={id}
+              tagId={element.tag_id}
+              key={JSON.stringify(element)}
               title={element.title}
-              id={element.id}
+              sublessonId={element.id}
             />
           );
         })}

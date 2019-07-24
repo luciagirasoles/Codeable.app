@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import { data } from "../data";
 import LessonNavItem from "./LessonNavItem";
 import { Card } from "./Ui";
+import { useModulo } from "../redux/selector";
 
-function Aside({ styles, moduleID }) {
+function Aside({ styles, moduleId }) {
+  const modulo = useModulo(moduleId);
+
   return (
     <Card
       styles={{
@@ -17,14 +19,14 @@ function Aside({ styles, moduleID }) {
           padding: "20px 40px"
         }}
       >
-        <b>{data[moduleID].name}</b>
+        <b>{modulo.name}</b>
       </p>
-      {data[moduleID].resources.map((lesson, index) => (
+      {modulo.lessons.map((lesson, index) => (
         <LessonNavItem
           lessonName={lesson.title}
-          moduleId={moduleID}
-          lessonId={index}
-          lessonOverview={lesson.mainResources[0].title}
+          moduleId={moduleId}
+          lessonId={lesson.id}
+          lessonOverview={lesson.sublessons[0] && lesson.sublessons[0].title}
         />
       ))}
     </Card>

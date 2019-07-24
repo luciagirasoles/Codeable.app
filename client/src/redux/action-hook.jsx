@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { login, logout, requestAPI, requestSublesson } from "./action";
+import { login, logout, requestModulos, requestSublesson } from "./action";
 
 export function useLogin() {
   const dispatch = useDispatch();
@@ -12,9 +12,9 @@ export function useLogout() {
   return React.useCallback(() => dispatch(logout()), [dispatch]);
 }
 
-export function useRequestAPI() {
+export function useRequestModulos() {
   const dispatch = useDispatch();
-  return React.useCallback(() => dispatch(requestAPI()), [dispatch]);
+  return React.useCallback(() => dispatch(requestModulos()), [dispatch]);
 }
 
 export function useSubLesson() {
