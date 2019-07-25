@@ -1,5 +1,5 @@
 import { useSelector, shallowEqual } from "react-redux";
-import initialState from "./initialState";
+import { arrayToObject } from "../helpers";
 
 function useUser() {
   return useSelector(state => {
@@ -13,8 +13,8 @@ function useUser() {
 
 function useModulos() {
   return useSelector(state => {
-    if (state.modulos) {
-      return state.modulos;
+    if (state.lessonsData.modulos) {
+      return Object.values(state.lessonsData.modulos);
     } else {
       return [];
     }
@@ -23,83 +23,48 @@ function useModulos() {
 
 function useModulo(id) {
   return useSelector(state => {
-    try {
-      const modulo = state.modulos.find(modulo => modulo.id === id);
-
-      if (modulo === undefined) return initialState.modulos[0];
-      return modulo;
-    } catch (err) {
-      return initialState.modulos[0];
-    }
-  }, shallowEqual);
-}
-
-function useLesson(idModule, idLesson) {
-  return useSelector(state => {
-    try {
-      const lesson = state.modulos
-        .find(modulo => modulo.id === idModule)
-        .lessons.find(lesson => lesson.id === idLesson);
-      if (lesson === undefined) return initialState.modulos[0].lessons[0];
-      return lesson;
-    } catch (err) {
-      return initialState.modulos[0].lessons[0];
-    }
+    return state.lessonsData.modulos[id];
   }, shallowEqual);
 }
 
 function useLessons() {
   return useSelector(state => {
-    if (state.modulos) {
-      const modulos = state.modulos;
-      let lessons = [];
-      modulos.forEach(modulo => {
-        let moduleLessons = modulo.lessons.map(lesson => {
-          lesson.moduleId = modulo.id;
-          return lesson;
-        });
-        lessons.push(moduleLessons);
-      });
-      return lessons.flat();
+    return state.lessonsData.lessons;
+  }, shallowEqual);
+}
+
+function useLesson(lessonId) {
+  return useSelector(state => {
+    return state.lessonsData.lessons[lessonId];
+  }, shallowEqual);
+}
+
+function useSublessons(lessonId) {
+  return useSelector(state => {
+    if (lessonId === undefined) {
+      return state.lessonsData.sublessons;
     } else {
-      return [];
+      return arrayToObject(
+        state.lessonsData.lessons[lessonId].sublessons.map(
+          sublessonId => state.lessonsData.sublessons[sublessonId]
+        )
+      );
     }
   }, shallowEqual);
 }
 
-function useSublesson(idModule, idLesson, idSublesson) {
+function useSublesson(sublessonId) {
   return useSelector(state => {
-    try {
-      const sublesson = state.modulos
-        .find(modulo => modulo.id === idModule)
-        .lessons.find(lesson => lesson.id === idLesson)
-        .sublessons.find(sublesson => sublesson.id === idSublesson);
-      if (sublesson === undefined)
-        return initialState.modulos[0].lessons[0].sublessons[0];
-
-      return sublesson;
-    } catch (err) {
-      return initialState.modulos[0].lessons[0].sublessons[0];
-    }
-  }, shallowEqual);
-}
-
-function useLessonData() {
-  return useSelector(state => {
-    if (state.sublesson) {
-      return state.sublesson;
-    } else {
-      return null;
-    }
+    return state.lessonsData.sublessons[sublessonId];
   }, shallowEqual);
 }
 
 export {
   useUser,
   useModulos,
-  useLessonData,
+  useLessons,
   useModulo,
   useLesson,
-  useLessons,
+  useSublessons,
   useSublesson
 };

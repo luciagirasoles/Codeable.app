@@ -6,7 +6,7 @@ import { useUser, useLessons } from "../redux/selector";
 
 function SearchClasses({ searchTerm, isWriting }) {
   const user = useUser();
-  const lessons = useLessons();
+  const lessons = Object.values(useLessons());
   const [filteredLessons, setFilteredLessons] = useState([]);
 
   const animateListItem = keyframes`

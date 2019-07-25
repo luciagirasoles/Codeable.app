@@ -3,6 +3,7 @@ import React from "react";
 import Resources from "./Resources";
 import { jsx } from "@emotion/core";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import { useLessons } from "../redux/selector";
 
 function Module({ module }) {
   const [show, setShow] = React.useState(false);
@@ -52,20 +53,8 @@ function Module({ module }) {
       {show && (
         <div>
           <p>{module.description}</p>
-          {module.lessons.map(lesson => {
-            return (
-              <Resources
-                title={lesson.title}
-                mainResource={lesson.sublessons.filter(
-                  sublesson => sublesson.section === "main"
-                )}
-                extraResource={lesson.sublessons.filter(
-                  sublesson => sublesson.section === "extra"
-                )}
-                key={JSON.stringify(lesson)}
-                id={lesson.id}
-              />
-            );
+          {module.lessons.map(lessonId => {
+            return <Resources key={lessonId} lessonId={lessonId} />;
           })}
         </div>
       )}

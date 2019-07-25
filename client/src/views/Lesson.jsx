@@ -13,7 +13,7 @@ import TopNavigation from "../components/TopNavigation";
 
 function Lesson({ moduleId, lessonId, sublessonId }) {
   const user = useUser();
-  const sublesson = useSublesson(moduleId, lessonId, sublessonId);
+  const sublesson = useSublesson(sublessonId);
 
   if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 

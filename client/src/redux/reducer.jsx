@@ -1,12 +1,10 @@
 import { combineReducers } from "redux";
 import userReducer from "./reducers/userReducer";
-import moduloReducer from "./reducers/moduloReducer";
-import sublessonReducer from "./reducers/sublessonReducer";
+import lessonsDataReducer from "./reducers/lessonsDataReducer";
 
 const reducer = combineReducers({
   user: userReducer,
-  modulos: moduloReducer,
-  sublesson: sublessonReducer
+  lessonsData: lessonsDataReducer
 });
 
 export default reducer;

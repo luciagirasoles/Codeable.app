@@ -3,12 +3,13 @@ import { jsx } from "@emotion/core";
 import React from "react";
 import { Link } from "@reach/router";
 import { FaBookOpen } from "react-icons/fa";
-import { useLesson } from "../redux/selector";
+import { useLesson, useSublesson } from "../redux/selector";
 
-function LessonNavItem({ lessonName, moduleId, lessonId, lessonOverview }) {
-  const lesson = useLesson(moduleId, lessonId);
-  let url = `/lessons/module/${moduleId}/lesson/${lessonId}/sublesson/${
-    lesson.sublessons[0] ? lesson.sublessons[0].id : 1
+function LessonNavItem({ lessonId }) {
+  const lesson = useLesson(lessonId);
+  const sublesson = useSublesson(lesson.sublessons[0]);
+  let url = `/lessons/module/${lesson.moduleId}/lesson/${lessonId}/sublesson/${
+    sublesson ? sublesson.id : 1
   }`;
   return (
     <Link

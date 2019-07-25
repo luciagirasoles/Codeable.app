@@ -21,13 +21,8 @@ function Aside({ styles, moduleId }) {
       >
         <b>{modulo.name}</b>
       </p>
-      {modulo.lessons.map((lesson, index) => (
-        <LessonNavItem
-          lessonName={lesson.title}
-          moduleId={moduleId}
-          lessonId={lesson.id}
-          lessonOverview={lesson.sublessons[0] && lesson.sublessons[0].title}
-        />
+      {modulo.lessons.map(lessonId => (
+        <LessonNavItem lessonId={lessonId} key={lessonId} />
       ))}
     </Card>
   );
