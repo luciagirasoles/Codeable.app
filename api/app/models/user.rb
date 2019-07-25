@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_secure_password
   has_secure_token
   has_secure_token :reset_digest
+  has_many :solutions, through: :user_solutions
 
   def invalidate_token
     update(token: nil)

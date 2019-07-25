@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_195821) do
+ActiveRecord::Schema.define(version: 2019_07_24_155639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,20 +23,22 @@ ActiveRecord::Schema.define(version: 2019_07_16_195821) do
     t.index ["modulo_id"], name: "index_lessons_on_modulo_id"
   end
 
-  create_table "mini_assignments", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.bigint "lesson_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["lesson_id"], name: "index_mini_assignments_on_lesson_id"
-  end
-
   create_table "modulos", force: :cascade do |t|
     t.text "description"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "solutions", force: :cascade do |t|
+    t.string "content"
+    t.string "status"
+    t.bigint "user_id"
+    t.bigint "sublesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sublesson_id"], name: "index_solutions_on_sublesson_id"
+    t.index ["user_id"], name: "index_solutions_on_user_id"
   end
 
   create_table "sublessons", force: :cascade do |t|
@@ -71,7 +73,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_195821) do
   end
 
   add_foreign_key "lessons", "modulos"
-  add_foreign_key "mini_assignments", "lessons"
+  add_foreign_key "solutions", "sublessons"
+  add_foreign_key "solutions", "users"
   add_foreign_key "sublessons", "lessons"
   add_foreign_key "sublessons", "tags"
 end
