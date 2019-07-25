@@ -59,6 +59,16 @@ function useSublesson(sublessonId) {
   }, shallowEqual);
 }
 
+function useMiniAssigments() {
+  return useSelector(state => {
+    let sublessons = Object.values(state.lessonsData.sublessons); //[ , , ,  , ]
+    let miniAssigments = sublessons.filter(sublesson => {
+      return sublesson.tag_id === 3;
+    });
+    return arrayToObject(miniAssigments);
+  }, shallowEqual);
+}
+
 export {
   useUser,
   useModulos,
@@ -66,5 +76,6 @@ export {
   useModulo,
   useLesson,
   useSublessons,
-  useSublesson
+  useSublesson,
+  useMiniAssigments
 };

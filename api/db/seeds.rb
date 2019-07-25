@@ -43,5 +43,11 @@ Sublesson.create(title: 'Create your first repository', content:
    * Use your personal Github account
    * Include at least one Ruby file
   ', tag_id: 3, lesson_id: 1, section: 'main')
+Sublesson.create(title: 'Create a snake game using Ruby', content:
+  '## Create your first game using Ruby syntax
+   * Try to use classes and methods
+   * Is mandatory to do pair programming
+   * Use git branches
+  ', tag_id: 3, lesson_id: 2, section: 'main')
 Sublesson.create(title: 'Check extra exercises', content: '## Make your first pull request and code review', section: 'extra', lesson_id: 1, tag_id: 4)
 Sublesson.create(title: 'Read additional material about CLI', content: '## How to be a rockstart within CLI', section: 'extra', lesson_id: 1, tag_id: 5)

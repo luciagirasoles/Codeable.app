@@ -10,6 +10,7 @@ import ResetPassword from "./views/ResetPassword";
 import ResetSuccessful from "./views/ResetSuccessful";
 import Lesson from "./views/Lesson";
 import ChangePassword from "./views/ChangePassword";
+import MiniAssignments from "./views/MiniAssignments";
 
 function App() {
   const container = {
@@ -22,6 +23,7 @@ function App() {
         <Lessons path="lessons" />
         <Lesson path="lessons/module/:moduleId/lesson/:lessonId/sublesson/:sublessonId" />
         <Forgot path="/forgot" />
+        <MiniAssignments path="miniassignments" />
         <ResetConfirmation path="/resetconfirm/:email" />
         <ResetPassword path="/resetpassword/:token" />
         <ResetSuccessful path="/resetsuccessful/" />
