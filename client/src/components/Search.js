@@ -2,11 +2,37 @@
 import React, { useState } from "react";
 import { jsx } from "@emotion/core";
 import { InputSearch } from "../components/Ui";
+import SearchClasses from "./SearchClasses";
 
-import { useLessonData, useModulo } from "../redux/selector";
+function Search() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isWriting, setIsWriting] = React.useState(false);
 
-function Search({ styles, ...props }) {
-  return <InputSearch {...props} />;
+  React.useEffect(() => {
+    const timer = setTimeout(() => setIsWriting(false), 1000);
+    return () => clearTimeout(timer);
+  }, [isWriting]);
+
+  function handleChange(event) {
+    setIsWriting(true);
+    setSearchTerm(event.target.value);
+  }
+  function handleClick(event) {
+    event.preventDefault();
+  }
+  return (
+    <>
+      <form onSubmit={handleClick}>
+        <InputSearch
+          autoFocus
+          onChange={handleChange}
+          value={searchTerm}
+          aria-label="Search through site content"
+        />
+      </form>
+      <SearchClasses searchTerm={searchTerm} isWriting={isWriting} />
+    </>
+  );
 }
 
 export default Search;

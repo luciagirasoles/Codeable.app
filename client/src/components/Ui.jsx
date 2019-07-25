@@ -2,6 +2,73 @@
 import { jsx, keyframes } from "@emotion/core";
 import { FiUser, FiLock } from "react-icons/fi";
 import { FaSearch } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
+
+function Modal({ styles = {}, children }) {
+  return (
+    <div
+      css={{
+        backgroundColor: "rgba(0, 0, 0, .5)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 100,
+        ...(styles.backdrop || {})
+      }}
+    >
+      <button
+        css={{
+          position: "fixed",
+          right: "10px",
+          top: "10px",
+          background: "0 0",
+          border: "none",
+          cursor: "pointer",
+          padding: "0px",
+          borderRadius: "50%"
+        }}
+        aria-label="Close"
+      >
+        <IoMdClose
+          css={{
+            fontSize: "xx-large",
+            alignSelf: "center",
+            padding: "5px",
+            cursor: "pointer",
+            borderRadius: "50%",
+            size: "30px",
+            color: "white",
+            background: "#4ea64e",
+            boxShadow: "5px 8px 8px -1px rgba(64,64,64,0.74)",
+            transition: "0.3s",
+            ":hover": {
+              background: "#157522"
+            }
+          }}
+        />
+      </button>
+      <div
+        role="dialog"
+        css={{
+          position: "fixed",
+          top: "50%",
+          transform: "translateY(-50%)",
+          width: "80%",
+          maxWidth: 450,
+          zIndex: 110,
+          ...(styles.dialog || {})
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
 
 function Button({ styles, ...props }) {
   return (
@@ -19,10 +86,15 @@ function Button({ styles, ...props }) {
         maxWidth: "5em",
         alignSelf: "center",
         marginBottom: "16px",
-        ":hover": { backgroundColor: "#157522", cursor: "pointer" },
+        ":hover": {
+          backgroundColor: "#157522",
+          cursor: "pointer",
+          boxShadow: "5px 5px 3px -3px rgba(64,64,64,0.74)"
+        },
         transition: "all 200ms ease",
         textAlign: "center",
         textTransform: "uppercase",
+
         width: "100%",
         ...styles
       }}
@@ -166,7 +238,7 @@ function Logo({ styles, ...props }) {
       }}
       {...props}
     >
-      {"{"} Code<span css={{ color: "#999b9e" }}>able</span> {"}"}
+      {"{"} Code<span css={{ color: "#909296" }}>able</span> {"}"}
     </h1>
   );
 }
@@ -199,7 +271,7 @@ function InputSearch({ styles, ...props }) {
       >
         <input
           {...props}
-          type="text"
+          type="search"
           placeholder="Search..."
           css={{
             fontSize: "1em",
@@ -223,5 +295,6 @@ export {
   InputLoginEmail,
   InputLoginPassword,
   Logo,
-  InputSearch
+  InputSearch,
+  Modal
 };
