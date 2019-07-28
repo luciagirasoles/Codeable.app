@@ -7,4 +7,12 @@ const reducer = combineReducers({
   lessonsData: lessonsDataReducer
 });
 
-export default reducer;
+const rootReducer = (state, action) => {
+  if (action.type === "LOGOUT") {
+    state = undefined;
+  }
+
+  return reducer(state, action);
+};
+
+export default rootReducer;

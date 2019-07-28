@@ -47,6 +47,7 @@ function lessonsDataReducer(state = initialState.lessonsData, action = {}) {
         sublessons: sublessons
       };
     }
+
     default: {
       return state;
     }

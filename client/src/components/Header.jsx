@@ -114,7 +114,13 @@ function Header({ styles }) {
             backgroundColor: "blue"
           }}
         >
-          <MenuItem onSelect={() => logout()}>Logout</MenuItem>
+          <MenuItem
+            onSelect={() => {
+              logout();
+            }}
+          >
+            Logout
+          </MenuItem>
           <MenuItem onSelect={() => changePassword()}>Change Password</MenuItem>
         </MenuList>
       </Menu>
