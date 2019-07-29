@@ -11,6 +11,8 @@ import ResetSuccessful from "./views/ResetSuccessful";
 import Lesson from "./views/Lesson";
 import ChangePassword from "./views/ChangePassword";
 import MiniAssignments from "./views/MiniAssignments";
+import Grades from "./views/Grades";
+import TitleApplication from "./views/TitleApplication";
 
 function App() {
   const container = {
@@ -28,6 +30,8 @@ function App() {
         <ResetPassword path="/resetpassword/:token" />
         <ResetSuccessful path="/resetsuccessful/" />
         <ChangePassword path="/changepassword" />
+        <TitleApplication path="/titleapp" />
+        <Grades path="/grades" />
       </Router>
     </div>
   );

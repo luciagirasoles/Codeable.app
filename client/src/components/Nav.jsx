@@ -1,25 +1,47 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { Link } from "@reach/router";
+import NavItem from "./NavItem";
+import { GiSwordwoman, GiPodium } from "react-icons/gi";
+import { GoBook } from "react-icons/go";
+import { MdInsertChart } from "react-icons/md";
+
+function HomeIcon() {
+  return <span css={{ fontWeight: "bold", fontSize: "20px" }}>{"{ca}"}</span>;
+}
 
 function Nav({ styles }) {
   return (
     <div
       css={{
-        backgroundColor: "black",
-        color: "white",
+        backgroundColor: "rgb(28,32,34)",
+        color: "rgba(255, 255, 255, 0.6)",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-around",
         ...styles
       }}
     >
-      <Link to="/miniassignments">
-        <p>Miniassignments</p>
-      </Link>
-      <Link to="/lessons">
-        <p>Lessons</p>
-      </Link>
+      <NavItem url={"/lessons"} title={"Home"} Icon={HomeIcon} />
+      <hr
+        css={{
+          width: "40px",
+          outline: "none",
+          padding: "0px auto",
+          margin: "0px auto",
+          borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+          borderLeft: "0px ",
+          borderRight: "0px ",
+          borderBottom: "0px "
+        }}
+      />
+      <NavItem
+        url={"/miniassignments"}
+        title={"Miniassignments"}
+        Icon={GiSwordwoman}
+      />
+      <NavItem url={"/lessons"} title={"Lessons"} Icon={GoBook} />
+      <NavItem url={"/grades"} title={"Grades"} Icon={MdInsertChart} />
+      <NavItem url={"/titleapp"} title={"Title application"} Icon={GiPodium} />
     </div>
   );
 }

@@ -1,23 +1,21 @@
-/** @jsx jsx */
+/**@jsx jsx */
 import React from "react";
 import { jsx } from "@emotion/core";
-import { useUser } from "../redux/selector";
-import { useEffect } from "react";
+import MainLayout from "../components/layouts/MainLayout";
 import { Redirect } from "@reach/router";
 import { Card } from "../components/Ui";
+import { useUser } from "../redux/selector";
 
-function MiniAssignment({ miniassignment }) {
+function Grades() {
   const user = useUser();
 
   if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 
   return (
-    <>
-      <Card>
-        <p>{miniassignment.title}</p>
-      </Card>
-    </>
+    <MainLayout>
+      <Card styles={{ padding: "50px" }}>Grades</Card>
+    </MainLayout>
   );
 }
 
-export default MiniAssignment;
+export default Grades;

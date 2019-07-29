@@ -82,6 +82,7 @@ function Header({ styles }) {
 
       <Menu>
         <MenuButton
+          aria-label="User actions"
           css={{
             background: "none",
             border: "none",

@@ -11,7 +11,7 @@ function MainLayout({ children }) {
         height: "100vh",
         display: "grid",
         gridTemplateAreas: " 'nav header' 'nav content'",
-        gridTemplateColumns: "200px 1fr",
+        gridTemplateColumns: "auto 1fr",
         gridTemplateRows: "auto 1fr",
         fontFamily: "'Open Sans', 'sans-serif'"
       }}

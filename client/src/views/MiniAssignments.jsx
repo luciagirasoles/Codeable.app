@@ -18,6 +18,8 @@ function MiniAssignments() {
 
   return (
     <MainLayout>
+      <h1>MiniAssignments</h1>
+
       {miniassigments &&
         Object.values(miniassigments).map(miniassignment => {
           return <MiniAssignment miniassignment={miniassignment} />;
