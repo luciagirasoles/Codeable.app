@@ -28,11 +28,11 @@ Lesson.create(title: 'Brainstorming', modulo_id: 4)
 
 # Tag
 Tag.destroy_all
-Tag.create(name: 'OVERVIEW', color: 'green')
-Tag.create(name: 'WORKSHOP', color: 'blue')
-Tag.create(name: 'M-ASSIGN', color: 'orange')
-Tag.create(name: 'EXERCISES', color: 'purple')
-Tag.create(name: 'BLOG', color: 'brown')
+Tag.create(name: 'OVERVIEW', color: 'mediumseagreen')
+Tag.create(name: 'WORKSHOP', color: 'lightseagreen')
+Tag.create(name: 'M-ASSIGN', color: 'goldenrod')
+Tag.create(name: 'EXERCISES', color: 'mediumpurple')
+Tag.create(name: 'BLOG', color: 'indianred')
 
 # Sublesson
 Sublesson.destroy_all

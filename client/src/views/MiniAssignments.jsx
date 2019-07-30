@@ -12,7 +12,6 @@ import { ClassLink } from "../components/ClassLink";
 function MiniAssignments() {
   const user = useUser();
   const miniassigments = useMiniAssigments();
-  console.log(miniassigments);
 
   if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 

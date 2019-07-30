@@ -5,20 +5,21 @@ import Nav from "../Nav";
 
 function MainLayout({ children }) {
   return (
-    <div
-      css={{
-        backgroundColor: "#eee",
-        height: "100vh",
-        display: "grid",
-        gridTemplateAreas: " 'nav header' 'nav content'",
-        gridTemplateColumns: "auto 1fr",
-        gridTemplateRows: "auto 1fr",
-        fontFamily: "'Open Sans', 'sans-serif'"
-      }}
-    >
-      <Header styles={{ gridArea: "header" }} />
-      <Nav styles={{ gridArea: "nav" }} />
-      <div css={{ gridArea: "content", padding: "40px" }}>{children}</div>
+    <div css={{ fontFamily: "'Open Sans', 'sans-serif'" }}>
+      <Nav />
+      <div
+        css={{
+          backgroundColor: "white",
+          height: "100vh",
+          display: "grid",
+          gridTemplateAreas: " 'header' 'content'",
+          gridTemplateRows: "auto 1fr",
+          paddingLeft: "56px"
+        }}
+      >
+        <Header styles={{ gridArea: "header" }} />
+        <div css={{ gridArea: "content", padding: "10px" }}>{children}</div>
+      </div>
     </div>
   );
 }

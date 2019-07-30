@@ -3,55 +3,46 @@ import React from "react";
 import Resources from "./Resources";
 import { jsx } from "@emotion/core";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import { useLessons } from "../redux/selector";
 
 function Module({ module }) {
-  const [show, setShow] = React.useState(false);
+  const moduleEl = React.useRef(module.id);
+  const [show, setShow] = React.useState(true);
 
   function showMaterial() {
-    show ? setShow(false) : setShow(true);
+    setShow(!show);
   }
 
   return (
     <div
+      ref={moduleEl}
+      id={"module" + module.id}
       css={{
         backgroundColor: "white",
-        borderRadius: "10px",
-        padding: "10px",
-        margin: "20px 50px"
+        borderRadius: "10px"
       }}
     >
       <div
         css={{
           display: "flex",
           justifyContent: "space-between",
+          color: "white",
+          backgroundColor: "rgb(43,46,51)",
+          padding: "20px 30px",
+          margin: "20px 0px",
+          cursor: "pointer",
           alignItems: "center"
         }}
+        onClick={showMaterial}
       >
-        <h2>Modulo: {module.name}</h2>
+        <h3 css={{ margin: "0px", fontWeight: "inherit" }}>
+          Modulo: {module.name}
+        </h3>
 
-        {show ? (
-          <MdKeyboardArrowUp
-            onClick={showMaterial}
-            css={{
-              cursor: "pointer",
-              fontSize: "40px"
-            }}
-          />
-        ) : (
-          <MdKeyboardArrowDown
-            onClick={showMaterial}
-            css={{
-              cursor: "pointer",
-              fontSize: "40px"
-            }}
-          />
-        )}
+        {show ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
       </div>
-      <hr />
 
       {show && (
-        <div>
+        <div css={{ fontSize: "14px", padding: "0px 30px" }}>
           <p>{module.description}</p>
           {module.lessons.map(lessonId => {
             return <Resources key={lessonId} lessonId={lessonId} />;

@@ -15,25 +15,20 @@ import Grades from "./views/Grades";
 import TitleApplication from "./views/TitleApplication";
 
 function App() {
-  const container = {
-    display: "grid"
-  };
   return (
-    <div css={container}>
-      <Router>
-        <Login path="/" />
-        <Lessons path="lessons" />
-        <Lesson path="lessons/module/:moduleId/lesson/:lessonId/sublesson/:sublessonId" />
-        <Forgot path="/forgot" />
-        <MiniAssignments path="miniassignments" />
-        <ResetConfirmation path="/resetconfirm/:email" />
-        <ResetPassword path="/resetpassword/:token" />
-        <ResetSuccessful path="/resetsuccessful/" />
-        <ChangePassword path="/changepassword" />
-        <TitleApplication path="/titleapp" />
-        <Grades path="/grades" />
-      </Router>
-    </div>
+    <Router primary={false}>
+      <Login path="/" />
+      <Lessons path="lessons" />
+      <Lesson path="lessons/module/:moduleId/lesson/:lessonId/sublesson/:sublessonId" />
+      <Forgot path="/forgot" />
+      <MiniAssignments path="miniassignments" />
+      <ResetConfirmation path="/resetconfirm/:email" />
+      <ResetPassword path="/resetpassword/:token" />
+      <ResetSuccessful path="/resetsuccessful/" />
+      <ChangePassword path="/changepassword" />
+      <TitleApplication path="/titleapp" />
+      <Grades path="/grades" />
+    </Router>
   );
 }
 

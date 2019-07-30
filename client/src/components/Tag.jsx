@@ -7,37 +7,36 @@ const Tag = ({ tagId }) => {
   let tagText;
   switch (tagId) {
     case 1:
-      color = "green";
-      tagText = "OVERVIEW";
+      color = "mediumseagreen";
+      tagText = "overview";
       break;
     case 2:
-      color = "blue";
-      tagText = "WORKSHOP";
+      color = "lightseagreen";
+      tagText = "workshop";
       break;
     case 3:
-      color = "orange";
-      tagText = "M-ASSIGN";
+      color = "goldenrod";
+      tagText = "m-assign";
       break;
     case 4:
-      color = "purple";
-      tagText = "EXERCISES";
+      color = "mediumpurple";
+      tagText = "exercises";
       break;
     default:
-      color = "brown";
-      tagText = "BLOG";
+      color = "indianred";
+      tagText = "blog";
       break;
   }
 
   return (
     <span
       css={{
-        fontSize: ".6em",
+        fontSize: ".8em",
         fontWeight: "bold",
         letterSpacing: "1px",
         backgroundColor: color,
-        color: "white",
         display: "inline-block",
-        padding: "4px",
+        padding: "4px 7px",
         borderRadius: "5px"
       }}
     >

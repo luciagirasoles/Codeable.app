@@ -16,6 +16,8 @@ function Nav({ styles }) {
       css={{
         backgroundColor: "rgb(28,32,34)",
         color: "rgba(255, 255, 255, 0.6)",
+        height: "100vh",
+        position: "fixed",
         display: "flex",
         flexDirection: "column",
         ...styles
