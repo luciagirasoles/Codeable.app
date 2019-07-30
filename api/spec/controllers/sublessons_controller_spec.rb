@@ -1,5 +1,5 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe SublessonsController, type: :controller do
+# RSpec.describe SublessonsController, type: :controller do
 
-end
+# end

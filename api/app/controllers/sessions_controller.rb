@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       render json: user
     else
       render json: { errors: 'Incorrect email or password' },
-             status: :bad_request
+             status: :unauthorized
     end
   end
 
