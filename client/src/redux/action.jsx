@@ -2,6 +2,7 @@ const API_LOGIN_URL = "http://localhost:3000/login";
 const API_LOGOUT_URL = "http://localhost:3000/logout";
 const URL_MODULOS = `http://localhost:3000/modulos`;
 const URL_SUBLESSON = `http://localhost:3000/sublessons`;
+const URL_SOLUTION = `http://localhost:3000/solutions`;
 
 async function createError(response) {
   const { errors } = await response.json();
@@ -53,7 +54,7 @@ function logout() {
   };
 }
 
-// Request API for Module , Lesson & Sublesson
+// Request API for Module , Lesson, Sublesson & Solutions
 function requestModulos() {
   return async dispatch => {
     try {
@@ -87,4 +88,61 @@ function requestSublesson(id) {
   };
 }
 
-export { login, logout, requestModulos, requestSublesson };
+function requestSolutions() {
+  return async dispatch => {
+    try {
+      let response = await fetch(`${URL_SOLUTION}`, {
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      if (!response.ok) throw await createError(response);
+      let data = await response.json();
+      dispatch({ type: "LIST_SOLUTIONS", payload: data });
+    } catch {
+      dispatch({ type: "LOGOUT" });
+    }
+  };
+}
+function createSolution(solutiondata) {
+  return async dispatch => {
+    let response = await fetch(
+      `${URL_SUBLESSON}/${solutiondata.sublesson_id}/solutions`,
+      {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(solutiondata)
+      }
+    );
+    if (response.ok) dispatch(requestSolutions());
+    if (!response.ok) throw await createError(response);
+  };
+}
+function updateSolution(solutiondata) {
+  return async dispatch => {
+    let response = await fetch(`${URL_SOLUTION}/${solutiondata.id}`, {
+      method: "PATCH",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(solutiondata)
+    });
+    if (response.ok) dispatch(requestSolutions());
+    if (!response.ok) throw await createError(response);
+  };
+}
+
+export {
+  login,
+  logout,
+  requestModulos,
+  requestSublesson,
+  requestSolutions,
+  createSolution,
+  updateSolution
+};

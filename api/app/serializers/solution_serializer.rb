@@ -11,9 +11,7 @@
 #  updated_at   :datetime         not null
 #
 
-class Solution < ApplicationRecord
-  belongs_to :user
-  belongs_to :sublesson
-  has_many :users
+class SolutionSerializer < ActiveModel::Serializer
+  attributes :id, :user_id, :sublesson_id, :content, :status
 
 end

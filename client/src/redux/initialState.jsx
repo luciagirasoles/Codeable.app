@@ -28,6 +28,15 @@ const initialState = {
         updated_at: "2019-07-19T16:36:34.123Z"
       }
     }
+  },
+  solutionsData: {
+    1: {
+      id: 1,
+      content: "default",
+      status: "default",
+      user_id: 1,
+      sublesson_id: 1
+    }
   }
 };
 

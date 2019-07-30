@@ -12,8 +12,10 @@ Rails.application.routes.draw do
     resources :lessons do
     end
   end
+  resources :solutions, only: [:show, :update, :index]
 
   resources :sublessons do
+    resources :solutions, only: [:create]
   end
 
 end

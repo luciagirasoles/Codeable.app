@@ -68,6 +68,15 @@ function useMiniAssigments() {
     return arrayToObject(miniAssigments);
   }, shallowEqual);
 }
+function useSolutions() {
+  return useSelector(state => {
+    if (state.solutionsData) {
+      return state.solutionsData;
+    } else {
+      return {};
+    }
+  }, shallowEqual);
+}
 
 export {
   useUser,
@@ -77,5 +86,6 @@ export {
   useLesson,
   useSublessons,
   useSublesson,
-  useMiniAssigments
+  useMiniAssigments,
+  useSolutions
 };
