@@ -52,7 +52,16 @@ function MiniAssignments() {
 
   return (
     <MainLayout>
-      <h1>MiniAssignments</h1>
+      <h1
+        css={{
+          margin: "0px",
+          fontWeight: "inherit",
+          fontSize: "20px",
+          paddingBottom: "30px"
+        }}
+      >
+        <b>MiniAssignments</b>
+      </h1>
 
       {miniassigments &&
         Object.values(miniassigments).map(miniassignment => {

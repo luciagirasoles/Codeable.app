@@ -70,6 +70,30 @@ function Modal({ styles = {}, children }) {
   );
 }
 
+function Collaborator({ styles, ...props }) {
+  return (
+    <div
+      css={{
+        borderRadius: "50%",
+        color: "white",
+        fontSize: "10px",
+        margin: "2px",
+        fontWeight: "bold",
+        backgroundColor: "mediumpurple",
+        height: "22px",
+        width: "22px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        boxSizing: "border-box",
+        ...styles
+      }}
+    >
+      {props.children}
+    </div>
+  );
+}
+
 function Button({ styles, ...props }) {
   return (
     <button
@@ -102,6 +126,34 @@ function Button({ styles, ...props }) {
   );
 }
 
+function Tag({ styles, ...props }) {
+  const tagProps = {
+    1: { color: "mediumseagreen", tagText: "overview" },
+    2: { color: "lightseagreen", tagText: "workshop" },
+    3: { color: "goldenrod", tagText: "m-assign" },
+    4: { color: "mediumpurple", tagText: "exercises" },
+    5: { color: "indianred", tagText: "blog" }
+  };
+  return (
+    <span
+      css={{
+        fontSize: ".8em",
+        fontWeight: "bold",
+        letterSpacing: "1px",
+        backgroundColor: `${
+          props.tagId ? tagProps[props.tagId].color : "indianred"
+        }`,
+        display: "inline-block",
+        padding: "4px 7px",
+        borderRadius: "5px",
+        ...styles
+      }}
+    >
+      {props.children ? props.children : tagProps[props.tagId].tagText}
+    </span>
+  );
+}
+
 function Card({ styles, ...props }) {
   const animateProfileGate = keyframes`
    0% {
@@ -119,7 +171,7 @@ function Card({ styles, ...props }) {
       {...props}
       css={{
         background: "white",
-        borderRadius: ".5em",
+        borderRadius: ".2em",
         boxShadow: "0px 2px 5px 0px rgba(0, 0, 0, .12)",
         boxSizing: "border-box",
         padding: "2rem",
@@ -296,5 +348,7 @@ export {
   InputLoginPassword,
   Logo,
   InputSearch,
-  Modal
+  Modal,
+  Tag,
+  Collaborator
 };

@@ -14,7 +14,8 @@ function MainLayout({ children }) {
           display: "grid",
           gridTemplateAreas: " 'header' 'content'",
           gridTemplateRows: "auto 1fr",
-          paddingLeft: "56px"
+          paddingLeft: "76px",
+          paddingRight: "26px"
         }}
       >
         <Header styles={{ gridArea: "header" }} />

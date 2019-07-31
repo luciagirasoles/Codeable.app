@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react";
-import Tag from "./Tag";
+import { Tag } from "./Ui";
 import ClassLink from "./ClassLink";
 import { jsx } from "@emotion/core";
 
@@ -11,7 +11,11 @@ function Resource({ tagId, title, sublessonId, lessonId }) {
         <Tag tagId={tagId} />
       </div>
       <div css={{ width: "400px" }}>
-        <ClassLink title={title} sublessonId={sublessonId} lessonId={lessonId} />
+        <ClassLink
+          title={title}
+          sublessonId={sublessonId}
+          lessonId={lessonId}
+        />
       </div>
     </li>
   );
