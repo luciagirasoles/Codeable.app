@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useEffect, useState } from "react";
 import { jsx, keyframes } from "@emotion/core";
-import { Redirect } from "@reach/router";
+import { Redirect, Link } from "@reach/router";
 import { useUser, useLessons } from "../redux/selector";
 
 function SearchClasses({ searchTerm, isWriting }) {
@@ -25,6 +25,9 @@ function SearchClasses({ searchTerm, isWriting }) {
 
   const cssLi = {
     perpective: "100px",
+    color: "blue",
+    padding: "5px 10px",
+    display: "block",
     animation: `${animateListItem} 450ms ease 1`
   };
 
@@ -49,9 +52,15 @@ function SearchClasses({ searchTerm, isWriting }) {
       {searchTerm && filteredLessons
         ? Object.values(filteredLessons).map(lesson => {
             return (
-              <li css={cssLi} key={lesson.id}>
-                {lesson.title}{" "}
-              </li>
+              <Link
+                to={`/lessons/module/${lesson.moduleId}/lesson/${
+                  lesson.id
+                }/sublesson/1`}
+                css={cssLi}
+                key={JSON.stringify(lesson)}
+              >
+                {lesson.title}
+              </Link>
             );
           })
         : null}
