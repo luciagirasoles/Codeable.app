@@ -1,14 +1,13 @@
 import initialState from "../initialState";
 import { arrayToObject } from "../../helpers";
 
-function solutionsDataReducer(state = initialState.solutionsData, action = {}) {
+function gradesReducer(state = initialState.grades, action = {}) {
   switch (action.type) {
-    case "LIST_SOLUTIONS": {
+    case "FETCH_DATA_GRADES":
       return arrayToObject(action.payload);
-    }
     default:
       return state;
   }
 }
 
-export default solutionsDataReducer;
+export default gradesReducer;

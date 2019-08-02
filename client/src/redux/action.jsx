@@ -3,6 +3,7 @@ const API_LOGOUT_URL = "http://localhost:3000/logout";
 const URL_MODULOS = `http://localhost:3000/modulos`;
 const URL_SUBLESSON = `http://localhost:3000/sublessons`;
 const URL_SOLUTION = `http://localhost:3000/solutions`;
+const API_GRADES = `http://localhost:3000/modulo_grades`;
 
 async function createError(response) {
   const { errors } = await response.json();
@@ -137,6 +138,24 @@ function updateSolution(solutiondata) {
   };
 }
 
+function requestGrades() {
+  return async dispatch => {
+    try {
+      let response = await fetch(`${API_GRADES}`, {
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      if (!response.ok) throw await createError(response);
+      let data = await response.json();
+      dispatch({ type: "FETCH_DATA_GRADES", payload: data });
+    } catch {
+      dispatch({ type: "LOGOUT" });
+    }
+  };
+}
+
 export {
   login,
   logout,
@@ -144,5 +163,6 @@ export {
   requestSublesson,
   requestSolutions,
   createSolution,
-  updateSolution
+  updateSolution,
+  requestGrades
 };

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_155639) do
+ActiveRecord::Schema.define(version: 2019_07_30_195531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 2019_07_24_155639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["modulo_id"], name: "index_lessons_on_modulo_id"
+  end
+
+  create_table "modulo_grades", force: :cascade do |t|
+    t.integer "week"
+    t.float "code_review"
+    t.float "performance"
+    t.float "testing"
+    t.float "dry_code"
+    t.text "feedback"
+    t.bigint "user_id"
+    t.bigint "modulo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "tipo"
+    t.index ["modulo_id"], name: "index_modulo_grades_on_modulo_id"
+    t.index ["user_id"], name: "index_modulo_grades_on_user_id"
   end
 
   create_table "modulos", force: :cascade do |t|
@@ -73,6 +89,8 @@ ActiveRecord::Schema.define(version: 2019_07_24_155639) do
   end
 
   add_foreign_key "lessons", "modulos"
+  add_foreign_key "modulo_grades", "modulos"
+  add_foreign_key "modulo_grades", "users"
   add_foreign_key "solutions", "sublessons"
   add_foreign_key "solutions", "users"
   add_foreign_key "sublessons", "lessons"

@@ -77,8 +77,30 @@ function useSolutions() {
     }
   }, shallowEqual);
 }
-
+function useGrades() {
+  return useSelector(state => {
+    return Object.fromEntries(
+      Object.entries(
+        Object.values(state.grades).reduce((gradesPerModule, grade) => {
+          return {
+            ...gradesPerModule,
+            [grade.modulo]: gradesPerModule[grade.modulo]
+              ? [...gradesPerModule[grade.modulo], grade]
+              : [grade]
+          };
+        }, {})
+      ).map(([moduleName, moduleGrades]) => {
+        return [moduleName, moduleGrades.sort((a, b) => {
+          if (a.week === null) return 1;
+          if (b.week === null) return -1;
+          return a.week - b.week
+        })];
+      })
+    );
+  }, shallowEqual);
+}
 export {
+  useGrades,
   useUser,
   useModulos,
   useLessons,

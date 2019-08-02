@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :modulo_grades, only: %i[index show]
   get 'password_resets/new'
   get 'password_resets/edit'
   # sessions routes

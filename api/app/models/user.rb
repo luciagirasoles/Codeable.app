@@ -18,6 +18,8 @@ class User < ApplicationRecord
   has_secure_token
   has_secure_token :reset_digest
   has_many :solutions, through: :user_solutions
+  has_many :modulo_grades
+
 
   def invalidate_token
     update(token: nil)

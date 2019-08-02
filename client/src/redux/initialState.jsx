@@ -37,7 +37,8 @@ const initialState = {
       user_id: 1,
       sublesson_id: 1
     }
-  }
+  },
+  grades: {}
 };
 
 export default initialState;

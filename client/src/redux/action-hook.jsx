@@ -7,7 +7,8 @@ import {
   requestSublesson,
   requestSolutions,
   createSolution,
-  updateSolution
+  updateSolution,
+  requestGrades
 } from "./action";
 
 export function useLogin() {
@@ -48,4 +49,9 @@ export function useUpdateSolution() {
     solutiondata => dispatch(updateSolution(solutiondata)),
     [dispatch]
   );
+}
+
+export function useRequestGrades() {
+  const dispatch = useDispatch();
+  return React.useCallback(() => dispatch(requestGrades()), [dispatch]);
 }
