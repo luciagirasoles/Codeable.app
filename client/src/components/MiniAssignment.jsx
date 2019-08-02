@@ -47,7 +47,6 @@ function MiniAssignment({
   handleUpdateClick
 }) {
   const user = useUser();
-  console.log(miniassignment);
 
   if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 

@@ -59,15 +59,16 @@ function useSublesson(sublessonId) {
   }, shallowEqual);
 }
 
-function useMiniAssigments() {
+function useMiniAssignments() {
   return useSelector(state => {
     let sublessons = Object.values(state.lessonsData.sublessons); //[ , , ,  , ]
-    let miniAssigments = sublessons.filter(sublesson => {
+    let miniAssignments = sublessons.filter(sublesson => {
       return sublesson.tag_id === 3;
     });
-    return arrayToObject(miniAssigments);
+    return arrayToObject(miniAssignments);
   }, shallowEqual);
 }
+
 function useSolutions() {
   return useSelector(state => {
     if (state.solutionsData) {
@@ -108,6 +109,6 @@ export {
   useLesson,
   useSublessons,
   useSublesson,
-  useMiniAssigments,
+  useMiniAssignments,
   useSolutions
 };

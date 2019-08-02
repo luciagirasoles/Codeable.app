@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import React from "react";
 import Module from "../components/Module";
 import {
   useUser,
   useModulos,
-  useMiniAssigments,
+  useMiniAssignments,
   useSolutions
 } from "../redux/selector";
 import MainLayout from "../components/layouts/MainLayout";
@@ -17,17 +18,22 @@ import {
   useUpdateSolution
 } from "../redux/action-hook";
 import MiniAssignment from "../components/MiniAssignment";
+import MiniAssignmentsAside from "../components/MiniAssignmentsAside";
 import { ClassLink } from "../components/ClassLink";
-import { Button } from "../components/Ui";
+import { Button, Card } from "../components/Ui";
 
 function MiniAssignments() {
   const user = useUser();
 
-  const miniassigments = useMiniAssigments();
+  const storedMiniassignments = useMiniAssignments();
   const requestSolutions = useRequestSolutions();
   const solutions = useSolutions();
   const createSolution = useCreateSolution();
   const updateSolution = useUpdateSolution();
+
+  const [miniassignments, setMiniassignments] = React.useState(
+    storedMiniassignments
+  );
 
   useEffect(() => {
     requestSolutions();
@@ -52,27 +58,43 @@ function MiniAssignments() {
 
   return (
     <MainLayout>
-      <h1
+      <div
         css={{
-          margin: "0px",
-          fontWeight: "inherit",
-          fontSize: "20px",
-          paddingBottom: "30px"
+          display: "grid",
+          gridTemplateColumns: "1fr 250px",
+          gridGap: "70px",
+          height: "100%"
         }}
       >
-        <b>MiniAssignments</b>
-      </h1>
+        <div>
+          <h1
+            css={{
+              margin: "0px",
+              fontWeight: "inherit",
+              fontSize: "20px",
+              paddingBottom: "30px"
+            }}
+          >
+            <b>MiniAssignments</b>
+          </h1>
 
-      {miniassigments &&
-        Object.values(miniassigments).map(miniassignment => {
-          return (
-            <MiniAssignment
-              miniassignment={miniassignment}
-              handleCreateClick={handleCreateClick}
-              handleUpdateClick={handleUpdateClick}
-            />
-          );
-        })}
+          {miniassignments &&
+            Object.values(miniassignments).map(miniassignment => {
+              return (
+                <MiniAssignment
+                  miniassignment={miniassignment}
+                  handleCreateClick={handleCreateClick}
+                  handleUpdateClick={handleUpdateClick}
+                />
+              );
+            })}
+        </div>
+
+        <MiniAssignmentsAside
+          setMiniassignments={setMiniassignments}
+          miniassignments={miniassignments}
+        />
+      </div>
     </MainLayout>
   );
 }

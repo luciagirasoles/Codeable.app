@@ -50,7 +50,7 @@ Sublesson.create(
   lesson: lesson1,
   section: 'main'
 )
-Sublesson.create(
+miniassigment1 = Sublesson.create(
   title: 'Create your first repository',
   content:
   '## Create your first repository on Github and apply some commands
@@ -61,7 +61,7 @@ Sublesson.create(
   lesson: lesson1,
   section: 'main'
 )
-Sublesson.create(
+miniassigment2 = Sublesson.create(
   title: 'Create a snake game using Ruby',
   content:
   '## Create your first game using Ruby syntax
@@ -88,6 +88,8 @@ Sublesson.create(
   tag: tag5
 )
 
+Solution.create(content:'this url solution 1', status: "saved", user_id: user1.id, sublesson_id: miniassigment1.id)
+Solution.create(content:'this url solution 2', status: "sent", user_id: user1.id, sublesson_id: miniassigment2.id)
 ModuloGrade.all
 ModuloGrade.create(week: 1, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo1)
 ModuloGrade.create(week: 2, tipo: 'EP', code_review: 2.3, performance: 2.5, testing: 2.7, dry_code: 3.5, user: user1, modulo: modulo1)
