@@ -10,7 +10,7 @@ function MainLayout({ styles, children }) {
       <div
         css={{
           backgroundColor: "#e4eae7",
-          height: "100vh",
+          minHeight: "100vh",
           display: "grid",
           gridTemplateAreas: " 'header' 'content'",
           gridTemplateRows: "auto 1fr",

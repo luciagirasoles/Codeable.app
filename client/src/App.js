@@ -13,16 +13,20 @@ import MiniAssignments from "./views/MiniAssignments";
 import Grades from "./views/Grades";
 import TitleApplication from "./views/TitleApplication";
 import { useRequestModulos } from "./redux/action-hook";
+import { useUser } from "./redux/selector";
 import { Loading } from "./components/UI/Ui";
 
 const Login = React.lazy(() => import("./views/Login"));
 
 function App() {
   const requestModulos = useRequestModulos();
+  const user = useUser();
 
   React.useEffect(() => {
-    requestModulos();
-  }, [requestModulos]);
+    if (user.currentUser) {
+      requestModulos();
+    }
+  }, [requestModulos, user.currentUser]);
 
   return (
     <React.Suspense fallback={<Loading />}>
