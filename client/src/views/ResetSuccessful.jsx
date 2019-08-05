@@ -2,7 +2,7 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 import { Link } from "@reach/router";
-import { Card } from "../components/Ui";
+import { Card } from "../components/UI/Ui";
 import HomeLayout from "../components/layouts/HomeLayout";
 
 function ResetSuccessful() {

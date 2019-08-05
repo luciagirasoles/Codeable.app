@@ -3,7 +3,7 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import MainLayout from "../components/layouts/MainLayout";
 import { Redirect } from "@reach/router";
-import { Card } from "../components/Ui";
+import { Card } from "../components/UI/Ui";
 import { useUser } from "../redux/selector";
 
 function TitleApplication() {

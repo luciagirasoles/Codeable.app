@@ -1,5 +1,8 @@
 const initialState = {
   user: { currentUser: {}, loading: false, error: null },
+  userlist: {
+    1: { id: 1, name: "" }
+  },
   lessonsData: {
     modulos: {
       1: {

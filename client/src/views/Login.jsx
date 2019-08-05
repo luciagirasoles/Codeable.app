@@ -4,13 +4,9 @@ import { jsx } from "@emotion/core";
 import { navigate, Link } from "@reach/router";
 import { useLogin } from "../redux/action-hook";
 import { useUser } from "../redux/selector";
-import {
-  Button,
-  InputLoginEmail,
-  InputLoginPassword,
-  Card,
-  Logo
-} from "../components/Ui";
+import { Card, Logo } from "../components/UI/Ui";
+import { Button } from "../components/UI/Buttons";
+import { InputLoginEmail, InputLoginPassword } from "../components/UI/Inputs";
 import HomeLayout from "../components/layouts/HomeLayout";
 function Login() {
   const login = useLogin();

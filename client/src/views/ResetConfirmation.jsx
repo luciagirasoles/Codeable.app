@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { Link } from "@reach/router";
-import { Card, Logo } from "../components/Ui";
+import { Card, Logo } from "../components/UI/Ui";
 import HomeLayout from "../components/layouts/HomeLayout";
 
 function ResetConfirmation({ email }) {

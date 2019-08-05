@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import React from "react";
 import { jsx } from "@emotion/core";
-import { Card } from "../components/Ui";
+import { Card } from "../components/UI/Ui";
 import GradeDetails from "../components/GradeDetails";
 import Grade from "../components/Grade";
 import { motion } from "framer-motion";

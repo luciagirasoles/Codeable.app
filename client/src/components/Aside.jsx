@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import LessonNavItem from "./LessonNavItem";
-import { Card } from "./Ui";
+import { Card } from "./UI/Ui";
 import { useModulo } from "../redux/selector";
 
 function Aside({ styles, moduleId }) {

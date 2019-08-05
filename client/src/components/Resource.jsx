@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react";
-import { Tag } from "./Ui";
+import { Tag } from "./UI/Ui";
 import ClassLink from "./ClassLink";
 import { jsx } from "@emotion/core";
 

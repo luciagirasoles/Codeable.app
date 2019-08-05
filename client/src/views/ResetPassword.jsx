@@ -3,7 +3,9 @@ import { useState } from "react";
 import { jsx } from "@emotion/core";
 import { navigate } from "@reach/router";
 
-import { Card, Input, Button, Logo } from "../components/Ui";
+import { Card, Logo } from "../components/UI/Ui";
+import { Button } from "../components/UI/Buttons";
+import { Input } from "../components/UI/Inputs";
 import { resetPassword } from "../services/resetPassword";
 import HomeLayout from "../components/layouts/HomeLayout";
 

@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx } from "@emotion/core";
-import { Card, Button } from "./Ui";
+import { Card } from "./UI/Ui";
+import { Button, ButtonOrange, ButtonBlue } from "./UI/Buttons";
 import { useSolutions, useMiniAssignments } from "../redux/selector";
 import { arrayToObject } from "../helpers";
 
@@ -15,11 +16,11 @@ function MiniAssignmentsAside({ styles, setMiniassignments }) {
   }
 
   function filterPending() {
-    const pendignSolutions = Object.values(solutions).filter(
+    const pendingSolutions = Object.values(solutions).filter(
       solution => solution.status === "saved"
     );
 
-    const pendingMinis = pendignSolutions.map(
+    const pendingMinis = pendingSolutions.map(
       pending => miniassignments[pending.sublesson_id]
     );
 
@@ -56,12 +57,12 @@ function MiniAssignmentsAside({ styles, setMiniassignments }) {
       <div
         css={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
-        <Button css={{ fontSize: "15px" }} onClick={filterPending}>
+        <ButtonOrange css={{ fontSize: "15px" }} onClick={filterPending}>
           Pending
-        </Button>
-        <Button css={{ fontSize: "15px" }} onClick={filterSent}>
+        </ButtonOrange>
+        <ButtonBlue css={{ fontSize: "15px" }} onClick={filterSent}>
           Sent
-        </Button>
+        </ButtonBlue>
         <Button css={{ fontSize: "15px" }} onClick={reset}>
           All
         </Button>

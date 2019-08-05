@@ -20,11 +20,10 @@ class ApplicationController < ActionController::API
 
   def authenticate_token
     user = User.find_by_token(cookies.signed[:auth_token])
-    regenerate_and_signed_token(user) if user
   end
 
   def regenerate_and_signed_token(user)
-    user.regenerate_token
+    # user.regenerate_token
     cookies.signed[:auth_token] = { value: user.token, httponly: true }
     user
   end

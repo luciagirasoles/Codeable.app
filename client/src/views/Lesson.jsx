@@ -8,7 +8,7 @@ import Aside from "../components/Aside";
 import { useLessonData, useLesson, useSublesson } from "../redux/selector";
 import { Redirect } from "@reach/router";
 import { useUser } from "../redux/selector";
-import { Card } from "../components/Ui";
+import { Card } from "../components/UI/Ui";
 import TopNavigation from "../components/TopNavigation";
 
 function Lesson({ moduleId, lessonId, sublessonId }) {

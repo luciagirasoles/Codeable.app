@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useState } from "react";
 import { jsx } from "@emotion/core";
-import { InputSearch } from "../components/Ui";
+import { InputSearch } from "./UI/Inputs";
 import SearchClasses from "./SearchClasses";
 
 function Search() {

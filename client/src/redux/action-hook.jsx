@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import {
   login,
   logout,
+  requestUsersList,
   requestModulos,
   requestSublesson,
   requestSolutions,
@@ -21,6 +22,10 @@ export function useLogout() {
   return React.useCallback(() => dispatch(logout()), [dispatch]);
 }
 
+export function useRequestUsersList() {
+  const dispatch = useDispatch();
+  return React.useCallback(() => dispatch(requestUsersList()), [dispatch]);
+}
 export function useRequestModulos() {
   const dispatch = useDispatch();
   return React.useCallback(() => dispatch(requestModulos()), [dispatch]);

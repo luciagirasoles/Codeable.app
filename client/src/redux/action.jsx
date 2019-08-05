@@ -4,6 +4,7 @@ const URL_MODULOS = `http://localhost:3000/modulos`;
 const URL_SUBLESSON = `http://localhost:3000/sublessons`;
 const URL_SOLUTION = `http://localhost:3000/solutions`;
 const API_GRADES = `http://localhost:3000/modulo_grades`;
+const URL_USERS_LIST = `http://localhost:3000/users/`;
 
 async function createError(response) {
   const { errors } = await response.json();
@@ -55,6 +56,26 @@ function logout() {
   };
 }
 
+// Request API for Users List
+
+function requestUsersList() {
+  return async dispatch => {
+    try {
+      let response = await fetch(`${URL_USERS_LIST}`, {
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      if (!response.ok) throw await createError(response);
+      let data = await response.json();
+      dispatch({ type: "LIST_USERS", payload: data });
+    } catch {
+      dispatch({ type: "LOGOUT" });
+    }
+  };
+}
+
 // Request API for Module , Lesson, Sublesson & Solutions
 function requestModulos() {
   return async dispatch => {
@@ -85,7 +106,7 @@ function requestSublesson(id) {
       }
     });
     let data = await response.json();
-    dispatch({ type: "FETCH_DATA_SUBLESSON", payload: data });
+    dispatch({ type: "DEFAULT", payload: data });
   };
 }
 
@@ -159,6 +180,7 @@ function requestGrades() {
 export {
   login,
   logout,
+  requestUsersList,
   requestModulos,
   requestSublesson,
   requestSolutions,

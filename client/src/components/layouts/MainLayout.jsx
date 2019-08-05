@@ -3,19 +3,20 @@ import { jsx } from "@emotion/core";
 import Header from "../Header";
 import Nav from "../Nav";
 
-function MainLayout({ children }) {
+function MainLayout({ styles, children }) {
   return (
     <div css={{ fontFamily: "'Open Sans', 'sans-serif'" }}>
       <Nav />
       <div
         css={{
-          backgroundColor: "white",
+          backgroundColor: "#e4eae7",
           height: "100vh",
           display: "grid",
           gridTemplateAreas: " 'header' 'content'",
           gridTemplateRows: "auto 1fr",
           paddingLeft: "76px",
-          paddingRight: "26px"
+          paddingRight: "26px",
+          ...styles
         }}
       >
         <Header styles={{ gridArea: "header" }} />

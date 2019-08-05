@@ -8,7 +8,7 @@ import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
 import { useLogout } from "../redux/action-hook";
 import { navigate } from "@reach/router";
 import Search from "./Search";
-import { Modal, Card } from "../components/Ui";
+import { Modal, Card } from "./UI/Ui";
 
 function Header({ styles }) {
   const $portal = useMemo(() => document.getElementById("portal"), []);
@@ -16,9 +16,11 @@ function Header({ styles }) {
   const node = useRef();
   const logout = useLogout();
 
+  //Modal functions
   function handleOpenClick() {
     setIsModalOpen(true);
   }
+
   useEffect(() => {
     function handleKeyDown(event) {
       if (event.key !== "Escape" || !isModalOpen) return;

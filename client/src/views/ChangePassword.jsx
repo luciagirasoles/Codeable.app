@@ -3,12 +3,15 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import { navigate } from "@reach/router";
 import { useUser } from "../redux/selector";
-import { Card, Input, Button, Logo } from "../components/Ui";
+import { Card, Logo } from "../components/UI/Ui";
+import { Button } from "../components/UI/Buttons";
+import { Input } from "../components/UI/Inputs";
 import { changePassword } from "../services/resetPassword";
 import MainLayout from "../components/layouts/MainLayout";
 import { Redirect } from "@reach/router";
 
 function Forgot() {
+  // eslint-disable-next-line no-unused-vars
   const [currentPassword, setCurrentPassword] = React.useState("");
   const [newPassword, setNewPassword] = React.useState("");
   const [confirm, setConfirm] = React.useState("");

@@ -2,8 +2,8 @@ class SolutionsController < ApplicationController
   before_action :set_solution, only: [:show, :update]
 
   def index
-    solution = Solution.all
-    render json: solution, status: :ok
+    solutions = Solution.select { |solution| solution['user_id'] == authenticate_token.id }
+    render json: solutions, status: :ok
   end
 
   def show
@@ -12,6 +12,7 @@ class SolutionsController < ApplicationController
       message: 'Loaded Solution',
       data: @solution
     }
+
   end
   
   def create

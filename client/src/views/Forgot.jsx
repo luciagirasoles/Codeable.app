@@ -2,7 +2,9 @@
 import { jsx } from "@emotion/core";
 import { navigate } from "@reach/router";
 
-import { Card, Input, Button } from "../components/Ui";
+import { Card } from "../components/UI/Ui";
+import { Button } from "../components/UI/Buttons";
+import { Input } from "../components/UI/Inputs";
 import { sendResetEmail } from "../services/resetPassword";
 import HomeLayout from "../components/layouts/HomeLayout";
 

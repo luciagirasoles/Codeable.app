@@ -19,4 +19,6 @@ Rails.application.routes.draw do
     resources :solutions, only: [:create]
   end
 
+  resources :users, only: [:index]
+
 end

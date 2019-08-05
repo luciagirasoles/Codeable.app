@@ -11,6 +11,16 @@ function useUser() {
   }, shallowEqual);
 }
 
+function useUsersList() {
+  return useSelector(state => {
+    if (state.userlist) {
+      return state.userlist;
+    } else {
+      return {};
+    }
+  }, shallowEqual);
+}
+
 function useModulos() {
   return useSelector(state => {
     if (state.lessonsData.modulos) {
@@ -103,6 +113,7 @@ function useGrades() {
 export {
   useGrades,
   useUser,
+  useUsersList,
   useModulos,
   useLessons,
   useModulo,
