@@ -16,6 +16,9 @@ class Sublesson < ApplicationRecord
   belongs_to :lesson
   belongs_to :tag
 
+  has_many :solutions
+  has_many :users, through: :solutions
+
   def isMiniassigment?
     self.tag_id == Tag.where(name: 'M-ASSIGN').first.id
   end

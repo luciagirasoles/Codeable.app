@@ -584,10 +584,9 @@ sublesson444 = Sublesson.create(
 
 
 
-
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment1.id)
-Solution.create(content:'http://massign2.com/user1', status: "sent", user_id: user1.id, sublesson_id: miniassigment2.id)
-Solution.create(content:'http://massign1.com/user2', status: "saved", user_id: user2.id, sublesson_id: miniassigment1.id)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment1.id, score: 4)
+Solution.create(content:'http://massign2.com/user1', status: "sent", user_id: user1.id, sublesson_id: miniassigment2.id, score: 3)
+Solution.create(content:'http://massign1.com/user2', status: "saved", user_id: user2.id, sublesson_id: miniassigment1.id, score: 2)
 ModuloGrade.all
 ModuloGrade.create(week: 1, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo1)
 ModuloGrade.create(week: 2, tipo: 'EP', code_review: 2.3, performance: 2.5, testing: 2.7, dry_code: 3.5, user: user1, modulo: modulo1)
@@ -599,3 +598,4 @@ ModuloGrade.create(week: 3, tipo: 'EP', code_review: 2.8, performance: 2, testin
 ModuloGrade.create(week: 4, tipo: 'EP', code_review: 2.9, performance: 1.6, testing: 2.1, dry_code: 3, user: user1, modulo: modulo2)
 ModuloGrade.create(feedback: 'Lo hiciste muy bien', tipo: 'GATE', code_review: 3, performance: 4, testing: 3, dry_code: 4, user: user1, modulo: modulo1)
 ModuloGrade.create(feedback: 'Tienes que repasar mucho', tipo: 'GATE', code_review: 2.2, performance: 1.6, testing: 2, dry_code: 2, user: user1, modulo: modulo2)
+

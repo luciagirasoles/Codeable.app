@@ -12,6 +12,6 @@
 #
 
 class SolutionSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :sublesson_id, :content, :status
-
+  attributes :id, :user_id, :sublesson_id, :content, :status, :score
+  
 end

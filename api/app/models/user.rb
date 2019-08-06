@@ -17,7 +17,10 @@ class User < ApplicationRecord
   has_secure_password
   has_secure_token
   has_secure_token :reset_digest
-  has_many :solutions, through: :user_solutions
+
+  has_many :solutions
+  has_many :sublessons, through: :solutions
+
   has_many :modulo_grades
 
 
