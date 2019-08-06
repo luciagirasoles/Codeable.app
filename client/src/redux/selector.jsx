@@ -71,11 +71,15 @@ function useSublesson(sublessonId) {
 
 function useMiniAssignments() {
   return useSelector(state => {
-    let sublessons = Object.values(state.lessonsData.sublessons); //[ , , ,  , ]
-    let miniAssignments = sublessons.filter(sublesson => {
-      return sublesson.tag_id === 3;
-    });
-    return arrayToObject(miniAssignments);
+    if (state.lessonsData.sublessons) {
+      let sublessons = Object.values(state.lessonsData.sublessons); //[ , , ,  , ]
+      let miniAssignments = sublessons.filter(sublesson => {
+        return sublesson.tag_id === 3;
+      });
+      return arrayToObject(miniAssignments);
+    } else {
+      return {};
+    }
   }, shallowEqual);
 }
 
@@ -101,11 +105,14 @@ function useGrades() {
           };
         }, {})
       ).map(([moduleName, moduleGrades]) => {
-        return [moduleName, moduleGrades.sort((a, b) => {
-          if (a.week === null) return 1;
-          if (b.week === null) return -1;
-          return a.week - b.week
-        })];
+        return [
+          moduleName,
+          moduleGrades.sort((a, b) => {
+            if (a.week === null) return 1;
+            if (b.week === null) return -1;
+            return a.week - b.week;
+          })
+        ];
       })
     );
   }, shallowEqual);

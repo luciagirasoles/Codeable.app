@@ -76,7 +76,7 @@ function MiniAssignments() {
   const [miniassignments, setMiniassignments] = useState(storedMiniassignments);
   useEffect(() => {
     setMiniassignments(storedMiniassignments);
-  }, [storedMiniassignments]);
+  }, [JSON.stringify(storedMiniassignments)]);
 
   // function handleUpdateClick() {
   //   updateSolution({

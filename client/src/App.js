@@ -23,10 +23,10 @@ function App() {
   const user = useUser();
 
   React.useEffect(() => {
-    if (user.currentUser) {
+    if (user.currentUser.name) {
       requestModulos();
     }
-  }, [requestModulos, user.currentUser]);
+  }, [requestModulos, user.currentUser.name]);
 
   return (
     <React.Suspense fallback={<Loading />}>
