@@ -12,26 +12,20 @@ function TopNavigation({ moduleId, lessonId }) {
   const sublessons = useSublessons(lessonId);
 
   return (
-    <div
-      css={{
-        display: "flex",
-        justifyContent: "space-between",
-        color: "black",
-        fontSize: ".9em",
-        fontWeight: "bold"
-      }}
-    >
+    <>
       {lesson.sublessons.map(sublessonId => {
         return (
-          <Link
-            to={`/lessons/module/${moduleId}/lesson/${lessonId}/sublesson/${sublessonId}`}
-            key={sublessonId}
-          >
-            <Tab>{TAGS[sublessons[sublessonId].tag_id - 1]}</Tab>
-          </Link>
+          <Tab>
+            <Link
+              to={`/lessons/module/${moduleId}/lesson/${lessonId}/sublesson/${sublessonId}`}
+              key={sublessonId}
+            >
+              {TAGS[sublessons[sublessonId].tag_id - 1]}
+            </Link>
+          </Tab>
         );
       })}
-    </div>
+    </>
   );
 }
 
