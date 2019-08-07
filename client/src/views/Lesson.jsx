@@ -10,6 +10,8 @@ import { Redirect } from "@reach/router";
 import { useUser } from "../redux/selector";
 import { Card } from "../components/UI/Ui";
 import TopNavigation from "../components/TopNavigation";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 function Lesson({ moduleId, lessonId, sublessonId }) {
   const user = useUser();
@@ -27,11 +29,15 @@ function Lesson({ moduleId, lessonId, sublessonId }) {
           height: "100%"
         }}
       >
-        <Card styles={{ padding: "50px" }}>
-          <TopNavigation moduleId={moduleId} lessonId={lessonId} />
-          <h1 css={{ marginBottom: "25px" }}>{sublesson.title}</h1>
-          <p>{sublesson.content}</p>
-        </Card>
+        <Tabs>
+          <TabList>
+            <TopNavigation moduleId={moduleId} lessonId={lessonId} />
+          </TabList>
+          <Card styles={{ padding: "50px" }}>
+            <h1 css={{ marginBottom: "25px" }}>{sublesson.title}</h1>
+            <p>{sublesson.content}</p>
+          </Card>
+        </Tabs>
         <Aside moduleId={moduleId} />
       </div>
     </MainLayout>
