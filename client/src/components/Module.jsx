@@ -18,7 +18,8 @@ function Module({ module }) {
       id={"module" + module.id}
       css={{
         backgroundColor: "white",
-        borderRadius: "10px"
+        borderRadius: "10px",
+        "@media (max-width: 760px)": { maxWidth: "75vw" }
       }}
     >
       <div

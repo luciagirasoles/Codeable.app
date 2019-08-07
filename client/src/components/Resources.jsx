@@ -44,7 +44,11 @@ function Resources({ lessonId }) {
           <>
             {" "}
             <p
-              css={{ fontWeight: "bold", fontSize: ".8em", marginTop: "30px" }}
+              css={{
+                fontWeight: "bold",
+                fontSize: ".8em",
+                marginTop: "30px"
+              }}
             >
               EXTRA
             </p>

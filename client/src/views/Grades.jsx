@@ -46,7 +46,10 @@ function Grades() {
     display: "flex",
     flexWrap: "wrap",
     alignItems: "stretch",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
+    "@media (max-width: 760px)": {
+      padding: "0"
+    }
   };
 
   return (
@@ -55,13 +58,20 @@ function Grades() {
         <TabList>
           <Tab>Extended Projects</Tab>
           <Tab>Mini Assignments</Tab>
-          <Tab disabled>English Progress</Tab>
         </TabList>
         <TabPanel>
           <section css={sectionStyle}>
             {Object.entries(grades).map(([title, grades]) => {
               return (
-                <article css={{ marginBottom: "1rem", width: "45%" }}>
+                <article
+                  css={{
+                    marginBottom: "1rem",
+                    width: "45%",
+                    "@media (max-width: 760px)": {
+                      width: "90%"
+                    }
+                  }}
+                >
                   <GradeModulo key={title} title={title} grades={grades} />
                 </article>
               );

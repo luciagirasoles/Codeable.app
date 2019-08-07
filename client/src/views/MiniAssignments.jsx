@@ -86,9 +86,13 @@ function MiniAssignments() {
         <div
           css={{
             display: "grid",
-            gridTemplateColumns: "1fr 250px",
+            gridTemplateColumns: "1fr 200px",
             gridGap: "30px",
-            height: "100%"
+            height: "100%",
+            "@media (max-width: 760px)": {
+              gridTemplateColumns: "1fr 100px",
+              gridGap: "0"
+            }
           }}
         >
           <div>
@@ -115,14 +119,13 @@ function MiniAssignments() {
                 );
               })}
           </div>
-          <div>
-            {!!Object.values(miniassignments).length && (
-              <MiniAssignmentsAside
-                miniassignments={miniassignments}
-                setMiniassignments={setMiniassignments}
-              />
-            )}
-          </div>
+
+          {!!Object.values(miniassignments).length && (
+            <MiniAssignmentsAside
+              miniassignments={miniassignments}
+              setMiniassignments={setMiniassignments}
+            />
+          )}
         </div>
       </MainLayout>
       {isModalOpen &&

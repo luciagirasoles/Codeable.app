@@ -68,7 +68,10 @@ function MiniAssignment({ miniassignment, handleOpenModalClick }) {
         margin: "30px 0px",
         width: "auto",
         minHeight: "200px",
-        padding: "0px"
+        padding: "0px",
+        "@media (max-width: 760px)": {
+          gridTemplateColumns: "1fr"
+        }
       }}
     >
       <div
@@ -115,7 +118,16 @@ function MiniAssignment({ miniassignment, handleOpenModalClick }) {
         </div>
         <div />
       </div>
-      <div css={{ display: "flex", padding: "25px" }}>
+      <div
+        css={{
+          display: "flex",
+          padding: "25px",
+          "@media (max-width: 760px)": {
+            padding: 0,
+            position: "absolute"
+          }
+        }}
+      >
         {miniassigmentStatus === "pending" && <PendingIcon />}
         {miniassigmentStatus === "saved" && <SavedIcon />}
         {miniassigmentStatus === "sent" && <SentIcon />}

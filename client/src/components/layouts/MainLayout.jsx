@@ -16,6 +16,11 @@ function MainLayout({ styles, children }) {
           gridTemplateRows: "auto 1fr",
           paddingLeft: "76px",
           paddingRight: "26px",
+          minWidth: "fit-content",
+
+          "@media (max-width: 350px)": {
+            paddingLeft: "56px"
+          },
           ...styles
         }}
       >

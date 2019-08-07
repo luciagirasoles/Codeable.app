@@ -39,35 +39,26 @@ function MiniAssignmentsAside({ styles, setMiniassignments }) {
   }
 
   return (
-    <Card
-      styles={{
-        padding: "0px",
-        height: "250px",
-        marginTop: "80px",
-        ...styles
-      }}
+    <div
+      css={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <p
         css={{
-          padding: "20px 100px"
+          padding: "20px"
         }}
       >
         <b>Filters</b>
       </p>
-      <div
-        css={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-      >
-        <ButtonBlue css={{ fontSize: "15px" }} onClick={filterPending}>
-          Saved
-        </ButtonBlue>
-        <ButtonOrange css={{ fontSize: "15px" }} onClick={filterSent}>
-          Sent
-        </ButtonOrange>
-        <Button css={{ fontSize: "15px" }} onClick={reset}>
-          All
-        </Button>
-      </div>
-    </Card>
+      <ButtonBlue css={{ fontSize: "15px" }} onClick={filterPending}>
+        Saved
+      </ButtonBlue>
+      <ButtonOrange css={{ fontSize: "15px" }} onClick={filterSent}>
+        Sent
+      </ButtonOrange>
+      <Button css={{ fontSize: "15px" }} onClick={reset}>
+        All
+      </Button>
+    </div>
   );
 }
 

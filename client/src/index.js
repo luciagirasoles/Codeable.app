@@ -14,7 +14,8 @@ ReactDOM.render(
           fontFamily:
             "'Roboto Slab', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue','Helvetica','sans-serif'",
           margin: 0,
-          backgroundColor: "#FFF"
+          backgroundColor: "#FFF",
+          fontSize: "small"
         },
         a: { textDecoration: "inherit", color: "inherit" },
         "h1, h2, h3, p, ul, li": { margin: 0, padding: 0 }

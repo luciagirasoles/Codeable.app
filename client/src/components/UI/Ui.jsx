@@ -132,6 +132,7 @@ function Tag({ styles, ...props }) {
         display: "inline-block",
         padding: "4px 7px",
         borderRadius: "5px",
+        "@media (max-width: 760px)": { minWidth: "max-content" },
         ...styles
       }}
     >

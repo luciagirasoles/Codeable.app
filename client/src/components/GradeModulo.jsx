@@ -27,7 +27,11 @@ function GradeModulo({ title, grades }) {
     : null;
 
   return (
-    <Card styles={{ height: "100%" }}>
+    <Card
+      styles={{
+        height: "100%"
+      }}
+    >
       <header>
         <h2>{title}</h2>
       </header>
