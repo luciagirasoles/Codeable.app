@@ -12,7 +12,15 @@ function TopNavigation({ moduleId, lessonId }) {
   const sublessons = useSublessons(lessonId);
 
   return (
-    <div>
+    <div
+      css={{
+        display: "flex",
+        justifyContent: "space-between",
+        color: "black",
+        fontSize: ".9em",
+        fontWeight: "bold"
+      }}
+    >
       {lesson.sublessons.map(sublessonId => {
         return (
           <Link

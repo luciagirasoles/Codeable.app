@@ -29,13 +29,15 @@ function Lesson({ moduleId, lessonId, sublessonId }) {
           height: "100%"
         }}
       >
-        <Card styles={{ padding: "50px" }}>
+        <Tabs>
           <TabList>
             <TopNavigation moduleId={moduleId} lessonId={lessonId} />
           </TabList>
-          <h1 css={{ marginBottom: "25px" }}>{sublesson.title}</h1>
-          <p>{sublesson.content}</p>
-        </Card>
+          <Card styles={{ padding: "50px" }}>
+            <h1 css={{ marginBottom: "25px" }}>{sublesson.title}</h1>
+            <p>{sublesson.content}</p>
+          </Card>
+        </Tabs>
         <Aside moduleId={moduleId} />
       </div>
     </MainLayout>
