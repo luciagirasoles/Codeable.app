@@ -39,7 +39,7 @@ function PendingIcon({ styles, ...props }) {
         css={{
           justifyContent: "center",
           fontSize: "xx-large",
-          color: "#0aa5fd",
+          color: "#f88f51",
           animation: `${animateProfileGate} 300ms ease 1`,
           ...styles
         }}
@@ -57,7 +57,7 @@ function SavedIcon({ styles, ...props }) {
         css={{
           justifyContent: "center",
           fontSize: "xx-large",
-          color: "#ffc82c",
+          color: "#0aa5fd",
           animation: `${animateProfileGate} 450ms ease 1`,
           ...styles
         }}

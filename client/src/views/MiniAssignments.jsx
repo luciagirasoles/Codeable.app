@@ -4,12 +4,8 @@ import React, { useMemo, useState, useEffect, useRef } from "react";
 import { Redirect } from "@reach/router";
 import { createPortal } from "react-dom";
 
-import { useUser, useMiniAssignments, useSolutions } from "../redux/selector";
-import {
-  useRequestSolutions,
-  useUpdateSolution,
-  useRequestUsersList
-} from "../redux/action-hook";
+import { useUser, useMiniAssignments } from "../redux/selector";
+import { useRequestSolutions, useRequestUsersList } from "../redux/action-hook";
 
 import MiniAssignment from "../components/MiniAssignment";
 import MiniAssignmentsAside from "../components/MiniAssignmentsAside";
@@ -21,9 +17,11 @@ import { Modal, Card } from "../components/UI/Ui";
 function MiniAssignments() {
   const user = useUser();
   const requestSolutions = useRequestSolutions();
-  // const updateSolution = useUpdateSolution();
+
   const requestUsersList = useRequestUsersList();
   const [mId, setMID] = useState("");
+  const [mStatus, setMStatus] = useState("");
+  const [sContent, setSContent] = useState("");
   const storedMiniassignments = useMiniAssignments();
 
   //Modal functionality
@@ -33,6 +31,8 @@ function MiniAssignments() {
   const nodeSelected = useRef();
   function handleOpenModalClick(event) {
     setMID(event.target.getAttribute("miniassigment"));
+    setMStatus(event.target.getAttribute("status"));
+    setSContent(event.target.getAttribute("solcontent"));
     setIsModalOpen(true);
   }
 
@@ -77,13 +77,6 @@ function MiniAssignments() {
   useEffect(() => {
     setMiniassignments(storedMiniassignments);
   }, [JSON.stringify(storedMiniassignments)]);
-
-  // function handleUpdateClick() {
-  //   updateSolution({
-  //     id: 1,
-  //     status: "saved"
-  //   });
-  // }
 
   if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 
@@ -140,6 +133,8 @@ function MiniAssignments() {
                 <Solution
                   handleCloseModalClick={handleCloseModalClick}
                   miniassignment={miniassignments[mId]}
+                  status={mStatus}
+                  solcontent={sContent}
                 />
               </Card>
             </div>

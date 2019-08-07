@@ -114,7 +114,7 @@ function ButtonOrange({ styles, ...props }) {
         alignSelf: "center",
         marginBottom: "16px",
         ":hover": {
-          backgroundColor: "#ed884e",
+          backgroundColor: "#df8048",
           cursor: "pointer",
           boxShadow: "5px 5px 3px -3px rgba(64,64,64,0.74)"
         },
@@ -161,4 +161,38 @@ function ButtonAmber({ styles, ...props }) {
   );
 }
 
-export { Button, ButtonRed, ButtonBlue, ButtonOrange, ButtonAmber };
+function ButtonDisabled({ styles, ...props }) {
+  return (
+    <button
+      {...props}
+      disabled
+      css={{
+        border: "none",
+        padding: "0.3em",
+        backgroundColor: "#939393",
+        font: "inherit",
+        color: "#FFF",
+        fontSize: "1.3em",
+        fontWeight: "bold",
+        borderRadius: "5px",
+        maxWidth: "5em",
+        alignSelf: "center",
+        marginBottom: "16px",
+        cursor: "not-allowed",
+        textAlign: "center",
+        textTransform: "uppercase",
+        width: "100%",
+        ...styles
+      }}
+    />
+  );
+}
+
+export {
+  Button,
+  ButtonRed,
+  ButtonBlue,
+  ButtonOrange,
+  ButtonAmber,
+  ButtonDisabled
+};

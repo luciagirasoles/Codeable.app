@@ -57,12 +57,12 @@ function MiniAssignmentsAside({ styles, setMiniassignments }) {
       <div
         css={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
-        <ButtonOrange css={{ fontSize: "15px" }} onClick={filterPending}>
-          Pending
-        </ButtonOrange>
-        <ButtonBlue css={{ fontSize: "15px" }} onClick={filterSent}>
-          Sent
+        <ButtonBlue css={{ fontSize: "15px" }} onClick={filterPending}>
+          Saved
         </ButtonBlue>
+        <ButtonOrange css={{ fontSize: "15px" }} onClick={filterSent}>
+          Sent
+        </ButtonOrange>
         <Button css={{ fontSize: "15px" }} onClick={reset}>
           All
         </Button>

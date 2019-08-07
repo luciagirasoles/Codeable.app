@@ -2,19 +2,27 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 import { useUser, useSolutions } from "../redux/selector";
-import { Redirect } from "@reach/router";
+import { useUpdateSolution } from "../redux/action-hook";
+import { Redirect, navigate } from "@reach/router";
 import { Card } from "../components/UI/Ui";
-import { Button } from "../components/UI/Buttons";
+import {
+  ButtonOrange,
+  ButtonDisabled,
+  ButtonBlue,
+  Button
+} from "../components/UI/Buttons";
 import { SentIcon, SavedIcon, PendingIcon } from "./UI/Icons";
 
 function MiniAssignment({ miniassignment, handleOpenModalClick }) {
   const user = useUser();
 
   const solutions = useSolutions();
-  if (!user.currentUser.name) return <Redirect to="/" noThrow />;
+  const updateSolution = useUpdateSolution();
+
   const solutionsIds = Object.values(solutions).map(solution => {
     return solution.sublesson_id;
   });
+
   function verifyStatusSolution() {
     let status = "pending";
 
@@ -27,8 +35,29 @@ function MiniAssignment({ miniassignment, handleOpenModalClick }) {
 
     return status;
   }
+
+  function obtainSolutionId() {
+    const id = Object.values(solutions).find(solution => {
+      return solution.sublesson_id === miniassignment.id;
+    }).id;
+
+    return id;
+  }
+
+  function obtainSolutionContent() {
+    const id = Object.values(solutions).find(solution => {
+      return solution.sublesson_id === miniassignment.id;
+    }).id;
+    return solutions[id].content;
+  }
+
+  function handleSentSolutionClick() {
+    updateSolution({
+      id: obtainSolutionId(),
+      status: "sent"
+    });
+  }
   const miniassigmentStatus = verifyStatusSolution();
-  console.log("status ", miniassigmentStatus);
   if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 
   return (
@@ -56,13 +85,33 @@ function MiniAssignment({ miniassignment, handleOpenModalClick }) {
           </h4>
           <p>{miniassignment.content}</p>
 
-          <Button
-            css={{ marginTop: "16px" }}
-            onClick={handleOpenModalClick}
-            miniassigment={miniassignment.id}
-          >
-            Create
-          </Button>
+          {miniassigmentStatus === "pending" && (
+            <ButtonOrange
+              css={{ marginTop: "16px" }}
+              onClick={handleOpenModalClick}
+              miniassigment={miniassignment.id}
+              status="pending"
+            >
+              Create
+            </ButtonOrange>
+          )}
+          {miniassigmentStatus === "saved" && (
+            <>
+              <ButtonBlue
+                css={{ marginTop: "16px", marginRight: "20px" }}
+                onClick={handleOpenModalClick}
+                miniassigment={miniassignment.id}
+                status="saved"
+                solcontent={obtainSolutionContent()}
+              >
+                Edit
+              </ButtonBlue>
+              <Button onClick={handleSentSolutionClick}>Sent</Button>
+            </>
+          )}
+          {miniassigmentStatus === "sent" && (
+            <ButtonDisabled css={{ marginTop: "16px" }}>Sent</ButtonDisabled>
+          )}
         </div>
         <div />
       </div>

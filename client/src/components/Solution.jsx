@@ -4,21 +4,27 @@ import { jsx } from "@emotion/core";
 import { InputLink } from "./UI/Inputs";
 import { Label } from "./UI/Ui";
 import { Button, ButtonRed } from "./UI/Buttons";
-import { useUser, useUsersList } from "../redux/selector";
-import { useCreateSolution } from "../redux/action-hook";
+import { useUser, useUsersList, useSolution } from "../redux/selector";
+import { useCreateSolution, useUpdateSolution } from "../redux/action-hook";
 import Select from "react-dropdown-select";
 
-function Solution({ styles, handleCloseModalClick, miniassignment }) {
+function Solution({
+  styles,
+  handleCloseModalClick,
+  miniassignment,
+  status,
+  solcontent
+}) {
   const currentuser = useUser();
   const usersList = useUsersList();
   const createSolution = useCreateSolution();
+  const updateSolution = useUpdateSolution();
   const [userListFormatted, setUserListFormatted] = useState([]);
+  console.log("solContent en solution ", solcontent);
   const [solutionContent, setSolutionContent] = useState(
-    "https://github.com/codeableorg/Codeable.app"
+    solcontent ? solcontent : ""
   );
-  const [solutionStatus, setSolutionStatus] = useState("saved");
   const [collaborators, setCollaborators] = useState([]);
-
   function fillUserList() {
     const list = Object.values(usersList).flatMap(user => {
       if (user.id !== currentuser.currentUser.id) {
@@ -32,7 +38,7 @@ function Solution({ styles, handleCloseModalClick, miniassignment }) {
 
   function initialValues() {
     setCollaborators([]);
-    // setSolutionContent("");
+    setSolutionContent("");
     handleCloseModalClick();
   }
   useEffect(() => {
@@ -52,24 +58,32 @@ function Solution({ styles, handleCloseModalClick, miniassignment }) {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    createSolution({
-      content: solutionContent,
-      status: solutionStatus,
-      user_id: currentuser.currentUser.id,
-      sublesson_id: miniassignment.id
-    });
 
-    collaborators.forEach(user => {
+    if (status === "pending") {
       createSolution({
         content: solutionContent,
-        status: solutionStatus,
-        user_id: user.id,
+        status: "saved",
+        user_id: currentuser.currentUser.id,
         sublesson_id: miniassignment.id
       });
-    });
+
+      collaborators.forEach(user => {
+        createSolution({
+          content: solutionContent,
+          status: "saved",
+          user_id: user.id,
+          sublesson_id: miniassignment.id
+        });
+      });
+    } else {
+      updateSolution({
+        id: 1,
+        content: solutionContent,
+        status: "saved"
+      });
+    }
     initialValues();
   }
-
   return (
     <>
       <form>
@@ -83,22 +97,24 @@ function Solution({ styles, handleCloseModalClick, miniassignment }) {
             required
           />
         </Label>
-        <Label aria-label="Collaborators">
-          Collaborators
-          <Select
-            style={{ font: "inherit" }}
-            multi
-            placeholder="My collaborators in this Miniassigment"
-            closeOnSelect={true}
-            clearable={true}
-            addPlaceholder="+ click to add"
-            options={userListFormatted}
-            labelField="name"
-            values={collaborators}
-            color="#4ea64e"
-            onChange={handleCollaboratorsContentChange}
-          />
-        </Label>
+        {status === "pending" && (
+          <Label aria-label="Collaborators">
+            Collaborators
+            <Select
+              style={{ font: "inherit" }}
+              multi
+              placeholder="My collaborators in this Miniassigment"
+              closeOnSelect={true}
+              clearable={true}
+              addPlaceholder="+ click to add"
+              options={userListFormatted}
+              labelField="name"
+              values={collaborators}
+              color="#4ea64e"
+              onChange={handleCollaboratorsContentChange}
+            />
+          </Label>
+        )}
         <div css={{ display: "flex", justifyContent: "space-evenly" }}>
           <ButtonRed onClick={handleCancelClick}>Cancel</ButtonRed>
           <Button type="submit" onClick={handleSubmit}>
