@@ -27,7 +27,11 @@ function GradeDetails({
     <section css={{ display: "flex", flexDirection: "column" }}>
       {details.map(([title, score]) => (
         <article
-          css={{ display: "flex", justifyContent: "space-between" }}
+          css={{
+            display: "flex",
+            justifyContent: "space-between",
+            padding: "2.5px 0"
+          }}
           key={title}
         >
           {score && (
@@ -43,7 +47,7 @@ function GradeDetails({
         css={{
           display: "flex",
           justifyContent: "center",
-          fontSize: "1.5rem",
+          fontSize: "1.8rem",
           marginTop: "20px"
         }}
       >

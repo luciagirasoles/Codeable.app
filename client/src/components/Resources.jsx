@@ -23,7 +23,9 @@ function Resources({ lessonId }) {
       }}
     >
       <h3>{lesson.title}</h3>
-      <div css={{ marginLeft: "20px", marginTop: "20px" }}>
+      <div
+        css={{ marginLeft: "20px", marginTop: "20px", paddingBottom: "20px" }}
+      >
         <ul>
           {mainResource.map((element, i) => {
             return (
@@ -38,22 +40,29 @@ function Resources({ lessonId }) {
           })}
         </ul>
 
-        <p css={{ fontWeight: "bold", fontSize: ".8em", marginTop: "30px" }}>
-          EXTRA
-        </p>
-        <ul>
-          {extraResource.map((element, i) => {
-            return (
-              <Resource
-                lessonId={lessonId}
-                tagId={element.tag_id}
-                key={JSON.stringify(element)}
-                title={element.title}
-                sublessonId={element.id}
-              />
-            );
-          })}
-        </ul>
+        {extraResource.length > 0 && (
+          <>
+            {" "}
+            <p
+              css={{ fontWeight: "bold", fontSize: ".8em", marginTop: "30px" }}
+            >
+              EXTRA
+            </p>
+            <ul>
+              {extraResource.map((element, i) => {
+                return (
+                  <Resource
+                    lessonId={lessonId}
+                    tagId={element.tag_id}
+                    key={JSON.stringify(element)}
+                    title={element.title}
+                    sublessonId={element.id}
+                  />
+                );
+              })}
+            </ul>
+          </>
+        )}
       </div>
     </div>
   );

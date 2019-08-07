@@ -25,6 +25,22 @@ function Grades() {
 
   if (!user.currentUser.name) return <Redirect to="/" noThrow />;
 
+  let data = Object.fromEntries(
+    Object.entries(
+      Object.values(solutions).reduce((gradesPerModule, grade) => {
+        return {
+          ...gradesPerModule,
+          [grade.modulo]: gradesPerModule[grade.modulo]
+            ? [
+                ...gradesPerModule[grade.modulo],
+                { title: grade.title, score: grade.score }
+              ]
+            : [{ title: grade.title, score: grade.score }]
+        };
+      }, {})
+    )
+  );
+
   const sectionStyle = {
     padding: "50px",
     display: "flex",
@@ -54,8 +70,9 @@ function Grades() {
         </TabPanel>
         <TabPanel>
           <section css={sectionStyle}>
-            <WeekMini />
-            <WeekMini />
+            {Object.entries(data).map(([title, score]) => {
+              return <WeekMini title={title} score={score} />;
+            })}
           </section>
         </TabPanel>
       </Tabs>

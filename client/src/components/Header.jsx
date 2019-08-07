@@ -101,6 +101,10 @@ function Header({ styles }) {
               color: "white",
               background: "black",
               boxShadow: "5px 5px 3px -3px rgba(64,64,64,0.74)"
+            },
+            ":focus": {
+              outline: "0px",
+              border: "0px"
             }
           }}
         >
@@ -114,7 +118,10 @@ function Header({ styles }) {
             cursor: "pointer",
             color: "white",
             padding: "2px 5px 3px",
-            backgroundColor: "blue"
+            backgroundColor: "gray",
+            "& :focus": {
+              outline: "0px"
+            }
           }}
         >
           <MenuItem

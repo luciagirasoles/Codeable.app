@@ -43,7 +43,11 @@ function Nav({ styles }) {
       />
       <NavItem url={"/lessons"} title={"Lessons"} Icon={GoBook} />
       <NavItem url={"/grades"} title={"Grades"} Icon={MdInsertChart} />
-      <NavItem url={"/titleapp"} title={"Title application"} Icon={GiPodium} />
+      {/* <NavItem
+        url={"/titleapp"}
+        title={"Title application coming soon"}
+        Icon={GiPodium}
+      /> */}
     </div>
   );
 }

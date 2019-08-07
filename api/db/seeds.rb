@@ -9,8 +9,8 @@ user4 = User.create(name: 'Carlos Sandoval', email: 'csandoval@able.co', passwor
 Modulo.destroy_all
 modulo1 = Modulo.create(name: 'Ruby Fundamentals', description: 'Ruby Fundamentals is an inmersive module for beginners')
 modulo2 = Modulo.create(name: 'Ruby on Rails', description: 'The most used framework for Ruby developers. We will learn how to create an entire backend project from scratch')
-modulo3 = Modulo.create(name: 'React', description: 'React is one of the most demanded libraries to build interfaces. We will learn how to create an entire frontend project from scratch')
-modulo4 = Modulo.create(name: 'Final Project', description: 'At the end of the module all Codeable students will create a full project using Frontend & Backend concepts in just 4 weeks.')
+modulo3 = Modulo.create(name: 'JavaScript', description: 'React is one of the most demanded libraries to build interfaces. We will learn how to create an entire frontend project from scratch')
+modulo4 = Modulo.create(name: 'React', description: 'At the end of the module all Codeable students will create a full project using Frontend & Backend concepts in just 4 weeks.')
 
 # Lessons
 Lesson.destroy_all
@@ -148,7 +148,7 @@ sublesson132 = Sublesson.create(
   section: 'main'
 )
 
-sublesson133 = Sublesson.create(
+miniassigment15 = Sublesson.create(
   title: 'Sublesson 3 Lesson 3 Tag 3',
   content: '# Content Sublesson 3 Lesson 3 Tag 3',
   tag: tag3,
@@ -172,7 +172,7 @@ sublesson142 = Sublesson.create(
   section: 'main'
 )
 
-sublesson143 = Sublesson.create(
+miniassigment3 = Sublesson.create(
   title: 'Sublesson 3 Lesson 4 Tag 3',
   content: '# Content Sublesson 3 Lesson 4 Tag 3',
   tag: tag3,
@@ -203,7 +203,7 @@ sublesson212 = Sublesson.create(
   section: 'main'
 )
 
-sublesson213 = Sublesson.create(
+miniassigment4 = Sublesson.create(
   title: 'Sublesson 3 Lesson 1 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 1 Tag 3 section main',
   tag: tag3,
@@ -236,7 +236,7 @@ sublesson222 = Sublesson.create(
   section: 'main'
 )
 
-sublesson223 = Sublesson.create(
+miniassigment4 = Sublesson.create(
   title: 'Sublesson 3 Lesson 2 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 2 Tag 3 section main',
   tag: tag3,
@@ -269,7 +269,7 @@ sublesson232 = Sublesson.create(
   section: 'main'
 )
 
-sublesson233 = Sublesson.create(
+miniassigment5 = Sublesson.create(
   title: 'Sublesson 3 Lesson 2 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 2 Tag 3 section main',
   tag: tag3,
@@ -302,7 +302,7 @@ sublesson242 = Sublesson.create(
   section: 'main'
 )
 
-sublesson243 = Sublesson.create(
+miniassigment6 = Sublesson.create(
   title: 'Sublesson 3 Lesson 2 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 2 Tag 3 section main',
   tag: tag3,
@@ -335,7 +335,7 @@ sublesson312 = Sublesson.create(
   section: 'main'
 )
 
-sublesson313 = Sublesson.create(
+miniassigment7 = Sublesson.create(
   title: 'Sublesson 3 Lesson 1 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 1 Tag 3 section main',
   tag: tag3,
@@ -368,7 +368,7 @@ sublesson322 = Sublesson.create(
   section: 'main'
 )
 
-sublesson323 = Sublesson.create(
+miniassigment8 = Sublesson.create(
   title: 'Sublesson 3 Lesson 2 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 2 Tag 3 section main',
   tag: tag3,
@@ -401,7 +401,7 @@ sublesson332 = Sublesson.create(
   section: 'main'
 )
 
-sublesson333 = Sublesson.create(
+miniassigment9 = Sublesson.create(
   title: 'Sublesson 3 Lesson 3 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 3 Tag 3 section main',
   tag: tag3,
@@ -434,7 +434,7 @@ sublesson342 = Sublesson.create(
   section: 'main'
 )
 
-sublesson343 = Sublesson.create(
+miniassigment10 = Sublesson.create(
   title: 'Sublesson 3 Lesson 3 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 3 Tag 3 section main',
   tag: tag3,
@@ -467,7 +467,7 @@ sublesson412 = Sublesson.create(
   section: 'main'
 )
 
-sublesson413 = Sublesson.create(
+miniassigment11 = Sublesson.create(
   title: 'Sublesson 3 Lesson 1 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 1 Tag 3 section main',
   tag: tag3,
@@ -500,7 +500,7 @@ sublesson422 = Sublesson.create(
   section: 'main'
 )
 
-sublesson423 = Sublesson.create(
+miniassigment12 = Sublesson.create(
   title: 'Sublesson 3 Lesson 2 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 2 Tag 3 section main',
   tag: tag3,
@@ -533,7 +533,7 @@ sublesson432 = Sublesson.create(
   section: 'main'
 )
 
-sublesson433 = Sublesson.create(
+miniassigment13 = Sublesson.create(
   title: 'Sublesson 3 Lesson 3 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 3 Tag 3 section main',
   tag: tag3,
@@ -566,7 +566,7 @@ sublesson442 = Sublesson.create(
   section: 'main'
 )
 
-sublesson443 = Sublesson.create(
+miniassigment14 = Sublesson.create(
   title: 'Sublesson 3 Lesson 3 Tag 3 section main',
   content: 'Content Sublesson 3 Lesson 3 Tag 3 section main',
   tag: tag3,
@@ -587,6 +587,28 @@ sublesson444 = Sublesson.create(
 Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment1.id, score: 4)
 Solution.create(content:'http://massign2.com/user1', status: "sent", user_id: user1.id, sublesson_id: miniassigment2.id, score: 3)
 Solution.create(content:'http://massign1.com/user2', status: "saved", user_id: user2.id, sublesson_id: miniassigment1.id, score: 2)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment3.id, score: 4)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment4.id, score: 2.3)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment5.id, score: 2.3)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment6.id, score: 2.3)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment7.id, score: 2.3)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment8.id, score: 2.3)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment9.id, score: 2.3)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment10.id, score: 2.7)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment11.id, score: 3.6)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment12.id, score: 3.1)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment13.id, score: 1.8)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment14.id, score: 3.1)
+Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment15.id, score: 3.1)
+
+
+
+
+
+
+
+
+
 ModuloGrade.all
 ModuloGrade.create(week: 1, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo1)
 ModuloGrade.create(week: 2, tipo: 'EP', code_review: 2.3, performance: 2.5, testing: 2.7, dry_code: 3.5, user: user1, modulo: modulo1)
@@ -598,4 +620,16 @@ ModuloGrade.create(week: 3, tipo: 'EP', code_review: 2.8, performance: 2, testin
 ModuloGrade.create(week: 4, tipo: 'EP', code_review: 2.9, performance: 1.6, testing: 2.1, dry_code: 3, user: user1, modulo: modulo2)
 ModuloGrade.create(feedback: 'Lo hiciste muy bien', tipo: 'GATE', code_review: 3, performance: 4, testing: 3, dry_code: 4, user: user1, modulo: modulo1)
 ModuloGrade.create(feedback: 'Tienes que repasar mucho', tipo: 'GATE', code_review: 2.2, performance: 1.6, testing: 2, dry_code: 2, user: user1, modulo: modulo2)
+ModuloGrade.create(week: 1, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo3)
+ModuloGrade.create(week: 2, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo3)
+ModuloGrade.create(week: 3, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo3)
+ModuloGrade.create(week: 4, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo3)
+ModuloGrade.create(feedback: 'Necesitas mucha ayuda de todos', tipo: 'GATE', code_review: 3, performance: 4, testing: 3, dry_code: 4, user: user1, modulo: modulo3)
+ModuloGrade.create(week: 1, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo4)
+ModuloGrade.create(week: 2, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo4)
+ModuloGrade.create(week: 3, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo4)
+ModuloGrade.create(week: 4, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo4)
+ModuloGrade.create(feedback: 'Necesitas mucha ayuda de todos', tipo: 'GATE', code_review: 3, performance: 4, testing: 3, dry_code: 4, user: user1, modulo: modulo4)
+
+
 
