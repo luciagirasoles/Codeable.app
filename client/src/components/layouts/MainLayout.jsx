@@ -5,7 +5,14 @@ import Nav from "../Nav";
 
 function MainLayout({ styles, children }) {
   return (
-    <div css={{ fontFamily: "'Open Sans', 'sans-serif'" }}>
+    <div
+      css={{
+        fontFamily: "'Open Sans', 'sans-serif'",
+        "@media (max-width: 450px)": {
+          paddingRight: 0
+        }
+      }}
+    >
       <Nav />
       <div
         css={{
@@ -15,11 +22,11 @@ function MainLayout({ styles, children }) {
           gridTemplateAreas: " 'header' 'content'",
           gridTemplateRows: "auto 1fr",
           paddingLeft: "76px",
-          paddingRight: "26px",
+          paddingRight: "10px",
           minWidth: "fit-content",
-
-          "@media (max-width: 350px)": {
-            paddingLeft: "56px"
+          "@media (max-width: 450px)": {
+            paddingLeft: "56px",
+            paddingRight: 0
           },
           ...styles
         }}

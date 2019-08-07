@@ -3,7 +3,7 @@ import React from "react";
 import { jsx } from "@emotion/core";
 import { useUser, useSolutions } from "../redux/selector";
 import { useUpdateSolution } from "../redux/action-hook";
-import { Redirect, navigate } from "@reach/router";
+import { Redirect } from "@reach/router";
 import { Card } from "../components/UI/Ui";
 import {
   ButtonOrange,

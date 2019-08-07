@@ -58,7 +58,16 @@ function Header({ styles }) {
 
   const trigger = (
     <span>
-      <Image avatar src={avatar} /> {user.currentUser.name}
+      <Image
+        css={{
+          ":hover": {
+            boxShadow: "5px 5px 3px -3px rgba(64,64,64,0.74)"
+          }
+        }}
+        avatar
+        src={avatar}
+      />
+      {user.currentUser.name}
     </span>
   );
 

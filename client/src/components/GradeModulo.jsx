@@ -29,7 +29,8 @@ function GradeModulo({ title, grades }) {
   return (
     <Card
       styles={{
-        height: "100%"
+        height: "100%",
+        display: "inline-grid"
       }}
     >
       <header>

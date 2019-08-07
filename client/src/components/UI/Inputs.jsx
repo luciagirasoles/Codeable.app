@@ -121,7 +121,7 @@ function InputLoginEmail({ styles, ...props }) {
             fontSize: "1em",
             border: "none",
             outline: "none",
-            paddingLeft: "1em",
+            paddingLeft: "5px",
             width: "calc(100% - 1em)",
             ...styles
           }}
@@ -157,7 +157,7 @@ function InputLoginPassword({ styles, ...props }) {
             fontSize: "1em",
             border: "none",
             outline: "none",
-            paddingLeft: "1em",
+            paddingLeft: "5px",
             width: "calc(100% - 1em)"
           }}
         />
