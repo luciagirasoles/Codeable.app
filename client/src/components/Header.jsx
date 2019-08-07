@@ -2,19 +2,23 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { jsx } from "@emotion/core";
-import { FaUserCircle, FaRegBell } from "react-icons/fa";
 import { GoSearch } from "react-icons/go";
-import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
 import { useLogout } from "../redux/action-hook";
 import { navigate } from "@reach/router";
 import Search from "./Search";
 import { Modal, Card } from "./UI/Ui";
+import { Dropdown, Image } from "semantic-ui-react";
+import faker from "faker";
+import { useUser } from "../redux/selector";
+
+const avatar = faker.internet.avatar();
 
 function Header({ styles }) {
   const $portal = useMemo(() => document.getElementById("portal"), []);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const node = useRef();
   const logout = useLogout();
+  const user = useUser();
 
   //Modal functions
   function handleOpenClick() {
@@ -51,6 +55,23 @@ function Header({ styles }) {
   function changePassword() {
     navigate("/changepassword");
   }
+
+  const trigger = (
+    <span>
+      <Image avatar src={avatar} /> {user.currentUser.name}
+    </span>
+  );
+
+  const options = [
+    {
+      key: "settings",
+      text: "Change Password",
+      icon: "settings",
+      onClick: changePassword
+    },
+    { key: "sign-out", text: "Sign Out", icon: "sign out", onClick: logout }
+  ];
+
   return (
     <div
       css={{
@@ -62,7 +83,7 @@ function Header({ styles }) {
     >
       <GoSearch
         css={{
-          fontSize: "1.15em",
+          fontSize: "2.3em",
           alignSelf: "center",
           marginRight: "20px",
           cursor: "pointer",
@@ -78,62 +99,13 @@ function Header({ styles }) {
         onClick={handleOpenClick}
       />
 
-      <FaRegBell
-        css={{ fontSize: "1.15em", alignSelf: "center", marginRight: "20px" }}
+      <Dropdown
+        trigger={trigger}
+        options={options}
+        pointing="top left"
+        icon={null}
       />
 
-      <Menu>
-        <MenuButton
-          aria-label="User actions"
-          css={{
-            background: "none",
-            border: "none",
-            borderRadius: "50%",
-            cursor: "pointer",
-            padding: "0",
-            width: "30px",
-            marginRight: "30px",
-            fontSize: "2em",
-            display: "flex",
-            alignSelf: "center",
-            transition: "all 200ms ease",
-            ":hover": {
-              color: "white",
-              background: "black",
-              boxShadow: "5px 5px 3px -3px rgba(64,64,64,0.74)"
-            },
-            ":focus": {
-              outline: "0px",
-              border: "0px"
-            }
-          }}
-        >
-          <FaUserCircle />
-        </MenuButton>
-        <MenuList
-          css={{
-            position: "absolute",
-            right: 25,
-            top: 40,
-            cursor: "pointer",
-            color: "white",
-            padding: "2px 5px 3px",
-            backgroundColor: "gray",
-            "& :focus": {
-              outline: "0px"
-            }
-          }}
-        >
-          <MenuItem
-            onSelect={() => {
-              logout();
-            }}
-          >
-            Logout
-          </MenuItem>
-          <MenuItem onSelect={() => changePassword()}>Change Password</MenuItem>
-        </MenuList>
-      </Menu>
       {isModalOpen &&
         createPortal(
           <Modal>

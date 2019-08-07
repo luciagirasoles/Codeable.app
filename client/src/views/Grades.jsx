@@ -58,6 +58,7 @@ function Grades() {
         <TabList>
           <Tab>Extended Projects</Tab>
           <Tab>Mini Assignments</Tab>
+          {/* <Tab disabled>English Progress</Tab> */}
         </TabList>
         <TabPanel>
           <section css={sectionStyle}>
