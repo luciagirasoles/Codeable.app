@@ -51,7 +51,19 @@ function GradeDetails({
           marginTop: "20px"
         }}
       >
-        <FaArrowAltCircleLeft onClick={onClick} />
+        <FaArrowAltCircleLeft
+          css={{
+            color: "#4ea64e",
+            borderRadius: "50%",
+            ":hover": {
+              color: "#157522",
+              cursor: "pointer",
+              boxShadow: "5px 5px 3px -3px rgba(64,64,64,0.74)"
+            },
+            transition: "all 200ms ease"
+          }}
+          onClick={onClick}
+        />
       </div>
     </section>
   );

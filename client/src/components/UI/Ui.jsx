@@ -180,7 +180,7 @@ function Logo({ styles, ...props }) {
     <h1
       css={{
         textAlign: "center",
-        fontSize: "2em",
+        fontSize: "xx-large",
         ...styles
       }}
       {...props}

@@ -3,9 +3,8 @@ import { jsx } from "@emotion/core";
 import React from "react";
 import { Link } from "@reach/router";
 
-function NavItem({ url, Icon, title, ariaLabel }) {
+function NavItem({ url, Icon, title, styles }) {
   const [active, setActive] = React.useState(false);
-
   return (
     <Link
       aria-label={"Go to your " + title}
@@ -26,7 +25,8 @@ function NavItem({ url, Icon, title, ariaLabel }) {
             opacity: "1",
             transitionDelay: "0.5s"
           }
-        }
+        },
+        ...styles
       }}
       getProps={({ isCurrent }) => {
         setActive(isCurrent);
