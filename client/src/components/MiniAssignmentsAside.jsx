@@ -19,6 +19,23 @@ function MiniAssignmentsAside({ styles, setMiniassignments }) {
   }
 
   function filterPending() {
+    let solutionsIds = Object.values(solutions).map(
+      solution => solution.sublesson_id
+    );
+    let miniassignmentsIds = Object.values(miniassignments).map(
+      miniassignment => miniassignment.id
+    );
+
+    let diffIds = miniassignmentsIds.filter(function(x) {
+      return solutionsIds.indexOf(x) < 0;
+    });
+
+    const pendingMinis = diffIds.map(id => miniassignments[id]);
+
+    setMiniassignments(arrayToObject(pendingMinis));
+  }
+
+  function filterEdit() {
     const pendingSolutions = Object.values(solutions).filter(
       solution => solution.status === "saved"
     );
@@ -71,7 +88,7 @@ function MiniAssignmentsAside({ styles, setMiniassignments }) {
           }
         }}
         title="Edit"
-        onClick={filterPending}
+        onClick={filterEdit}
       >
         {width > 450 ? "Edit" : "E"}
       </ButtonBlue>
@@ -92,7 +109,27 @@ function MiniAssignmentsAside({ styles, setMiniassignments }) {
         title="Sent"
         onClick={filterSent}
       >
-        {width > 450 ? "Saved" : "S"}
+        {width > 450 ? "Sent" : "S"}
+      </Button>
+
+      <Button
+        css={{
+          fontSize: "15px",
+          backgroundColor: "orange",
+          "@media (max-width: 450px)": {
+            fontSize: "40px",
+            height: "55px",
+            width: "55px",
+            borderRadius: "50%",
+            ":hover": {
+              backgroundColor: "#939393"
+            }
+          }
+        }}
+        title="Sent"
+        onClick={filterPending}
+      >
+        {width > 450 ? "Pending" : "P"}
       </Button>
       <Button
         css={{
