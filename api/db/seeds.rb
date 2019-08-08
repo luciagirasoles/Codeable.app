@@ -242,8 +242,9 @@ sublesson214 = Sublesson.create(
 )
 
 sublesson221 = Sublesson.create(
-  title: 'Sublesson 1 Lesson 2 Tag 1',
-  content: '<h3>Intro to Postgres</h3> 
+  title: 'Intro SQL',
+  content: '<h3>Topic</h3>
+  <p>Intro to Postgres</p> 
   <p>What is PostgreSQL? </p>
   <p>How to create a database?</p>',
   tag: tag1,

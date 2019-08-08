@@ -12,6 +12,7 @@ import { Card } from "../components/UI/Ui";
 import TopNavigation from "../components/TopNavigation";
 import { Tabs, TabList } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Interweave from "interweave";
 
 function Lesson({ moduleId, lessonId, sublessonId }) {
   const user = useUser();
@@ -35,7 +36,7 @@ function Lesson({ moduleId, lessonId, sublessonId }) {
           </TabList>
           <Card styles={{ padding: "50px" }}>
             <h1 css={{ marginBottom: "25px" }}>{sublesson.title}</h1>
-            <p>{sublesson.content}</p>
+            <Interweave content={sublesson.content} />
           </Card>
         </Tabs>
         <Aside moduleId={moduleId} />

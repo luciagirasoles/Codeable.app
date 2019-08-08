@@ -8,6 +8,7 @@
     "@reach/router": "^1.2.1",
     "faker": "^4.1.0",
     "framer-motion": "^1.4.2",
+    "interweave": "^11.1.0",
     "lodash.throttle": "^4.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

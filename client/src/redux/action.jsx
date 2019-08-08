@@ -154,7 +154,7 @@ function updateSolution(solutiondata) {
       },
       body: JSON.stringify(solutiondata)
     });
-    if (response.ok) dispatch(requestSolutions());
+    if (response.ok) await dispatch(requestSolutions());
     if (!response.ok) throw await createError(response);
   };
 }
