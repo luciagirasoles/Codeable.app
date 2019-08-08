@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx } from "@emotion/core";
-import { Button, ButtonBlue } from "./UI/Buttons";
+import { Button, ButtonBlue, ButtonOrange, ButtonGray } from "./UI/Buttons";
 import { useSolutions, useMiniAssignments } from "../redux/selector";
 import { arrayToObject } from "../helpers";
 
@@ -92,45 +92,37 @@ function MiniAssignmentsAside({ styles, setMiniassignments }) {
       >
         {width > 450 ? "Edit" : "E"}
       </ButtonBlue>
-      <Button
+      <ButtonGray
         css={{
           fontSize: "15px",
-          backgroundColor: "#939393",
           "@media (max-width: 450px)": {
             fontSize: "40px",
             height: "55px",
             width: "55px",
-            borderRadius: "50%",
-            ":hover": {
-              backgroundColor: "#939393"
-            }
+            borderRadius: "50%"
           }
         }}
         title="Sent"
         onClick={filterSent}
       >
         {width > 450 ? "Sent" : "S"}
-      </Button>
+      </ButtonGray>
 
-      <Button
+      <ButtonOrange
         css={{
           fontSize: "15px",
-          backgroundColor: "orange",
           "@media (max-width: 450px)": {
             fontSize: "40px",
             height: "55px",
             width: "55px",
-            borderRadius: "50%",
-            ":hover": {
-              backgroundColor: "#939393"
-            }
+            borderRadius: "50%"
           }
         }}
         title="Sent"
         onClick={filterPending}
       >
         {width > 450 ? "Pending" : "P"}
-      </Button>
+      </ButtonOrange>
       <Button
         css={{
           fontSize: "15px",
