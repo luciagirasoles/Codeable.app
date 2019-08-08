@@ -82,7 +82,7 @@ function ButtonBlue({ styles, ...props }) {
         alignSelf: "center",
         marginBottom: "16px",
         ":hover": {
-          backgroundColor: "#0994e3",
+          backgroundColor: "#0884ca",
           cursor: "pointer",
           boxShadow: "5px 5px 3px -3px rgba(64,64,64,0.74)"
         },
@@ -114,7 +114,38 @@ function ButtonOrange({ styles, ...props }) {
         alignSelf: "center",
         marginBottom: "16px",
         ":hover": {
-          backgroundColor: "#df8048",
+          backgroundColor: "#c67240",
+          boxShadow: "5px 5px 3px -3px rgba(64,64,64,0.74)"
+        },
+        transition: "all 200ms ease",
+        textAlign: "center",
+        textTransform: "uppercase",
+
+        width: "100%",
+        ...styles
+      }}
+    />
+  );
+}
+
+function ButtonGray({ styles, ...props }) {
+  return (
+    <button
+      {...props}
+      css={{
+        border: "none",
+        padding: "0.3em",
+        backgroundColor: "#939393",
+        font: "inherit",
+        color: "#FFF",
+        fontSize: "1.5em",
+        fontWeight: "bolder",
+        borderRadius: "5px",
+        maxWidth: "5em",
+        alignSelf: "center",
+        marginBottom: "16px",
+        ":hover": {
+          backgroundColor: "#696969",
           cursor: "pointer",
           boxShadow: "5px 5px 3px -3px rgba(64,64,64,0.74)"
         },
@@ -194,5 +225,6 @@ export {
   ButtonBlue,
   ButtonOrange,
   ButtonAmber,
-  ButtonDisabled
+  ButtonDisabled,
+  ButtonGray
 };
