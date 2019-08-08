@@ -55,7 +55,7 @@ function SearchClasses({ searchTerm, isWriting }) {
               <Link
                 to={`/lessons/module/${lesson.moduleId}/lesson/${
                   lesson.id
-                }/sublesson/1`}
+                }/sublesson/${lesson.sublessons[0]}`}
                 css={cssLi}
                 key={JSON.stringify(lesson)}
               >
