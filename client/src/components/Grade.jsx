@@ -4,7 +4,8 @@ import { jsx } from "@emotion/core";
 
 const space = {
   margin: 0,
-  marginLeft: "10px"
+  marginLeft: "10px",
+  cursor: "pointer"
 };
 
 function Grade({

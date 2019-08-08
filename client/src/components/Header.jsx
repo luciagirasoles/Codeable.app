@@ -66,6 +66,7 @@ function Header({ styles }) {
         }}
         avatar
         src={avatar}
+        alt="user image"
       />
       {user.currentUser.name}
     </span>

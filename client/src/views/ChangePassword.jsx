@@ -97,6 +97,7 @@ function Forgot() {
           >
             <label>Current Password</label>
             <Input
+              aria-label="Introduce Current Password"
               name="currentpassword"
               type="password"
               placeholder="Enter Current Password"
@@ -106,6 +107,7 @@ function Forgot() {
             />
             <label>New Password</label>
             <Input
+              aria-label="Introduce New password"
               name="newpassword"
               type="password"
               placeholder="Enter New Password"
@@ -114,6 +116,7 @@ function Forgot() {
             />
             <label>Confirm New Password</label>
             <Input
+              aria-label="Introduce your new password again to verify"
               name="confirmpassword"
               type="password"
               placeholder="Confirm New Password"
