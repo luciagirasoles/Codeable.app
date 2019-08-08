@@ -254,24 +254,164 @@ sublesson221 = Sublesson.create(
 
 
 sublesson222 = Sublesson.create(
-  title: 'Sublesson 2 Lesson 2 Tag 2 section main',
-  content: 'Content Sublesson 2 Lesson 2 Tag 2 section main',
+  title: 'Create your DB in PostgreSQL',
+  content: '<div class="application-main " data-commit-hovercards-enabled="">
+  <div class="">
+  <div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
+  <div class="repository-content ">
+  <div class="Box mt-3 position-relative">
+  <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
+  <article class="markdown-body entry-content p-3 p-md-6">
+  <div class="highlight highlight-source-shell">
+  <pre>$ brew services start postgresql
+  $ createdb <span class="pl-s"><span class="pl-pds">`</span>whoami<span class="pl-pds">`</span></span>
+  $ createuser postgres -P -s
+  $ psql</pre>
+  </div>
+  <ul>
+  <li>How to create a table?</li>
+  </ul>
+  <div class="highlight highlight-source-sql">
+  <pre>  <span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">products</span> (
+      product_no <span class="pl-k">integer</span>,
+      name <span class="pl-k">text</span>,
+      price <span class="pl-k">numeric</span>
+    );</pre>
+  </div>
+  <ul>
+  <li>How to delete a table?</li>
+  </ul>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">DROP</span> <span class="pl-k">TABLE</span> products</pre>
+  </div>
+  <ul>
+  <li>How do you define a default value in a column?</li>
+  </ul>
+  <div class="highlight highlight-source-sql">
+  <pre>price <span class="pl-k">numeric</span> DEFAULT <span class="pl-c1">0</span>.<span class="pl-c1">00</span></pre>
+  </div>
+  <ul>
+  <li>What are the constraints?</li>
+  <li>What types of constraints do you know? Give some examples</li>
+  <li>What is a CHECK constraint? Why would you use it?</li>
+  </ul>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">products</span> (
+      product_no <span class="pl-k">integer</span>,
+      name <span class="pl-k">text</span>,
+      price <span class="pl-k">numeric</span> <span class="pl-k">CHECK</span> (price <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>)
+  );</pre>
+  </div>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">products</span> (
+      product_no <span class="pl-k">integer</span>,
+      name <span class="pl-k">text</span>,
+      price <span class="pl-k">numeric</span> <span class="pl-k">CONSTRAINT</span> positive_price <span class="pl-k">CHECK</span> (price<span class="pl-k">&gt;</span> <span class="pl-c1">0</span>)
+  );</pre>
+  </div>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">products</span> (
+      product_no <span class="pl-k">integer</span>,
+      name <span class="pl-k">text</span>,
+      price <span class="pl-k">numeric</span> <span class="pl-k">CHECK</span> (price <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>),
+      discounted_price <span class="pl-k">numeric</span> <span class="pl-k">CHECK</span> (discounted_price <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>),
+      <span class="pl-k">CHECK</span> (price <span class="pl-k">&gt;</span> discounted_price)
+  );</pre>
+  </div>
+  <ul>
+  <li>What is a Not Null constraint? Why would you use it?</li>
+  </ul>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">products</span> (
+      product_no <span class="pl-k">integer</span> <span class="pl-k">NOT NULL</span>,
+      name <span class="pl-k">text</span> <span class="pl-k">NOT NULL</span>,
+      price <span class="pl-k">numeric</span>
+  );</pre>
+  </div>
+  <ul>
+  <li>What is a Unique constraint? Why would you use it?</li>
+  </ul>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">products</span> (
+      product_no <span class="pl-k">integer</span> UNIQUE,
+      name <span class="pl-k">text</span>,
+      price <span class="pl-k">numeric</span>
+  );</pre>
+  </div>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">example</span> (
+      a <span class="pl-k">integer</span>,
+      b <span class="pl-k">integer</span>,
+      c <span class="pl-k">integer</span>,
+      UNIQUE (a, c)
+  );</pre>
+  </div>
+  <ul>
+  <li>What is a primary key? Why would you use it?</li>
+  </ul>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">products</span> (
+      product_no <span class="pl-k">integer</span> <span class="pl-k">PRIMARY KEY</span>,
+      name <span class="pl-k">text</span>,
+      price <span class="pl-k">numeric</span>
+  );</pre>
+  </div>
+  <ul>
+  <li>What is a foreign key? Why would you use it?</li>
+  </ul>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">orders</span> (
+      order_id <span class="pl-k">integer</span> <span class="pl-k">PRIMARY KEY</span>,
+      product_no <span class="pl-k">integer</span> <span class="pl-k">REFERENCES</span> products (product_no),
+      quantity <span class="pl-k">integer</span>
+  );</pre>
+  </div>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">products</span> (
+      product_no <span class="pl-k">integer</span> <span class="pl-k">PRIMARY KEY</span>,
+      name <span class="pl-k">text</span>,
+      price <span class="pl-k">numeric</span>
+  );</pre>
+  </div>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">orders</span> (
+      order_id <span class="pl-k">integer</span> <span class="pl-k">PRIMARY KEY</span>,
+      shipping_address <span class="pl-k">text</span>,
+      ...
+  );</pre>
+  </div>
+  <div class="highlight highlight-source-sql">
+  <pre><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-en">order_items</span> (
+      product_no <span class="pl-k">integer</span> <span class="pl-k">REFERENCES</span> products <span class="pl-k">ON DELETE</span> RESTRICT,
+      order_id <span class="pl-k">integer</span> <span class="pl-k">REFERENCES</span> orders <span class="pl-k">ON DELETE CASCADE</span>,
+      quantity <span class="pl-k">integer</span>,
+      <span class="pl-k">PRIMARY KEY</span> (product_no, order_id)
+  );</pre>
+  </div>
+  </article>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>',
   tag: tag2,
   lesson: lesson22,
   section: 'main'
 )
 
 miniassigment4 = Sublesson.create(
-  title: 'Sublesson 3 Lesson 2 Tag 3 section main',
-  content: 'Content Sublesson 3 Lesson 2 Tag 3 section main',
+  title: 'SQL’s Data Modeling Language',
+  content: "<p>Create the database of the previous day's exercises.</p>
+  <p>Use&nbsp;<a href='https://github.com/stympy/faker'>Faker</a>&nbsp;to populate the database with data.</p>",
   tag: tag3,
   lesson: lesson22,
   section: 'main'
 )
 
 sublesson224 = Sublesson.create(
-  title: 'Sublesson 4 Lesson 2 Tag 4 section main',
-  content: 'Content Sublesson 4 Lesson 2 Tag 4 section main',
+  title: 'SQL’s Data Modeling Language Exercises',
+  content: 'Create Instagram database',
   tag: tag4,
   lesson: lesson22,
   section: 'main'
