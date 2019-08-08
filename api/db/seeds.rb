@@ -1,9 +1,26 @@
 # Create users
 User.destroy_all
-user1 = User.create(name: 'Ricardo Yrupailla', email: 'ry.yrupailla@gmail.com', password: '123456')
-user2 = User.create(name: 'Mayra Navarro', email: 'mnavarro@able.co', password: '123456')
-user3 = User.create(name: 'Lucia Navarro', email: 'luciagirasoles+1@gmail.com', password: '123456')
-user4 = User.create(name: 'Carlos Sandoval', email: 'csandoval@able.co', password: '123456')
+user1 = User.create(name: 'Mayra Navarro', email: 'mayra@codeable.co', password: '123456')
+user2 = User.create(name: 'Ricardo Yrupailla', email: 'ricardo@codeable.com', password: '123456')
+user3 = User.create(name: 'Carlos Sandoval', email: 'carlos@codeable.com', password: '123456')
+User.create(name: 'Deyvi Conde', email: 'deyvi@codeable.co', password: '123456')
+User.create(name: 'Cristian Estrada', email: 'cristian@codeable.co', password: '123456')
+User.create(name: 'Frank Condezo', email: 'frank@codeable.co', password: '123456')
+User.create(name: 'Christopher Roa', email: 'christopher@codeable.co', password: '123456')
+User.create(name: 'Valeria Vassallo', email: 'valeria@codeable.co', password: '123456')
+User.create(name: 'Diego Cuevas', email: 'diegoc@codeable.co', password: '123456')
+User.create(name: 'Marieth Perez', email: 'marieth@codeable.co', password: '123456')
+
+User.create(name: 'Angie Gonzales', email: 'angie@codeable.co', password: '123456')
+User.create(name: 'Christopher Roa', email: 'christopher@codeable.co', password: '123456')
+User.create(name: 'Paulo Tijero', email: 'paulo@codeable.co', password: '123456')
+User.create(name: 'Paul Portillo', email: 'paul@codeable.co', password: '123456')
+User.create(name: 'Liam Nivi', email: 'liam@codeable.co', password: '123456')
+User.create(name: 'Diego Torres', email: 'diegot@codeable.co', password: '123456')
+User.create(name: 'Brayan Ciudad', email: 'deyvi@codeable.co', password: '123456')
+User.create(name: 'Jonathan Mendoza', email: 'jonathan@codeable.co', password: '123456')
+User.create(name: 'Cesar Cachay', email: 'cesar@codeable.co', password: '123456')
+
 
 # Modules
 Modulo.destroy_all
@@ -21,8 +38,11 @@ lesson14 = Lesson.create(title: 'Lesson 4 Module 1', modulo: modulo1)
 
 lesson21 = Lesson.create(title: 'Database Overview', modulo: modulo2)
 lesson22 = Lesson.create(title: 'SQL Data Modeling', modulo: modulo2)
-lesson23 = Lesson.create(title: 'Lesson 3 Module 2', modulo: modulo2)
-lesson24 = Lesson.create(title: 'Lesson 4 Module 2', modulo: modulo2)
+lesson23 = Lesson.create(title: 'SQL’s Data Manipulation Language', modulo: modulo2)
+lesson24 = Lesson.create(title: 'Retrieving data: Queries, Sorting & Paginating', modulo: modulo2)
+lesson25 = Lesson.create(title: 'Rails 101', modulo: modulo2)
+lesson26 = Lesson.create(title: 'Rails Models: Validations & Migrations', modulo: modulo2)
+lesson27 = Lesson.create(title: 'API, Rest & MVC', modulo: modulo2)
 
 lesson31 = Lesson.create(title: 'HTML & CSS', modulo: modulo3)
 lesson32 = Lesson.create(title: 'Flexbox, Grid & Layouts', modulo: modulo3)
@@ -42,8 +62,8 @@ tag3 = Tag.create(name: 'M-ASSIGN', color: 'goldenrod')
 tag4 = Tag.create(name: 'EXERCISES', color: 'mediumpurple')
 tag5 = Tag.create(name: 'BLOG', color: 'indianred')
 
-# Sublesson
-sublesson1111 = Sublesson.destroy_all
+# Sublessons Module 1
+sublesson111 = Sublesson.destroy_all
 Sublesson.create(
   title: 'CLI Commands',
   content: '# Learn some basic commands like: ls, cd, mkdir, touch, rm -rf, mv, cat, history, grep, find, chmod',
@@ -188,6 +208,8 @@ sublesson144 = Sublesson.create(
   section: 'main'
 )
 
+# Sublessons Module 2
+
 sublesson211 = Sublesson.create(
   title: 'Sublesson 1 Lesson 1 Tag 1',
   content: 'Content Sublesson 1 Lesson 1 Tag 1',
@@ -221,7 +243,9 @@ sublesson214 = Sublesson.create(
 
 sublesson221 = Sublesson.create(
   title: 'Sublesson 1 Lesson 2 Tag 1',
-  content: 'Content Sublesson 1 Lesson 2 Tag 1',
+  content: '<h3>Intro to Postgres</h3> 
+  <p>What is PostgreSQL? </p>
+  <p>How to create a database?</p>',
   tag: tag1,
   lesson: lesson22,
   section: 'main'
@@ -317,6 +341,8 @@ sublesson244 = Sublesson.create(
   lesson: lesson24,
   section: 'main'
 )
+
+# Sublessons Module 3
 
 sublesson311 = Sublesson.create(
   title: 'Sublesson 1 Lesson 1 Tag 1',
@@ -450,6 +476,8 @@ sublesson344 = Sublesson.create(
   section: 'main'
 )
 
+# Sublessons Module 4
+
 sublesson411 = Sublesson.create(
   title: 'Sublesson 1 Lesson 1 Tag 1',
   content: 'Content Sublesson 1 Lesson 1 Tag 1',
@@ -582,30 +610,26 @@ sublesson444 = Sublesson.create(
   section: 'main'
 )
 
-
+# Solutions from user1
 
 Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment1.id, score: 4)
 Solution.create(content:'http://massign2.com/user1', status: "sent", user_id: user1.id, sublesson_id: miniassigment2.id, score: 3)
-Solution.create(content:'http://massign1.com/user2', status: "saved", user_id: user2.id, sublesson_id: miniassigment1.id, score: 2)
 Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment3.id, score: 4)
 Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment4.id, score: 2.3)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment5.id, score: 2.3)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment6.id, score: 2.3)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment7.id, score: 2.3)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment8.id, score: 2.3)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment9.id, score: 2.3)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment10.id, score: 2.7)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment11.id, score: 3.6)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment12.id, score: 3.1)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment13.id, score: 1.8)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment14.id, score: 3.1)
-Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment15.id, score: 3.1)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment5.id, score: 2.3)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment6.id, score: 2.3)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment7.id, score: 2.3)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment8.id, score: 2.3)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment9.id, score: 2.3)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment10.id, score: 2.7)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment11.id, score: 3.6)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment12.id, score: 3.1)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment13.id, score: 1.8)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment14.id, score: 3.1)
+# Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: miniassigment15.id, score: 3.1)
 
-
-
-
-
-
+# Solutions from user2
+Solution.create(content:'http://massign1.com/user2', status: "saved", user_id: user2.id, sublesson_id: miniassigment1.id, score: 2)
 
 
 

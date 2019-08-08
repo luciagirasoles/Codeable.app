@@ -11,8 +11,8 @@ import HomeLayout from "../components/layouts/HomeLayout";
 function Login() {
   const login = useLogin();
   const user = useUser();
-  const [email, setEmail] = React.useState("ry.yrupailla@gmail.com");
-  const [password, setPassword] = React.useState("123456");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   React.useEffect(() => {
     if (user.currentUser.name) {

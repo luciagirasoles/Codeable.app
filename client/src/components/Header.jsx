@@ -11,7 +11,7 @@ import { Dropdown, Image } from "semantic-ui-react";
 import faker from "faker";
 import { useUser } from "../redux/selector";
 
-const avatar = faker.internet.avatar();
+const avatar = faker.image.cats();
 
 function Header({ styles }) {
   const $portal = useMemo(() => document.getElementById("portal"), []);

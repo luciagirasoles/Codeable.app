@@ -10,7 +10,7 @@ import { Redirect } from "@reach/router";
 import { useUser } from "../redux/selector";
 import { Card } from "../components/UI/Ui";
 import TopNavigation from "../components/TopNavigation";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tabs, TabList } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 function Lesson({ moduleId, lessonId, sublessonId }) {

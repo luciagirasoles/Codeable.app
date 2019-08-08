@@ -20,7 +20,6 @@ function Solution({
   const createSolution = useCreateSolution();
   const updateSolution = useUpdateSolution();
   const [userListFormatted, setUserListFormatted] = useState([]);
-  console.log("solContent en solution ", solcontent);
   const [solutionContent, setSolutionContent] = useState(
     solcontent ? solcontent : ""
   );
