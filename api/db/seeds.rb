@@ -1,9 +1,25 @@
 # Create users
 User.destroy_all
-user1 = User.create(name: 'Ricardo Yrupailla', email: 'ry.yrupailla@gmail.com', password: '123456')
-user2 = User.create(name: 'Mayra Navarro', email: 'mnavarro@able.co', password: '123456')
-user3 = User.create(name: 'Lucia Navarro', email: 'luciagirasoles+1@gmail.com', password: '123456')
-user4 = User.create(name: 'Carlos Sandoval', email: 'csandoval@able.co', password: '123456')
+user1 = User.create(name: 'Mayra Navarro', email: 'mayra@codeable.co', password: '123456')
+user2 = User.create(name: 'Ricardo Yrupailla', email: 'ricardo@codeable.com', password: '123456')
+user3 = User.create(name: 'Carlos Sandoval', email: 'carlos@codeable.com', password: '123456')
+User.create(name: 'Deyvi Conde', email: 'deyvi@codeable.co', password: '123456')
+User.create(name: 'Cristian Estrada', email: 'cristian@codeable.co', password: '123456')
+User.create(name: 'Frank Condezo', email: 'frank@codeable.co', password: '123456')
+User.create(name: 'Christopher Roa', email: 'christopher@codeable.co', password: '123456')
+User.create(name: 'Valeria Vassallo', email: 'valeria@codeable.co', password: '123456')
+User.create(name: 'Diego Cuevas', email: 'diegoc@codeable.co', password: '123456')
+User.create(name: 'Marieth Perez', email: 'marieth@codeable.co', password: '123456')
+User.create(name: 'Angie Gonzales', email: 'angie@codeable.co', password: '123456')
+User.create(name: 'Christopher Roa', email: 'christopher@codeable.co', password: '123456')
+User.create(name: 'Paulo Tijero', email: 'paulo@codeable.co', password: '123456')
+User.create(name: 'Paul Portillo', email: 'paul@codeable.co', password: '123456')
+User.create(name: 'Liam Nivi', email: 'liam@codeable.co', password: '123456')
+User.create(name: 'Diego Torres', email: 'diegot@codeable.co', password: '123456')
+User.create(name: 'Brayan Ciudad', email: 'deyvi@codeable.co', password: '123456')
+User.create(name: 'Jonathan Mendoza', email: 'jonathan@codeable.co', password: '123456')
+User.create(name: 'Cesar Cachay', email: 'cesar@codeable.co', password: '123456')
+
 
 # Modules
 Modulo.destroy_all
@@ -73,9 +89,12 @@ Sublesson.create(
 massign1 = Sublesson.create(
   title: 'Create your first repository',
   content:
-  '## Create your first repository on Github and apply some commands
-   * Use your personal Github account
-   * Include at least one Ruby file
+  '<h4 id="create-your-first-repository-on-github-and-apply-some-commands">Create your first repository on Github and apply some commands</h4>
+  <ul>
+  <li>Use your personal Github account</li>
+  <li>Include at least one Ruby file</li>
+  </ul>
+  
   ',
   tag: tag3,
   lesson: lesson11,
@@ -84,7 +103,7 @@ massign1 = Sublesson.create(
 
 Sublesson.create(
   title: 'Check extra exercises',
-  content: '## Make your first pull request and code review',
+  content: '<h3 id="make-your-first-pull-request-and-code-review">Make your first pull request and code review</h3>',
   section: 'extra',
   lesson: lesson11,
   tag: tag4,
@@ -92,7 +111,7 @@ Sublesson.create(
 
 Sublesson.create(
   title: 'Read additional material about CLI',
-  content: '## How to be a rockstart within CLI',
+  content: '<h3 id="how-to-be-a-rockstart-within-cli">How to be a rockstart within CLI</h3>',
   section: 'extra',
   lesson: lesson11,
   tag: tag5,
@@ -211,22 +230,7 @@ Sublesson.create(
 massign2 = Sublesson.create(
   title: 'Bob, the teen',
   content: '<h3 id="instructions">Instructions</h3>
-  <p> Add information about ancestry tracking</p>
-  <p> Add information about</p>
-  <ul>
-  <li>Make groups of 2 - 3 people, this group will be your <em><strong>peer code-review</strong></em> group for this week. You will be giving feedback to the other members of your group on the solutions they present, as well as receiving feedback from them.</li>
-  <li>As a group, create a Github repository with the name <code>codeable-exercises-wk1</code>. All other members should <em>fork</em> this repository.</li>
-  <li>Within this repository, create a directory <code>0226-basic-programming</code>. This is where you will store your solutions.</li>
-  <li>Divide the work below between your team. All exercises should be resolved by the end of the period.</li>
-  <li><p>Each team member should create <em>pull requests</em> to the master branch in the original repo. Do not merge them yet.</p>
-  <h3 id="peer-code-review">Peer code-review</h3>
-  </li>
-  <li><p>The last 10 minutes of the period are assigned to provide feedback to your team. Use Github&#39;s review feature to comment on their code within the <em>pull requests</em>.</p>
-  </li>
-  <li>Use the last 5 minutes to review the comments from your peers. Based on their feedback, do you think you need to make changes to your code? Go ahead and do so!</li>
-  <li><p>By the end of this 15-minute period, all exercises should be resolved in the <code>master</code> branch in the original repo.</p>
-  <p>Great job! 🙌</p>
-  <h1 id="bob-the-teenager">Bob, the teenager</h1>
+  <h4 id="bob-the-teenager">Bob, the teenager</h4>
   <p>Bob is a lackadaisical teenager. In conversation, his responses are very limited.
   Bob answers <code>Sure.</code> if you ask him a question.
   He answers <code>Whoa, chill out!</code> if you yell at him.
@@ -301,21 +305,7 @@ Sublesson.create(
 
 massign3 = Sublesson.create(
   title: 'Remove all the marked elements of a list',
-  content: '<h3 id="instructions">Instructions</h3>
-  <ul>
-  <li>Get together with your <em><strong>peer code-review</strong></em> group. You will be giving feedback to the other members of your group on the solutions they present, as well as receiving feedback from them.</li>
-  <li>Use the same repo from yesterday: <code>codeable-exercises-wk1</code>.</li>
-  <li>Make sure to update by <em>pulling</em> the changes from yesterday.</li>
-  <li>Within this repository, create a directory <code>0227-intro-algorithms</code>. This is where you will store your solutions.</li>
-  <li>Divide the work below between your team. All exercises should be resolved by the end of the period.</li>
-  <li><p>Each team member should create <em>pull requests</em> to the master branch in the original repo. Do not merge them yet.</p>
-  <h3 id="peer-code-review">Peer code-review</h3>
-  </li>
-  <li><p>The last 10 minutes of the period are assigned to provide feedback to your team. Use Github&#39;s review feature to comment on their code within the <em>pull requests</em>.</p>
-  </li>
-  <li>Use the last 5 minutes to review the comments from your peers. Based on their feedback, do you think you need to make changes to your code? Go ahead and do so!</li>
-  <li><p>By the end of this 15-minute period, all exercises should be resolved in the <code>master</code> branch in the original repo.</p>
-  <p>Great job! 🙌</p>
+  content: '<h3 id="instructions">Instructions</h3>  
   <p>Codewars:<a href="https://www.codewars.com/kata/remove-all-the-marked-elements-of-a-list/train/ruby">https://www.codewars.com/kata/remove-all-the-marked-elements-of-a-list/train/ruby</a></p>
   </li>
   </ul>
@@ -566,8 +556,7 @@ Sublesson.create(
 
 massign5 = Sublesson.create(
   title: 'Registro de Matricula',
-  content: '<h1 id="database-overview">Database Overview</h1>
-  <h2 id="registro-de-matr-cula">Registro de matrícula</h2>
+  content: '<h3 id="database-overview">Database Overview</h3>
   <table>
   <thead>
   <tr>
@@ -644,11 +633,11 @@ massign5 = Sublesson.create(
   </tr>
   </tbody>
   </table>
-  <h2 id="video-club">Video Club</h2>
+  <h4 id="video-club">Video Club</h4>
   <p>  En una tienda de video se necesita mantener información de alrededor de 3000 casetas cada uno de los casetes tiene asignado un número por cada película, se necesita conocer un título y categoría por ejemplo: comedia, suspenso, drama, acción, ciencia ficción, etc. Se mantienen algunas copias de muchas películas. Se le da a cada película una identificación y se mantiene seguimiento de lo que contiene cada casete.</p>
   <p>  Un casete puede venir en varios formatos y una película es grabada en un solo casete; frecuentemente las películas son pedidas de acuerdo a un actor específico Tom Cruise y Demi More son los más populares es por esto que se debe mantener información de los actores que pertenecen a cada película. No en todas las películas actúan artistas famosos, a los clientes de la tienda le gusta conocer datos como el nombre real del actor, y su fecha de nacimiento.</p>
   <p>  En la tienda se mantienen información solo de los actores que aparecen en las películas y que se tiene a disposición. Solo se alquila videos a aquellos que pertenecen al club de videos. Para pertenecer al club se debe tener un buen crédito. Por cada miembro del club se mantiene una ficha con su nombre, teléfono y dirección, cada miembro del club tiene asignado un número de membresía. Se desea mantener información de todos los casetes que un cliente alquila, cuando un cliente alquila un casete se debería conocer el nombre de la película, la fecha en la que se alquila y la fecha de devolución.</p>
-  <h2 id="diagrama-e-r">Diagrama E/R</h2>
+  <h4 id="diagrama-e-r">Diagrama E/R</h4>
   <p>  Obtener el diagrama E/R para un sistema de control de vuelos adaptado a las siguientes reglas de gestión (indicar las entidades, interrelaciones, etc., que se deducen de cada una de las reglas):</p>
   <ul>
   <li>a) De cada aeropuerto se conoce su código, nombre, ciudad y país.</li>
@@ -830,7 +819,7 @@ Sublesson.create(
 
 massign6 = Sublesson.create(
   title: 'Create a Database',
-  content: '<h1 id="sql-s-data-modeling-language">SQL’s Data Modeling Language</h1>
+  content: '<h3 id="sql-s-data-modeling-language">SQL’s Data Modeling Language</h3>
   <p>  Create the database of the previous day&#39;s exercises.</p>
   <p>  Use <a href="https://github.com/stympy/faker">Faker</a> to populate the database with data.</p>
   ',
@@ -908,14 +897,14 @@ Sublesson.create(
 
 massign7 = Sublesson.create(
   title: 'Queries, Sorting and paginating',
-  content: '<h1 id="retrieving-data-queries-sorting-paginating">Retrieving data: Queries, Sorting &amp; Paginating</h1>
-  <h2 id="registro-de-matr-cula">Registro de Matrícula</h2>
+  content: '<h3 id="retrieving-data-queries-sorting-paginating">Retrieving data: Queries, Sorting &amp; Paginating</h3>
+  <h4 id="registro-de-matr-cula">Registro de Matrícula</h4>
   <ul>
   <li>Cuáles son las 5 especialidades que tiene la mayor cantidad de alumnos?</li>
   <li>Cuáles son las 10 secciones más utilizadas? Hay alguna sección que no es usada en ningún curso?</li>
   <li>Cuáles son los alumnos que tienen más de 6 cursos?</li>
   <li><p>Cuál es el profesor que imparte más clases?</p>
-  <h2 id="videoclub">VideoClub</h2>
+  <h4 id="videoclub">VideoClub</h4>
   </li>
   <li><p>Cuál es la película más popular por semana, mes y año?</p>
   </li>
@@ -923,7 +912,7 @@ massign7 = Sublesson.create(
   <li>Cuál actor aparece en más películas?</li>
   <li>Cuál es la categoría de películas más solicitada?</li>
   <li><p>Cuál es el usuario que ha alquilado más películas? Cuál menos?</p>
-  <h2 id="vuelos">Vuelos</h2>
+  <h4 id="vuelos">Vuelos</h4>
   </li>
   <li><p>Creen una consulta para obtener el vuelo con menos escalas desde Lima a Kyoto y desde Bolivia a Berlín.</p>
   </li>
@@ -1029,14 +1018,14 @@ Sublesson.create(
 
 massign8 = Sublesson.create(
   title: 'Retrieving Data',
-  content: '<h1 id="retrieving-data-queries-sorting-paginating">Retrieving data: Queries, Sorting &amp; Paginating</h1>
-  <h2 id="registro-de-matr-cula">Registro de Matrícula</h2>
+  content: '<h3 id="retrieving-data-queries-sorting-paginating">Retrieving data: Queries, Sorting &amp; Paginating</h3>
+  <h4 id="registro-de-matr-cula">Registro de Matrícula</h4>
   <ul>
   <li>Cuáles son las 5 especialidades que tiene la mayor cantidad de alumnos?</li>
   <li>Cuáles son las 10 secciones más utilizadas? Hay alguna sección que no es usada en ningún curso?</li>
   <li>Cuáles son los alumnos que tienen más de 6 cursos?</li>
   <li><p>Cuál es el profesor que imparte más clases?</p>
-  <h2 id="videoclub">VideoClub</h2>
+  <h4 id="videoclub">VideoClub</h4>
   </li>
   <li><p>Cuál es la película más popular por semana, mes y año?</p>
   </li>
@@ -1044,7 +1033,7 @@ massign8 = Sublesson.create(
   <li>Cuál actor aparece en más películas?</li>
   <li>Cuál es la categoría de películas más solicitada?</li>
   <li><p>Cuál es el usuario que ha alquilado más películas? Cuál menos?</p>
-  <h2 id="vuelos">Vuelos</h2>
+  <h4 id="vuelos">Vuelos</h4>
   </li>
   <li><p>Creen una consulta para obtener el vuelo con menos escalas desde Lima a Kyoto y desde Bolivia a Berlín.</p>
   </li>
@@ -1061,11 +1050,11 @@ massign8 = Sublesson.create(
 
 Sublesson.create(
   title: 'Intro to HTML & CSS',
-  content: '<h1 id="html-css-basics">HTML &amp; CSS Basics</h1>
+  content: '<h3 id="html-css-basics">HTML &amp; CSS Basics</h3>
   <blockquote>
   <p><a href="https://sergiodxa.com/slides/codeable/html-css-basics/">Slides</a></p>
   </blockquote>
-  <h2 id="objective">Objective</h2>
+  <h4 id="objective">Objective</h4>
   <ul>
   <li>Learn the basics of Semantic HTML</li>
   <li>Learn about a11y and why is it important</li>
@@ -1138,7 +1127,7 @@ Sublesson.create(
 
 massign9 = Sublesson.create(
   title: 'Create a Personal Website',
-  content: '<h2 id="mini-assignments">Mini Assignments</h2>
+  content: '<h3 id="mini-assignments">Mini Assignments</h3>
   <p>  Create the layout of your personal website, it should:</p>
   <ul>
   <li>Use correct semantic tags.</li>
@@ -1223,7 +1212,7 @@ Sublesson.create(
 
 massign10 = Sublesson.create(
   title: 'Replicate a layout using Flexbox and Grid',
-  content: '<h2 id="mini-assignments">Mini Assignments</h2>
+  content: '
   <p>  Replicate the following layout using Flexbox and Grid.</p>
   <p>  <img src="/_media/m3w1d2/facebook.jpg" alt=""></p>
   <p>  Add a responsive version imagining it by yourself.</p>
@@ -1519,7 +1508,7 @@ Sublesson.create(
 
 massign11 = Sublesson.create(
   title: 'Replace all of the following animations using either CSS animations or transitions',
-  content: '<h2 id="mini-assignments">Mini Assignments</h2>
+  content: '
   <p>  Replace all of the following animations using either CSS animations or transitions.</p>
   <p>  <img src="/_media/m3w1d3/animation-1.gif" alt="">
     <img src="/_media/m3w1d3/animation-2.gif" alt="">
@@ -1780,7 +1769,7 @@ Sublesson.create(
 
 massign12 = Sublesson.create(
   title: 'Calculator',
-  content: '<h2 id="mini-assignments">Mini Assignments</h2>
+  content: '
   <p>  Create a calculator application using HTML forms for the input and JavaScript to calculate the results.</p>
   <p>  It should support:</p>
   <ul>
@@ -1799,7 +1788,7 @@ massign12 = Sublesson.create(
 
 Sublesson.create(
   title: 'Aditional Information',
-  content: '<h2 id="resources">Resources</h2>
+  content: '<h3 id="resources">Resources</h3>
   <ul>
   <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">Primitives</a></li>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">Data Types</a></li>
@@ -2017,7 +2006,7 @@ massign13 = Sublesson.create(
 
 Sublesson.create(
   title: 'Extra information',
-  content: '<h2 id="resources">Resources</h2>
+  content: '<h3 id="resources">Resources</h3>
   <ul>
   <li><a href="http://npmjs.com/">npm</a></li>
   <li><a href="https://yarnpkg.com/">yarn</a></li>
@@ -2039,7 +2028,7 @@ Sublesson.create(
 
 Sublesson.create(
   title: 'Topics React, State & Effects',
-  content: '<h1 id="react-state-effects">React, State &amp; Effects</h1>
+  content: '<h3 id="react-state-effects">React, State &amp; Effects</h3>
   <h2 id="topics">Topics</h2>
   <ul>
   <li>Create React App</li>
@@ -2303,7 +2292,7 @@ Sublesson.create(
 
 massign14 = Sublesson.create(
   title: 'Geolocation with Google Maps',
-  content: '<h2 id="mini-assignments">Mini Assignments</h2>
+  content: '
   <p>  Ask the user for their geolocation and render a map with a pin in it, keep listening for geolocation changes to update the pin in the map. Use <a href="https://www.npmjs.com/package/react-leaflet">React Leaflet</a> to show the map.</p>
   <p>  <em>Optional</em>: Use a Google Maps component from npm to show the map.</p>
   ',
@@ -2670,7 +2659,7 @@ Sublesson.create(
 
 massign15 = Sublesson.create(
   title: 'Multi Step Form',
-  content: '<h2 id="mini-assignments">Mini Assignments</h2>
+  content: '
   <p>  Create a multi step form for your module peer review feedback. Use the same questions and a fixed amount of three peers.</p>
   <p>  <em>Optional</em>: Ask for the amount of peers before starting to write the feedback.</p>
   <p>  It must have a step for each peer and keep the states of each one until the user send the form.</p>
@@ -3024,7 +3013,7 @@ Sublesson.create(
 
 massign16 = Sublesson.create(
   title: 'Use Emotion',
-  content: '<h2 id="mini-assignments">Mini Assignments</h2>
+  content: '
   <p>  Use Emotion (either core, styled or normal) and add styles to the components you created in the Mini Assignment of <a href="./w4d4-list-forms.md">m3w4d4</a>.</p>
   <p>  <em>Optional</em>: Create the same styles using the other versions of Emotion
     <em>Optional</em>: Create the same styles using CSS Modules</p>
@@ -3055,19 +3044,21 @@ Sublesson.create(
 
 Solution.create(content:'http://massign1.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign1.id, score: 4)
 Solution.create(content:'http://massign2.com/user1', status: "sent", user_id: user1.id, sublesson_id: massign2.id, score: 3)
-Solution.create(content:'http://massign3.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign3.id, score: 4)
-Solution.create(content:'http://massign5.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign5.id, score: 2.3)
+Solution.create(content:'http://massign3.com/user1', status: "sent", user_id: user1.id, sublesson_id: massign3.id, score: 4)
+Solution.create(content:'http://massign5.com/user1', status: "sent", user_id: user1.id, sublesson_id: massign5.id, score: 2.3)
 Solution.create(content:'http://massign6.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign6.id, score: 2.3)
-Solution.create(content:'http://massign7.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign7.id, score: 2.3)
-Solution.create(content:'http://massign8.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign8.id, score: 2.3)
-Solution.create(content:'http://massign9.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign9.id, score: 2.3)
-Solution.create(content:'http://massign10.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign10.id, score: 2.7)
-Solution.create(content:'http://massign11.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign11.id, score: 3.6)
-Solution.create(content:'http://massign12.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign12.id, score: 3.1)
-Solution.create(content:'http://massign13.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign13.id, score: 1.8)
-Solution.create(content:'http://massign14.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign14.id, score: 3.1)
-Solution.create(content:'http://massign15.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign15.id, score: 3.1)
-Solution.create(content:'http://massign16.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign16.id, score: 3.1)
+Solution.create(content:'http://massign6.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign7.id, score: 2.3)
+
+# Solution.create(content:'http://massign7.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign7.id, score: 2.3)
+# Solution.create(content:'http://massign8.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign8.id, score: 2.3)
+# Solution.create(content:'http://massign9.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign9.id, score: 2.3)
+# Solution.create(content:'http://massign10.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign10.id, score: 2.7)
+# Solution.create(content:'http://massign11.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign11.id, score: 3.6)
+# Solution.create(content:'http://massign12.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign12.id, score: 3.1)
+# Solution.create(content:'http://massign13.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign13.id, score: 1.8)
+# Solution.create(content:'http://massign14.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign14.id, score: 3.1)
+# Solution.create(content:'http://massign15.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign15.id, score: 3.1)
+# Solution.create(content:'http://massign16.com/user1', status: "saved", user_id: user1.id, sublesson_id: massign16.id, score: 3.1)
 
 ModuloGrade.all
 ModuloGrade.create(week: 1, tipo: 'EP', code_review: 2.2, performance: 3, testing: 2.8, dry_code: 4, user: user1, modulo: modulo1)

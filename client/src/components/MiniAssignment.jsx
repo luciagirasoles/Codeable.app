@@ -12,6 +12,7 @@ import {
   Button
 } from "../components/UI/Buttons";
 import { SentIcon, SavedIcon, PendingIcon } from "./UI/Icons";
+import Interweave from "interweave";
 
 function MiniAssignment({ miniassignment, handleOpenModalClick }) {
   const user = useUser();
@@ -86,7 +87,8 @@ function MiniAssignment({ miniassignment, handleOpenModalClick }) {
           <h4 css={{ margin: "0px", marginBottom: "20px" }}>
             {miniassignment.title}
           </h4>
-          <p>{miniassignment.content}</p>
+          {/* <p>{miniassignment.content}</p> */}
+          <Interweave content={miniassignment.content} />
 
           {miniassigmentStatus === "pending" && (
             <ButtonOrange
