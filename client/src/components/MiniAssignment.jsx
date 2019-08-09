@@ -87,7 +87,6 @@ function MiniAssignment({ miniassignment, handleOpenModalClick }) {
           <h4 css={{ margin: "0px", marginBottom: "20px" }}>
             {miniassignment.title}
           </h4>
-          {/* <p>{miniassignment.content}</p> */}
           <Interweave content={miniassignment.content} />
 
           {miniassigmentStatus === "pending" && (
@@ -111,7 +110,7 @@ function MiniAssignment({ miniassignment, handleOpenModalClick }) {
               >
                 Edit
               </ButtonBlue>
-              <Button onClick={handleSentSolutionClick}>Sent</Button>
+              <Button onClick={handleSentSolutionClick}>Send</Button>
             </>
           )}
           {miniassigmentStatus === "sent" && (
