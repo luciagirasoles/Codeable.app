@@ -1,7 +1,6 @@
 /**@jsx jsx */
 import React from "react";
 import { jsx } from "@emotion/core";
-import { useEffect } from "react";
 import MainLayout from "../components/layouts/MainLayout";
 import Aside from "../components/Aside";
 // import { useSubLesson } from "../redux/action-hook";

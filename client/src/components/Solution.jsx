@@ -4,7 +4,7 @@ import { jsx } from "@emotion/core";
 import { InputLink } from "./UI/Inputs";
 import { Label } from "./UI/Ui";
 import { Button, ButtonRed } from "./UI/Buttons";
-import { useUser, useUsersList, useSolution } from "../redux/selector";
+import { useUser, useUsersList, useSolutions } from "../redux/selector";
 import { useCreateSolution, useUpdateSolution } from "../redux/action-hook";
 import Select from "react-dropdown-select";
 
@@ -17,6 +17,7 @@ function Solution({
 }) {
   const currentuser = useUser();
   const usersList = useUsersList();
+  const solutions = useSolutions();
   const createSolution = useCreateSolution();
   const updateSolution = useUpdateSolution();
   const [userListFormatted, setUserListFormatted] = useState([]);
@@ -43,6 +44,14 @@ function Solution({
   useEffect(() => {
     setUserListFormatted(fillUserList());
   }, []);
+
+  function obtainSolutionId() {
+    const id = Object.values(solutions).find(solution => {
+      return solution.sublesson_id === miniassignment.id;
+    }).id;
+
+    return id;
+  }
 
   function handleSolutionContentChange(event) {
     setSolutionContent(event.target.value);
@@ -76,7 +85,7 @@ function Solution({
       });
     } else {
       updateSolution({
-        id: 1,
+        id: obtainSolutionId(),
         content: solutionContent,
         status: "saved"
       });

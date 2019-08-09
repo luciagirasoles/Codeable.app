@@ -29,7 +29,9 @@ function Lessons() {
           >
             Modules and <b>Lessons</b>
           </h1>
-          <p css={{ fontSize: "15px", display: "flex", alignItems: "center" }}>
+          <div
+            css={{ fontSize: "15px", display: "flex", alignItems: "center" }}
+          >
             <div css={{ textAlign: "center" }}>Quick Jump:</div>
             <div role="tablist">
               {modulos &&
@@ -55,7 +57,7 @@ function Lessons() {
                   );
                 })}
             </div>
-          </p>
+          </div>
           {modulos &&
             modulos.map(modulo => {
               return <Module key={JSON.stringify(modulo)} module={modulo} />;
